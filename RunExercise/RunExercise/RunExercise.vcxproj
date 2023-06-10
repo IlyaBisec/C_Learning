@@ -138,6 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="7\seven_four.cpp" />
     <ClCompile Include="7\seven_one.cpp" />
     <ClCompile Include="7\seven_three.cpp" />
     <ClCompile Include="7\seven_two.cpp" />

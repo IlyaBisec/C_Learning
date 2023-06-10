@@ -4,8 +4,8 @@
 
 class Employee
 {
-	std::string nameOfWorker;
-	long numberOfWorker;
+	std::string mNameOfWorker;
+	long mNumberOfWorker;
 
 public:
 	

@@ -1,6 +1,6 @@
 #include "seven_three.h"
 
-int main()
+int main3()
 {
 	Distance distArray[100];   // 100 objects type of Distance
 	Distance total(0, 0.0),
@@ -34,35 +34,35 @@ int main()
 void Distance::getDistance()
 {
 	std::cout << "\nInput foot: ";
-	std::cin >> feet;
+	std::cin >> mFeet;
 
 	std::cout << "\nInput inches: ";
-	std::cin >> inches;
+	std::cin >> mInches;
 }
 
 void Distance::showDistance() const
 {
-	std::cout << feet << "\'-" << inches << '\"';
+	std::cout << mFeet << "\'-" << mInches << '\"';
 }
 
 void Distance::addDistance(Distance d2, Distance d3)
 {
-	inches = d2.inches + d3.inches;
-	feet = 0;
-	if (inches >= 12.0)
+	mInches = d2.mInches + d3.mInches;
+	mFeet = 0;
+	if (mInches >= 12.0)
 	{
-		inches -= 12.0;
-		feet++;
+		mInches -= 12.0;
+		mFeet++;
 	}
-	feet += d2.feet + d3.feet;
+	mFeet += d2.mFeet + d3.mFeet;
 }
 
 void Distance::divideDistance(Distance d2, int divisor)
 {
 	//convert to float
-	float fitFeet = d2.feet + d2.inches / 12.0; 
+	float fitFeet = d2.mFeet + d2.mInches / 12.0;
 
 	fitFeet /= divisor;
-	feet = int(fitFeet); //get feet
-	inches = (fitFeet = feet) * 12.0; //get inches
+	mFeet = int(fitFeet); //get feet
+	mInches = (fitFeet = mFeet) * 12.0; //get inches
 }

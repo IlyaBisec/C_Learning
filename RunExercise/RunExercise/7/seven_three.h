@@ -5,13 +5,13 @@ class Distance
 {
 private:
 
-	int feet;
-	float inches;
+	int mFeet;
+	float mInches;
 
 public:
 
-	Distance() {feet = 0; inches = 0;}
-	Distance(int ft, float inch) : feet(ft), inches(inch) {}
+	Distance() { mFeet = 0; mInches = 0;}
+	Distance(int ft, float inch) : mFeet(ft), mInches(inch) {}
 
 	void getDistance();
 	void showDistance() const;
