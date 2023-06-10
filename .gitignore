@@ -1,2 +1,4 @@
 *.meta
 .vs/
+RunExercise/Debug/
+Debug/
