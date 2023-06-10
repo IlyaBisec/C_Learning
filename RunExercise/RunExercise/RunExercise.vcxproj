@@ -138,12 +138,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="7\seven_five.cpp" />
     <ClCompile Include="7\seven_four.cpp" />
     <ClCompile Include="7\seven_one.cpp" />
+    <ClCompile Include="7\seven_six.cpp" />
     <ClCompile Include="7\seven_three.cpp" />
     <ClCompile Include="7\seven_two.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="7\seven_five.h" />
     <ClInclude Include="7\seven_three.h" />
     <ClInclude Include="7\seven_two.h" />
     <ClInclude Include="7\stdafx.h" />

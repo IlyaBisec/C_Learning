@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-int main()
+int main4()
 {
 	void maxInt(int* values, int size); // prototype
 
