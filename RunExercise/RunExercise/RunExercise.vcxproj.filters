@@ -33,6 +33,18 @@
     <ClCompile Include="7\seven_six.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="7\seven_seven.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="7\seven_eight.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="7\seven_nine.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="7\seven_ten.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="7\seven_two.h">
@@ -47,5 +59,20 @@
     <ClInclude Include="7\seven_five.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="7\seven_seven.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="7\seven_eight.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="7\seven_nine.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="7\seven_ten.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="7\tasks7.txt" />
   </ItemGroup>
 </Project>
