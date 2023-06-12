@@ -1,7 +1,7 @@
 #include "8_3.h"
 
 
-int main()
+int main8_3()
 {
 	Time timeFirst(1, 5, 1), timeSecond(2, 4, 5);
 	Time timeSum;

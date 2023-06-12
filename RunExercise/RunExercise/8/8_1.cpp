@@ -2,7 +2,8 @@
 
 int main8_1()
 {
-	Distance distanceOne, distanceTwo,
+
+	Distance distanceOne,
 			 distanceThree, distanceFour;
 
 	distanceOne.getDistance();
