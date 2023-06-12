@@ -148,6 +148,9 @@
     <ClCompile Include="7\seven_ten.cpp" />
     <ClCompile Include="7\seven_three.cpp" />
     <ClCompile Include="7\seven_two.cpp" />
+    <ClCompile Include="8\8_1.cpp" />
+    <ClCompile Include="8\8_2.cpp" />
+    <ClCompile Include="8\8_3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="7\seven_eight.h" />
@@ -157,7 +160,10 @@
     <ClInclude Include="7\seven_ten.h" />
     <ClInclude Include="7\seven_three.h" />
     <ClInclude Include="7\seven_two.h" />
-    <ClInclude Include="7\stdafx.h" />
+    <ClInclude Include="8\8_1.h" />
+    <ClInclude Include="8\8_3.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="8\8_2.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="7\tasks7.txt" />

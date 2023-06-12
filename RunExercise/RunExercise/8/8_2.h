@@ -7,6 +7,7 @@ private:
 
 	enum{ SIZE = 80 };
 	char mString[SIZE];
+
 public:
 
 	String() { strcpy_s(mString, ""); }
