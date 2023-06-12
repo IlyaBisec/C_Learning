@@ -1,5 +1,5 @@
 #include "seven_nine.h"
-#include "stdafx.h"
+#include "..\stdafx.h"
 
 int main9()
 {
