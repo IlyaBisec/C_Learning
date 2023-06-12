@@ -2,7 +2,7 @@
 
 #include "seven_eight.h"
 
-int main8()
+int main7_8()
 {
 	Queue queue;
 

@@ -1,6 +1,6 @@
 #include "seven_ten.h"
 
-int main10()
+int main7_10()
 {
 	Money money1, money2, moneySum;
 	do

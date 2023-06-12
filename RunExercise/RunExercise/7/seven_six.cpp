@@ -60,7 +60,7 @@ void Card::display()
 	}
 }
 
-int main6()
+int main7_6()
 {
 	Card deck[52];
 	int i;

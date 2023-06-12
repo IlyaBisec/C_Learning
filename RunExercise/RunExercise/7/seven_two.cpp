@@ -1,6 +1,6 @@
 #include "seven_two.h"
 
-int main2()
+int main7_2()
 {
 	Employee employer[100];
 	

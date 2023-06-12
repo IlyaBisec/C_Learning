@@ -1,7 +1,8 @@
-#include "..\stdafx.h"
 #include "seven_seven.h"
 
-int main7()
+#include "..\stdafx.h"
+
+int main7_7()
 {
 	SafeArray safeArray;
 	int tempValue = 12345;

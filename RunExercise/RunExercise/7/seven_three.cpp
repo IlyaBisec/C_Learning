@@ -1,6 +1,6 @@
 #include "seven_three.h"
 
-int main3()
+int main7_3()
 {
 	Distance distArray[100];   // 100 objects type of Distance
 	Distance total(0, 0.0),

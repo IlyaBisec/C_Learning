@@ -2,7 +2,7 @@
 
 const int STRING_MAX_WIDTH = 80;
 
-int main1()
+int main7_1()
 {
 	void reversit(char []);
 

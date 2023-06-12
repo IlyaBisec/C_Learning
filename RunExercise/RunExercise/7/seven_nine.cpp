@@ -1,7 +1,7 @@
 #include "seven_nine.h"
 #include "..\stdafx.h"
 
-int main9()
+int main7_9()
 {
 	Matrix matrix(3, 4);
 	int matrixValue = 12345;

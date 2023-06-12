@@ -1,6 +1,6 @@
 #include "seven_five.h"
 
-int main5()
+int main7_5()
 {
 	const int SIZE = 10;
 	double values[SIZE];
