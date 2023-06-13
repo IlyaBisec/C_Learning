@@ -14,7 +14,6 @@ public:
 	String(char stringValue[])
 	{
 		strcpy_s(mString, stringValue);
-
 	}
 
 	void display() const

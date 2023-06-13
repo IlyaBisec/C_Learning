@@ -25,10 +25,10 @@ int main8_2()
 {
 	// check a book for true example
 
-	//String firstLine = "\nHey!\n";
-	//String secondLine = "\nI'm here!\n";
+	String firstLine; //= "\nHey!"; //error E0415
+	String secondLine;  //= "I'm here!";
 
-	String firstLine, secondLine,thirdLine;
+	String thirdLine;
 
 	firstLine.display();
 	secondLine.display();

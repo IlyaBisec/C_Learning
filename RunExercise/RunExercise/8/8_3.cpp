@@ -10,7 +10,7 @@ int main8_3()
 	
 	timeFirst.displayTime();
 	timeSecond.displayTime();
-	timeSum.displayTime();
+	timeSum.displayTime(); // 3 9 6
 
 	return 0;
 }
