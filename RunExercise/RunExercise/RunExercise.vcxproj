@@ -149,12 +149,15 @@
     <ClCompile Include="7\seven_three.cpp" />
     <ClCompile Include="7\seven_two.cpp" />
     <ClCompile Include="8\8_1.cpp" />
+    <ClCompile Include="8\8_10.cpp" />
     <ClCompile Include="8\8_2.cpp" />
     <ClCompile Include="8\8_3.cpp" />
     <ClCompile Include="8\8_4.cpp" />
     <ClCompile Include="8\8_5.cpp" />
     <ClCompile Include="8\8_6.cpp" />
     <ClCompile Include="8\8_7.cpp" />
+    <ClCompile Include="8\8_8.cpp" />
+    <ClCompile Include="8\8_9.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="7\seven_eight.h" />
@@ -165,11 +168,14 @@
     <ClInclude Include="7\seven_three.h" />
     <ClInclude Include="7\seven_two.h" />
     <ClInclude Include="8\8_1.h" />
+    <ClInclude Include="8\8_10.h" />
     <ClInclude Include="8\8_3.h" />
     <ClInclude Include="8\8_4.h" />
     <ClInclude Include="8\8_5.h" />
     <ClInclude Include="8\8_6.h" />
     <ClInclude Include="8\8_7.h" />
+    <ClInclude Include="8\8_8.h" />
+    <ClInclude Include="8\8_9.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="8\8_2.h" />
   </ItemGroup>
