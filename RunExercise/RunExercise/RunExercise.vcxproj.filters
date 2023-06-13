@@ -75,6 +75,9 @@
     <ClCompile Include="8\8_10.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="9\9_1.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="7\seven_two.h">
@@ -129,6 +132,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="8\8_10.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="9\9_1.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
