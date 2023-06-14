@@ -159,6 +159,7 @@
     <ClCompile Include="8\8_8.cpp" />
     <ClCompile Include="9\9_1.cpp" />
     <ClCompile Include="9\9_2.cpp" />
+    <ClCompile Include="9\9_3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="7\seven_eight.h" />
@@ -179,6 +180,7 @@
     <ClInclude Include="8\8_2.h" />
     <ClInclude Include="9\9_1.h" />
     <ClInclude Include="9\9_2.h" />
+    <ClInclude Include="9\9_3.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
