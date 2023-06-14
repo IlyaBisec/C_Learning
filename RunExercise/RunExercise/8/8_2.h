@@ -3,11 +3,6 @@
 
 class String
 {
-private:
-
-	enum{ SIZE = 80 };
-	char mString[SIZE];
-
 public:
 
 	String() { strcpy_s(mString, ""); }
@@ -22,4 +17,10 @@ public:
 	}
 
 	String operator += (String string)const;
+
+private:
+
+	enum { SIZE = 80 };
+	char mString[SIZE];
+
 };

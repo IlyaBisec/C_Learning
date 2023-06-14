@@ -5,19 +5,15 @@
 
 class NewTime
 {
-private:
-
-	unsigned int mHours, mMinutes, mSeconds;
-
 public:
 
-	NewTime() : mHours(0), mMinutes(0), mSeconds(0) {}
+	NewTime() : m_Hours(0), m_Minutes(0), m_Seconds(0) {}
 	NewTime(unsigned int hours, unsigned int minutes, unsigned int seconds) :
-		mHours(hours), mMinutes(minutes), mSeconds(seconds) {}
+		m_Hours(hours), m_Minutes(minutes), m_Seconds(seconds) {}
 
 	void displayTime() const
 	{
-		std::cout << mHours << ":" << mMinutes << ":" << mSeconds << "\n";
+		std::cout << m_Hours << ":" << m_Minutes << ":" << m_Seconds << "\n";
 	}
 
 	// arithmetic operations
@@ -35,4 +31,7 @@ public:
 	NewTime operator++();
 	NewTime operator--();
 
+private:
+
+	unsigned int m_Hours, m_Minutes, m_Seconds;
 };

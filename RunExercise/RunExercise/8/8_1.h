@@ -4,11 +4,6 @@
 
 class Distance
 {
-private:
-
-	int mFeet;
-	float mInches;
-
 public:
 
 	Distance(): mFeet(0), mInches(0.0){}
@@ -19,4 +14,10 @@ public:
 	
 	Distance operator+ (Distance distance) const;
 	Distance operator- (Distance distance) const;
+
+private:
+
+	int mFeet;
+	float mInches;
+
 };

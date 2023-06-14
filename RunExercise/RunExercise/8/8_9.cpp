@@ -25,35 +25,35 @@ void Polar::getCoordinate()
 {
 	std::cout << "Input polar coordinate\n";
 	std::cout << "Enter angle: \n";
-	std::cin >> mAngle;
+	std::cin >> m_Angle;
 
-	if (mAngle < 0)
+	if (m_Angle < 0)
 	{
-		if (mAngle > 360)
+		if (m_Angle > 360)
 		{
 			exit(1);
 		}
 	}
 	std::cout << "Enter radius: \n";
-	std::cin >> mRadius;
+	std::cin >> m_Radius;
 
 }
 
 void Polar::displayPolar()
 {
 	std::cout << "Current polar coordinate, after added\n";
-	std::cout << "Angle: " << mAngle << "\n";
-	std::cout << "Radius: " << mRadius << "\n";
+	std::cout << "Angle: " << m_Angle << "\n";
+	std::cout << "Radius: " << m_Radius << "\n";
 }
 
 double Polar::getAngle() const
 {
-	return mAngle;
+	return m_Angle;
 }
 
 double Polar::getRadius() const
 {
-	return mRadius;
+	return m_Radius;
 }
 
 

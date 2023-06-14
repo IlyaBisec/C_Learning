@@ -4,26 +4,23 @@
 
 class Sterling
 {
-private:
-	long mPounds;
-	int mShilling, mPens;
 public:
 
-	Sterling() :mPounds(0), mShilling(0),
-		mPens(0){}
+	Sterling() :m_Pounds(0), mShilling(0),
+		m_Pens(0){}
 	Sterling(double funt)
 	{
 		// converting
-		mPounds = static_cast<long>(funt);
+		m_Pounds = static_cast<long>(funt);
 		
-		long deschast = funt - mPounds;
+		long deschast = funt - m_Pounds;
 		
 		mShilling = static_cast<int>(deschast * 20);
-		mPens = static_cast<int>((funt - mPounds) * 240 
+		m_Pens = static_cast<int>((funt - m_Pounds) * 240
 			- mShilling * 12);
 	}
 	Sterling(long pounds, int shilling, int pens) :
-		mPounds(pounds), mShilling(shilling), mPens(pens){}
+		m_Pounds(pounds), mShilling(shilling), m_Pens(pens){}
 
 	void getSterling();
 	void putSterling() const;
@@ -37,4 +34,8 @@ public:
 	Sterling operator /(double sterling);
 
 	operator double();
+
+private:
+	long m_Pounds;
+	int mShilling, m_Pens;
 };

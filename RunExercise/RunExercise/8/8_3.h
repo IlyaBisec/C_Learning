@@ -5,10 +5,6 @@
 
 class Time
 {
-private:
-
-	unsigned int mHours, mMinutes, mSeconds;
-
 public:
 
 	Time() : mHours(0), mMinutes(0), mSeconds(0){}
@@ -19,4 +15,9 @@ public:
 	{std::cout << mHours << ":" << mMinutes << ":" << mSeconds << "\n";}
 
 	Time operator + (Time time);
+
+private:
+
+	unsigned int mHours, mMinutes, mSeconds;
+
 };

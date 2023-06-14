@@ -4,24 +4,25 @@
 
 class NewFraction
 {
-private:
-    int mNumerator, mDenominator;
 public:
-    NewFraction() :mNumerator(0), mDenominator(0)
+    NewFraction() :m_Numerator(0), m_Denominator(0)
     {}
-    NewFraction(int numerator, int denominator) : mNumerator(numerator),
-        mDenominator(denominator)
+    NewFraction(int numerator, int denominator) : m_Numerator(numerator),
+        m_Denominator(denominator)
     {}
 
     void getFraction();
     void lowTerms();
     void displayFraction()const
     {
-        std::cout << mNumerator << "/" << mDenominator << std::endl;
+        std::cout << m_Numerator << "/" << m_Denominator << std::endl;
     };
 
     NewFraction operator + (NewFraction fraction);
     NewFraction operator - (NewFraction fraction);
     NewFraction operator * (NewFraction fraction);
     NewFraction operator / (NewFraction fraction);
+
+private:
+    int m_Numerator, m_Denominator;
 };

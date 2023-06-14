@@ -30,8 +30,8 @@ int main8_6()
 
 NewTime NewTime::operator+(NewTime time)
 {
-	long totalSeconds = (mHours * 3600) + (mMinutes * 60) +
-		mSeconds + (time.mHours * 3600) + (time.mMinutes * 60) + time.mSeconds;
+	long totalSeconds = (m_Hours * 3600) + (m_Minutes * 60) +
+		m_Seconds + (time.m_Hours * 3600) + (time.m_Minutes * 60) + time.m_Seconds;
 
 	int hours = totalSeconds / (60 * 60);
 	int minutes = totalSeconds % (60 * 60) / 60;
@@ -42,8 +42,8 @@ NewTime NewTime::operator+(NewTime time)
 
 NewTime NewTime::operator-(NewTime time)
 {
-	long totalSeconds = ((mHours * 3600) + (mMinutes * 60) +
-		mSeconds) - ((time.mHours * 3600) + (time.mMinutes * 60) + time.mSeconds);
+	long totalSeconds = ((m_Hours * 3600) + (m_Minutes * 60) +
+		m_Seconds) - ((time.m_Hours * 3600) + (time.m_Minutes * 60) + time.m_Seconds);
 
 	int hours = totalSeconds / (60 * 60);
 	int minutes = totalSeconds % (60 * 60) / 60;
@@ -54,8 +54,8 @@ NewTime NewTime::operator-(NewTime time)
 
 NewTime NewTime::operator*(NewTime time)
 {
-	long totalSeconds = ((mHours * 3600) + (mMinutes * 60) +
-		mSeconds) * ((time.mHours * 3600) + (time.mMinutes * 60) + time.mSeconds);
+	long totalSeconds = ((m_Hours * 3600) + (m_Minutes * 60) +
+		m_Seconds) * ((time.m_Hours * 3600) + (time.m_Minutes * 60) + time.m_Seconds);
 
 	int hours = totalSeconds / (60 * 60);
 	int minutes = totalSeconds % (60 * 60) / 60;
@@ -70,22 +70,22 @@ NewTime NewTime::operator*(NewTime time)
 
 NewTime NewTime::operator++(int)
 {
-	return NewTime(mHours++, mMinutes++, mSeconds++);
+	return NewTime(m_Hours++, m_Minutes++, m_Seconds++);
 }
 
 NewTime NewTime::operator--(int)
 {
-	return NewTime(mHours--, mMinutes--, mSeconds--);
+	return NewTime(m_Hours--, m_Minutes--, m_Seconds--);
 }
 
 // prefix
 
 NewTime NewTime::operator++()
 {
-	return NewTime(++mHours, ++mMinutes, ++mSeconds);
+	return NewTime(++m_Hours, ++m_Minutes, ++m_Seconds);
 }
 
 NewTime NewTime::operator--()
 {
-	return NewTime(--mHours, --mMinutes, --mSeconds);
+	return NewTime(--m_Hours, --m_Minutes, --m_Seconds);
 }

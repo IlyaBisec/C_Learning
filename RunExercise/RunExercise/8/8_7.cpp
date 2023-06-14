@@ -43,12 +43,12 @@ void NewFraction::getFraction()
 {
     char choice;
     std::cout << "Input fraction\n";
-    std::cin >> mNumerator >> choice >> mDenominator;
-    if (mNumerator == 0 && mDenominator == 0)
+    std::cin >> m_Numerator >> choice >> m_Denominator;
+    if (m_Numerator == 0 && m_Denominator == 0)
     {
-        if (mNumerator == 1 && mDenominator == 1)
+        if (m_Numerator == 1 && m_Denominator == 1)
         {
-            if (mNumerator == 0 && mDenominator == 1)
+            if (m_Numerator == 0 && m_Denominator == 1)
             {
                 std::cout << "Error!\n";
                 exit(1);
@@ -62,8 +62,8 @@ void NewFraction::lowTerms()
     long numerator, denominator, temp, greatCommonDivisor;
 
     // using non-negative values 
-    numerator = labs(mNumerator);           
-    denominator = labs(mDenominator);    
+    numerator = labs(m_Numerator);           
+    denominator = labs(m_Denominator);
 
     if (denominator == 0)   // check denominator          
     {
@@ -94,30 +94,30 @@ void NewFraction::lowTerms()
 
 NewFraction NewFraction::operator+(NewFraction fraction)
 {
-    int numerator = mNumerator * fraction.mDenominator + mDenominator
-        * fraction.mNumerator;
-    int denominator = mDenominator * fraction.mDenominator;
+    int numerator = m_Numerator * fraction.m_Denominator + m_Denominator
+        * fraction.m_Numerator;
+    int denominator = m_Denominator * fraction.m_Denominator;
     return NewFraction(numerator, denominator);
 }
 
 NewFraction NewFraction::operator-(NewFraction fraction)
 {
-    int numerator = mNumerator * fraction.mDenominator - mDenominator
-        * fraction.mNumerator;
-    int denominator = mDenominator * fraction.mDenominator;
+    int numerator = m_Numerator * fraction.m_Denominator - m_Denominator
+        * fraction.m_Numerator;
+    int denominator = m_Denominator * fraction.m_Denominator;
     return NewFraction(numerator, denominator);
 }
 
 NewFraction NewFraction::operator*(NewFraction fraction)
 {
-    int numerator = mNumerator * fraction.mDenominator;
-    int denominator = mDenominator * fraction.mDenominator;
+    int numerator = m_Numerator * fraction.m_Denominator;
+    int denominator = m_Denominator * fraction.m_Denominator;
     return NewFraction(numerator, denominator);
 }
 
 NewFraction NewFraction::operator/(NewFraction fraction)
 {
-    int numerator = mNumerator * fraction.mDenominator;
-    int denominator = mDenominator * fraction.mNumerator;
+    int numerator = m_Numerator * fraction.m_Denominator;
+    int denominator = m_Denominator * fraction.m_Numerator;
     return NewFraction(numerator, denominator);
 }

@@ -5,10 +5,6 @@
 
 class Time
 {
-private:
-
-	unsigned int mHours, mMinutes, mSeconds;
-
 public:
 
 	Time() : mHours(0), mMinutes(0), mSeconds(0) {}
@@ -31,5 +27,9 @@ public:
 	// prefix
 	Time operator++();
 	Time operator--();
+
+private:
+
+	unsigned int mHours, mMinutes, mSeconds;
 
 };

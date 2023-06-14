@@ -4,17 +4,13 @@
 
 class Int
 {
-private:
-
-	long double mTemp;
-
 public:
 
-	Int() { mTemp = 0; }
-	Int(long double temp) : mTemp(temp){}
+	Int() { m_Temp = 0; }
+	Int(long double temp) : m_Temp(temp){}
 
 	// show result
-	void displayInt() { std::cout << mTemp<<"\n"; }
+	void displayInt() { std::cout << m_Temp <<"\n"; }
 	//check overflow
 	void checkOverflow(long double valueOverflow);
 	
@@ -31,4 +27,8 @@ public:
 
 	// increase
 	Int operator * (Int temp);
+
+private:
+
+	long double m_Temp;
 };
