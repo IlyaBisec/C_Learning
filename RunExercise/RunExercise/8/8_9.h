@@ -8,21 +8,18 @@
 
 class Polar
 {
-private:
-	double mAngle;
-	double mRadius;
 public:
 
-	Polar() :mAngle(0), mRadius(0){}
-	Polar(double angle, double radius) :mAngle(angle),
-		mRadius(radius){}
+	Polar() :m_Angle(0), m_Radius(0){}
+	Polar(double angle, double radius) :m_Angle(angle),
+		m_Radius(radius){}
 	Polar(const Casterian& cartes)
 	{
 		double x = cartes.getCoordinateX();
 		double y = cartes.getCoordinateY();
 
-		mAngle = tan(y / x);
-		mRadius = hypot(x, y);
+		m_Angle = tan(y / x);
+		m_Radius = hypot(x, y);
 	}
 
 	void getCoordinate();
@@ -31,13 +28,14 @@ public:
 	double getAngle() const;
 	double getRadius() const;
 
+private:
+	double m_Angle;
+	double m_Radius;
+
 };
 
 class Casterian
 {
-private:
-	double mX;
-	double mY;
 public:
 
 	Casterian() :mX(0), mY(0){}
@@ -54,4 +52,8 @@ public:
 
 	double getCoordinateX()const;
 	double getCoordinateY()const;
+
+private:
+	double mX;
+	double mY;
 };
