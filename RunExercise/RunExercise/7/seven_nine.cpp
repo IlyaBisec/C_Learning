@@ -21,7 +21,7 @@ void Matrix::putel(int rows, int colunms, int arrayValue)
 		std::cout << "Overflow array \n";
 	}
 
-	mArray[rows][colunms] = arrayValue;
+	m_Array[rows][colunms] = arrayValue;
 }
 
 int Matrix::getel(int rows, int colunms)
@@ -32,5 +32,5 @@ int Matrix::getel(int rows, int colunms)
 		std::cout << "Overflow array \n";
 	}
 
-	return mArray[rows][colunms];
+	return m_Array[rows][colunms];
 }

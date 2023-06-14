@@ -3,11 +3,6 @@
 #include "..\stdafx.h"
 class Money
 {
-private:
-
-	std::string mMoneyLine;
-	long double mNumber;
-
 public:
 
 	Money():mNumber(0){}
@@ -18,5 +13,10 @@ public:
 	void madd(Money money1, Money money2);
 	// show results
 	void display() const;
+
+private:
+
+	std::string mMoneyLine;
+	long double mNumber;
 
 };

@@ -17,20 +17,20 @@ int main7_8()
 
 void Queue::putQueue(int valueOfQueue)
 {
-	mStack[mTail++] = valueOfQueue;
-	if (mHead > 0)
+	m_Stack[m_Tail++] = valueOfQueue;
+	if (m_Head > 0)
 	{	
-		mHead--;
+		m_Head--;
 	}
 	//mHead > 0 ? mHead-- : cout<<"error head \n";
 }
 
 int Queue::getQueue()
 {
-	if (mTail > 0)
+	if (m_Tail > 0)
 	{
-		mTail--;
+		m_Tail--;
 	}
 
-	return mStack[mHead++];
+	return m_Stack[m_Head++];
 }

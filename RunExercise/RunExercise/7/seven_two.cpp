@@ -32,14 +32,14 @@ int main7_2()
 void Employee::getData()
 {
 	std::cout << "\nInput name of worker: "; 
-	std::cin >> mNameOfWorker;
+	std::cin >> m_NameOfWorker;
 
 	std::cout << "Input number of worker: "; 
-	std::cin >> mNumberOfWorker;
+	std::cin >> m_NumberOfWorker;
 }
 
 void Employee::putData()
 {
-	std::cout << "\n Name: " << mNameOfWorker;
-	std::cout << "\n Number: " << mNumberOfWorker;
+	std::cout << "\n Name: " << m_NameOfWorker;
+	std::cout << "\n Number: " << m_NumberOfWorker;
 }

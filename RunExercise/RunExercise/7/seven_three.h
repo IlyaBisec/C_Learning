@@ -3,11 +3,6 @@
 
 class Distance
 {
-private:
-
-	int mFeet;
-	float mInches;
-
 public:
 
 	Distance() { mFeet = 0; mInches = 0;}
@@ -17,4 +12,10 @@ public:
 	void showDistance() const;
 	void addDistance(Distance, Distance);
 	void divideDistance(Distance, int);
+
+private:
+
+	int mFeet;
+	float mInches;
+
 };

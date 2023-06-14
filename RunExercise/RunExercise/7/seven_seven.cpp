@@ -24,7 +24,7 @@ void SafeArray::putel(int index, int indexValue)
 		std::cout << "Overflow array \n";
 		// or close app 
 	}
-	mArray[index] = indexValue;
+	m_Array[index] = indexValue;
 }
 
 int SafeArray::getel(int index)
@@ -36,5 +36,5 @@ int SafeArray::getel(int index)
 		// or close app 
 	}
 
-	return mArray[index];
+	return m_Array[index];
 }

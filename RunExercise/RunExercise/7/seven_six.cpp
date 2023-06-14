@@ -13,30 +13,30 @@ const int
 
 class Card
 {
-private:
-	int mNumber;
-	Suit suit;
-
 public:
 	Card(){}
 
-	void set(int numb, Suit sut)
+	void set(int number, Suit sut)
 	{
-		mNumber = numb;
+		m_Number = number;
 		suit = sut;
 	}
-
 	void display();
+
+private:
+	int m_Number;
+	Suit suit;
+
 };
 
 // show card
 void Card::display()
 {
-	if (mNumber >= 2 && mNumber <= 10)
-		cout << mNumber;
+	if (m_Number >= 2 && m_Number <= 10)
+		cout << m_Number;
 	else 
 	{
-		switch (mNumber)
+		switch (m_Number)
 		{
 			case jack: cout << 'J'; break;
 			case queen: cout << 'Q'; break;

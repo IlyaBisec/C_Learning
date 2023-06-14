@@ -4,11 +4,13 @@
 
 class Employee
 {
-	std::string mNameOfWorker;
-	long mNumberOfWorker;
-
 public:
-	
+
 	void getData();
 	void putData();
+
+private:
+
+	std::string m_NameOfWorker;
+	long m_NumberOfWorker;
 };
