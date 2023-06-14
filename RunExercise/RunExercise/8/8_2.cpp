@@ -1,5 +1,26 @@
 #include "8_2.h"
 
+int main8_2()
+{
+	// check a book for true example
+
+	String firstLine = "\nHey!";
+	String secondLine  = "I'm here!";
+
+	String thirdLine;
+
+	firstLine.display();
+	secondLine.display();
+	thirdLine.display();
+
+	thirdLine = firstLine += secondLine;
+
+	std::cout << "\n";
+	std::cin.get();
+
+	return 0;
+}
+
 String String::operator += (String string) const
 {
 	String tempString;
@@ -20,24 +41,9 @@ String String::operator += (String string) const
 	return tempString;
 }
 
-
-int main8_2()
+void String::display()
 {
-	// check a book for true example
-
-	String firstLine; //= "\nHey!"; //error E0415
-	String secondLine;  //= "I'm here!";
-
-	String thirdLine;
-
-	firstLine.display();
-	secondLine.display();
-	thirdLine.display();
-
-	thirdLine = firstLine += secondLine;
-
-	std::cout << "\n";
-	std::cin.get();
-
-	return 0;
+	std::cout << mString;
 }
+
+

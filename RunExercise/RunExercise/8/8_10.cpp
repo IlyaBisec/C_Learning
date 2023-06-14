@@ -28,6 +28,8 @@ int main8_10()
 
 	decimal = sumFunt;
 	std::cout << decimal << "\n";
+
+	return 0;
 }
 
 void Sterling::getSterling()
