@@ -6,30 +6,31 @@ const int LENGTH = 80;
 
 class Publication
 {
-protected:
-	char mTittle[LENGTH];
-	float price;	
 public:
 	void getData();
-	void putData();
+	void putData() const;
+
+protected:
+	char p_Tittle[LENGTH];
+	float p_Price;	
 };
 
 class Book :public Publication
 {
-private:
-	int mCountPage; // count of page
-
 public:
 	void getData();
-	void putData();
+	void putData() const;
+private:
+	int m_CountPage; // count of page
+
 };
 
 class Type : public Book
 {
-private:
-	float mRecordTime;	// recording time in minutes
 public:
 	void getData();
-	void putData();
+	void putData() const;
+private:
+	float m_RecordTime;	// recording time in minutes
 };
 
