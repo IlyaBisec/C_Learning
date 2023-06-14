@@ -1,3 +1,5 @@
+//Convert money line to number
+
 #pragma once
 
 #include "..\stdafx.h"

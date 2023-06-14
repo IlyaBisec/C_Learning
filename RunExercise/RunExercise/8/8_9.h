@@ -1,3 +1,6 @@
+// Conversion of polar coordinates 
+// to cartesian coordinates
+
 #pragma once
 
 #include "..\stdafx.h"

@@ -1,3 +1,6 @@
+// Operation of overloaded arithmetic 
+// operations with the 'Int' type
+
 #pragma once
 
 #include "..\stdafx.h"

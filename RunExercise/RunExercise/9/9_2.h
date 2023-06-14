@@ -1,3 +1,4 @@
+// Inheritance of the String class 
 #pragma once
 
 #include "..\stdafx.h"

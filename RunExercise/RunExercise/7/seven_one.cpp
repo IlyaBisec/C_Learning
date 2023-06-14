@@ -1,3 +1,5 @@
+// reverse String
+
 #include "..\stdafx.h"
 
 const int STRING_MAX_WIDTH = 80;

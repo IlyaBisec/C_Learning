@@ -1,3 +1,6 @@
+// A reliable array that checks the
+// ouput of indexes outside the array
+
 #pragma once
 
 const int LIMIT = 80;

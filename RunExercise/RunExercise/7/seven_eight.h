@@ -1,4 +1,6 @@
-#pragma once
+// Simple queue demonstrate
+
+ #pragma once
 
 class Queue
 {

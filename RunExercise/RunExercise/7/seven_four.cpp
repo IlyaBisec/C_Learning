@@ -1,3 +1,6 @@
+// Finding the largest element
+// of the array
+
 #include "..\stdafx.h"
 
 int main7_4()

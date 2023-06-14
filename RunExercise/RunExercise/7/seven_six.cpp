@@ -1,8 +1,10 @@
+// Bridge card game
+
 #include "..\stdafx.h"
 
 using namespace std;
 
-enum Suit { clubs, diamonds, hearts, spades };
+enum Suit { k_Clubs, k_Diamonds, k_Hearts, k_Spades };
 
 // 2-10 default numbers
 const int
@@ -49,13 +51,13 @@ void Card::display()
 	}
 	switch (suit)
 	{
-	case clubs: cout << static_cast<char>(5);
+	case k_Clubs: cout << static_cast<char>(5);
 		break;
-	case diamonds: cout << static_cast<char>(4);
+	case k_Diamonds: cout << static_cast<char>(4);
 		break;
-	case hearts: cout << static_cast<char>(3);
+	case k_Hearts: cout << static_cast<char>(3);
 		break;
-	case spades: cout << static_cast<char>(6);
+	case k_Spades: cout << static_cast<char>(6);
 		break;
 	}
 }

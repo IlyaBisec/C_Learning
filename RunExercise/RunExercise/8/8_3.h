@@ -1,3 +1,6 @@
+// Overloaded operation '+' summations
+// two 'time'
+
 #include "..\stdafx.h"
 
 #pragma once

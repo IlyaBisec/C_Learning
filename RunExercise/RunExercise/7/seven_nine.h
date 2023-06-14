@@ -1,3 +1,6 @@
+// Demonstration of the operation
+// of a two-dimensional array - Matrix
+
 #pragma once
 
 const int LIMIT = 10;

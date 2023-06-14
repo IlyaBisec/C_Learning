@@ -11,7 +11,7 @@ int main9_2()
 	std::cout << "Short line: \n";
 	shortLine.display();
 
-
+	return 0;
 }
 
 void String::display() const

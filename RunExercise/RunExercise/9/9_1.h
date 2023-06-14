@@ -1,3 +1,5 @@
+// A class of publications and its offspring
+
 #pragma once
 
 #include "..\stdafx.h"
@@ -11,7 +13,7 @@ public:
 	void putData() const;
 
 protected:
-	char p_Tittle[LENGTH];
+	char p_Title[LENGTH];
 	float p_Price;	
 };
 

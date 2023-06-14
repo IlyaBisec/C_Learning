@@ -1,3 +1,6 @@
+// Overloaded operation '+=' for
+// string concatenation
+
 #pragma once
 #include "..\stdafx.h"
 

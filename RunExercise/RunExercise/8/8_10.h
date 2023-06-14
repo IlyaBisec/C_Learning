@@ -1,3 +1,7 @@
+// The opertation of converting
+// objects of the 'Sterling' class 
+// to the double type
+
 #pragma once
 
 #include "..\stdafx.h"

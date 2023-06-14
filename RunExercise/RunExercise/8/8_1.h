@@ -1,3 +1,6 @@
+// Overloaded operation '-' finds
+// the distance difference
+
 #pragma once
 
 #include "..\stdafx.h"

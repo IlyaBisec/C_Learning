@@ -1,3 +1,6 @@
+// Finding the average value
+// received from the user
+
 #pragma once
 
 #include "..\stdafx.h"

@@ -1,3 +1,6 @@
+// Overloaded operations '++' and '--'
+// for postfix and prefix forms
+
 #include "..\stdafx.h"
 
 #pragma once

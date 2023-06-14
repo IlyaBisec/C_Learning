@@ -1,3 +1,6 @@
+// Calculates the average value
+// of the lengths entered by the user
+
 #pragma once
 #include "..\stdafx.h"
 

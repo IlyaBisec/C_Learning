@@ -1,3 +1,6 @@
+// Checking the overflow of the
+// array from above and below
+
 #include "../stdafx.h"
 #pragma once
 

@@ -1,3 +1,6 @@
+// Overloaded operation '-' substractions
+// two 'time'
+
 #include "..\stdafx.h"
 
 #pragma once
