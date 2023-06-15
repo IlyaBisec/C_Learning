@@ -15,22 +15,22 @@ int main7_9()
 
 void Matrix::putel(int rows, int colunms, int arrayValue)
 {
-	if (rows < 0 || rows > LIMIT
-		|| colunms < 0 || colunms > LIMIT)
-	{
-		std::cout << "Overflow array \n";
-	}
-
+	checkOverflow(rows, colunms);
 	m_Array[rows][colunms] = arrayValue;
 }
 
 int Matrix::getel(int rows, int colunms)
 {
+	checkOverflow(rows, colunms);
+	return m_Array[rows][colunms];
+}
+
+void Matrix::checkOverflow(int rows, int colunms) const
+{
 	if (rows < 0 || rows > LIMIT
 		|| colunms < 0 || colunms > LIMIT)
 	{
 		std::cout << "Overflow array \n";
+		exit(1);
 	}
-
-	return m_Array[rows][colunms];
 }

@@ -10,7 +10,7 @@ int main7_3()
 	char choice;			   // Choice user
 
 	do {
-		std::cout << "\nInput distance: ";
+		std::cout << "Input distance: ";
 		distArray[countOfInputValue++].getDistance();
 		
 		std::cout << "Continue (y/n)?";
@@ -36,7 +36,7 @@ void Distance::getDistance()
 	std::cout << "\nInput foot: ";
 	std::cin >> mFeet;
 
-	std::cout << "\nInput inches: ";
+	std::cout << "Input inches: ";
 	std::cin >> mInches;
 }
 
@@ -45,7 +45,7 @@ void Distance::showDistance() const
 	std::cout << mFeet << "\'-" << mInches << '\"';
 }
 
-void Distance::addDistance(Distance d2, Distance d3)
+void Distance::addDistance(const Distance& d2, const Distance& d3)
 {
 	mInches = d2.mInches + d3.mInches;
 	mFeet = 0;
@@ -57,7 +57,7 @@ void Distance::addDistance(Distance d2, Distance d3)
 	mFeet += d2.mFeet + d3.mFeet;
 }
 
-void Distance::divideDistance(Distance d2, int divisor)
+void Distance::divideDistance(const Distance& d2, int divisor)
 {
 	// Convert to float
 	float fitFeet = d2.mFeet + d2.mInches / 12.0;

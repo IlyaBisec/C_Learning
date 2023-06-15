@@ -37,14 +37,14 @@ void Money::mstold()
 	}
 }
 
-void Money::madd(Money money1, Money money2)
+void Money::madd(const Money& money1, const Money& money2)
 {
 	mNumber = money1.mNumber + money2.mNumber;
 }
 
 void Money::display() const
 {
-	// Write floating-point values in fixed-point notation.
+	// Writing floating-point values in fixed-point notation.
 	std::cout << std::setiosflags(std::ios::fixed)
 		// Following the decimal point, as many 
 		// digits as necessary are written to match

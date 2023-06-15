@@ -18,23 +18,21 @@ int main7_7()
 
 void SafeArray::putel(int index, int indexValue)
 {
-	if (index < 0 || index > LIMIT - 1)
-	{
-		// Alert
-		std::cout << "Overflow array \n";
-		// or close app 
-	}
+	checkOverflow(index);
 	m_Array[index] = indexValue;
 }
 
-int SafeArray::getel(int index)
+int SafeArray::getel(int index) const
+{
+	checkOverflow(index);
+	return m_Array[index];
+}
+
+void SafeArray::checkOverflow(int index) const
 {
 	if (index < 0 || index > LIMIT - 1)
 	{
-		// Alert
 		std::cout << "Overflow array \n";
-		// or close app 
+		exit(1);
 	}
-
-	return m_Array[index];
 }

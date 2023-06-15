@@ -18,6 +18,8 @@ public:
 	void putel(int rows, int colunms, int arrayValue);
 	// Getel returns the matrix rows and colunms
 	int getel(int rows, int colunms);
+	// Checking the matrix against overflow
+	void checkOverflow(int rows, int colunms)const;
 
 private:
 

@@ -12,7 +12,9 @@ public:
 	// Putel gets the array index and the index value
 	void putel(int index, int indexValue);
 	// Getel gets the array index and returns the index value
-	int getel(int index);
+	int getel(int index) const;
+	// Checking the array against overflow
+	void checkOverflow(int index)const;
 
 private:
 	int m_Array[LIMIT];

@@ -13,8 +13,8 @@ public:
 
 	void getDistance();
 	void showDistance() const;
-	void addDistance(Distance, Distance);
-	void divideDistance(Distance, int);
+	void addDistance(const Distance&, const Distance&);
+	void divideDistance(const Distance&, int);
 
 private:
 

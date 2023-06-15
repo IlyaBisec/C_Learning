@@ -4,7 +4,7 @@
 
 using namespace std;
 
-enum Suit { k_Clubs, k_Diamonds, k_Hearts, k_Spades };
+enum class Suit { k_Clubs, k_Diamonds, k_Hearts, k_Spades };
 
 // 2-10 default numbers
 const int
@@ -51,13 +51,13 @@ void Card::display()
 	}
 	switch (suit)
 	{
-	case k_Clubs: cout << static_cast<char>(5);
+	case Suit::k_Clubs: cout << static_cast<char>(5);
 		break;
-	case k_Diamonds: cout << static_cast<char>(4);
+	case Suit::k_Diamonds: cout << static_cast<char>(4);
 		break;
-	case k_Hearts: cout << static_cast<char>(3);
+	case Suit::k_Hearts: cout << static_cast<char>(3);
 		break;
-	case k_Spades: cout << static_cast<char>(6);
+	case Suit::k_Spades: cout << static_cast<char>(6);
 		break;
 	}
 }

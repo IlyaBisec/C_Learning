@@ -10,8 +10,16 @@ int main7_2()
 	do 
 	{
 		std::cout << "Input data of worker with number: " << countOfWorkers+1;
+
 		employer[countOfWorkers++].getData();
-		
+
+		// Check input, last value for '\0'
+		if (countOfWorkers > 99) 
+		{
+			std::cout << "The program is finished. Reason: array overflow \n";
+			exit(1);
+		}
+
 		std::cout << "Continue (y/n)?"; 
 		std::cin >> choice;
 	
