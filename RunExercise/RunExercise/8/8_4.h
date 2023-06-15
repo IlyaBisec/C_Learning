@@ -12,23 +12,23 @@ public:
 	Int() { m_Temp = 0; }
 	Int(long double temp) : m_Temp(temp){}
 
-	// show result
+	// Show result
 	void displayInt() { std::cout << m_Temp <<"\n"; }
-	//check overflow
+	// Check overflow
 	void checkOverflow(long double valueOverflow);
 	
-	// arithmetic operations
+	// Arithmetic operations
 	
-	// summation
+	// Summation
 	Int operator + (Int temp);
 
-	// subtraction
+	// Subtraction
 	Int operator - (Int temp);
 
-	// division
+	// Division
 	Int operator / (Int temp);
 
-	// increase
+	// Increase
 	Int operator * (Int temp);
 
 private:

@@ -35,7 +35,7 @@ int main8_5()
 //	return Time(hours, minutes, seconds);
 //}
 
-// postfix
+// Postfix
 
 Time Time::operator++(int)
 {
@@ -47,7 +47,7 @@ Time Time::operator--(int)
 	return Time(mHours--, mMinutes--, mSeconds--);
 }
 
-// prefix
+// Prefix
 
 Time Time::operator++()
 {

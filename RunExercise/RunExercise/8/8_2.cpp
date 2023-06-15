@@ -2,8 +2,6 @@
 
 int main8_2()
 {
-	// check a book for true example
-
 	String firstLine = "\nHey!";
 	String secondLine  = "I'm here!";
 
@@ -27,10 +25,10 @@ String String::operator += (String string) const
 
 	if (strlen(mString) + strlen(string.mString) < SIZE)
 	{
-		// copy content of the first line
+		// Copying content of the first line
 		strcpy_s(tempString.mString, mString);
 	
-		// and add content of the second line
+		// and adding content of the second line
 		strcat_s(tempString.mString, mString);
 	}
 	else {

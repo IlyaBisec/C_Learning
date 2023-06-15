@@ -10,7 +10,8 @@ public:
 
 	String() { strcpy_s(mString, ""); }
 
-	// for !E0415
+	// For !E0415. If not declare this constructor,
+	// in this case, it will result in a E0415 error and a memory leak
 	String(const char line[]) { strcpy_s(mString, line); }
 
 	String operator += (String string)const;
