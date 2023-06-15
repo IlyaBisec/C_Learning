@@ -22,7 +22,7 @@ void Queue::putQueue(int index, int valueOfQueue)
 {
 	if ((index >= 0) && index < k_MAX)
 	{
-		m_Stack[index] = valueOfQueue;
+		m_Queue[index] = valueOfQueue;
 	}
 	else {
 		std::cout << "\nOverflo array..index " << index << " Out of boder "
@@ -36,7 +36,7 @@ int Queue::getQueue(int index)
 {
 	if ((index >= 0) && index < k_MAX)
 	{
-		return m_Stack[index];
+		return m_Queue[index];
 	}
 	else {
 		std::cout << "Overflo array..index " << index << " Out of boder "

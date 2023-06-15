@@ -8,15 +8,15 @@ class Queue
 public:
 	Queue() { m_Head = m_Tail = 0; }
 	
-	// Puts to stack
+	// Puts to queue
 	void putQueue(int index,int valueOfQueue);
-	// Gets from stack
+	// Gets from queue
 	int getQueue(int index);
 
 private:
 
 	enum { k_MAX = 10 };
-	int m_Stack[k_MAX];
+	int m_Queue[k_MAX];
 	int m_Head, m_Tail;
 
 };
