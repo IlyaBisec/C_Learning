@@ -2,35 +2,46 @@
 
 #include "seven_eight.h"
 
-int main7_8()
+int main()
 {
 	Queue queue;
 
-	queue.putQueue(10);
-	queue.putQueue(20);
+	int temp = 12345;    
 
-	std::cout << "Queue 1: " << queue.getQueue() << std::endl;
-	std::cout << "Queue 2: " << queue.getQueue() << std::endl;
+	queue.putQueue(7, temp);
+	temp = queue.getQueue(7);
+
+	std::cout << temp;
+
+	queue.putQueue(-5, temp); // Error, overflow queue 
 
 	return 0;
 }
 
-void Queue::putQueue(int valueOfQueue)
+void Queue::putQueue(int index, int valueOfQueue)
 {
-	m_Stack[m_Tail++] = valueOfQueue;
-	if (m_Head > 0)
-	{	
-		m_Head--;
+	if ((index >= 0) && index < k_MAX)
+	{
+		m_Stack[index] = valueOfQueue;
 	}
-	//mHead > 0 ? mHead-- : cout<<"error head \n";
+	else {
+		std::cout << "\nOverflo array..index " << index << " Out of boder "
+			<< k_MAX - 1;
+		exit(1);
+	}
 }
 
-int Queue::getQueue()
-{
-	if (m_Tail > 0)
-	{
-		m_Tail--;
-	}
 
-	return m_Stack[m_Head++];
+int Queue::getQueue(int index)
+{
+	if ((index >= 0) && index < k_MAX)
+	{
+		return m_Stack[index];
+	}
+	else {
+		std::cout << "Overflo array..index " << index << " Out of boder "
+			<< k_MAX - 1;
+		exit(1);
+	}
+	
 }
