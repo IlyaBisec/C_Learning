@@ -1,6 +1,6 @@
 #include "9_4.h"
 
-int main()
+int main9_4()
 {
 	NineFour::Book fantasyBook;
 	NineFour::Type type;
@@ -25,7 +25,7 @@ namespace NineFour {
 
 	void Publication::getData()
 	{
-		std::cout << "Input tittle: ";
+		std::cout << "Input title: ";
 		std::cin.get(p_Title, LENGTH);
 
 		std::cout << "Input price: ";
@@ -34,7 +34,7 @@ namespace NineFour {
 
 	void Publication::putData() const
 	{
-		std::cout << "Tittle: " << p_Title << "\n";
+		std::cout << "Title: " << p_Title << "\n";
 		std::cout << "Price: " << p_Price << "\n";
 	}
 

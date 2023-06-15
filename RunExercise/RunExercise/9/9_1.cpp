@@ -23,7 +23,7 @@ int main9_1()
 
 void Publication::getData()
 {
-	std::cout << "Input tittle: ";
+	std::cout << "Input title: ";
 	std::cin.get(p_Title, LENGTH);
 
 	std::cout << "Input price: ";
@@ -32,7 +32,7 @@ void Publication::getData()
 
 void Publication::putData() const
 {
-	std::cout << "Tittle: " << p_Title << "\n";
+	std::cout << "Title: " << p_Title << "\n";
 	std::cout << "Price: " << p_Price << "\n";
 }
 
