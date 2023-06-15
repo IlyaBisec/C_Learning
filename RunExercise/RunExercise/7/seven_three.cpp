@@ -4,10 +4,10 @@ int main7_3()
 {
 	Distance distArray[100];   // 100 objects type of Distance
 	Distance total(0, 0.0),
-			 average;		   // average value
+			 average;		   // Average value
 	
-	int countOfInputValue = 0; // count of input value 
-	char choice;			   // choice user
+	int countOfInputValue = 0; // Count of input value 
+	char choice;			   // Choice user
 
 	do {
 		std::cout << "\nInput distance: ";
@@ -17,11 +17,11 @@ int main7_3()
 		std::cin >> choice;
 	} while (choice != 'n');
 
-	// add up all the distances
+	// Add up all the distances
 	for (int i = 0; i < countOfInputValue; i++)
 		total.addDistance(total, distArray[i]);
 
-	//divide by a number
+	// Divide by a number
 	average.divideDistance(total, countOfInputValue);
 	std::cout << "\nAverage: ";
 
@@ -59,10 +59,10 @@ void Distance::addDistance(Distance d2, Distance d3)
 
 void Distance::divideDistance(Distance d2, int divisor)
 {
-	//convert to float
+	// Convert to float
 	float fitFeet = d2.mFeet + d2.mInches / 12.0;
 
 	fitFeet /= divisor;
-	mFeet = int(fitFeet); //get feet
-	mInches = (fitFeet = mFeet) * 12.0; //get inches
+	mFeet = int(fitFeet); // Get feet
+	mInches = (fitFeet = mFeet) * 12.0; // Get inches
 }

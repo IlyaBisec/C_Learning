@@ -31,7 +31,7 @@ private:
 
 };
 
-// show card
+// Show card
 void Card::display()
 {
 	if (m_Number >= 2 && m_Number <= 10)
@@ -68,7 +68,7 @@ int main7_6()
 	int i;
 
 	cout << "\n";
-	// creating an ordered deck of cards 
+	// Creating an ordered deck of cards 
 	for (i = 0; i < 52; i++)
 	{
 		int number = (i % 13) + 2;
@@ -76,24 +76,24 @@ int main7_6()
 		deck[i].set(number, suit);
 	}
 
-	// show source deck
+	// Show source deck
 	cout << "Source deck: \n";
 	for (i = 0; i < 52; i++)
 	{
 		deck[i].display();
 		cout << " ";
-		// start a new line after every 13 cards
+		// Start a new line after every 13 cards
 		if (!((i + 1) % 13)) {
 			cout << endl;
 		}
 	}
 	cout << endl;
 	
-	// initialize the randomizer
+	// Initialize the randomizer
 	srand(time(NULL));
 	for (i = 0; i < 52; i++)
 	{
-		// choosing a random card
+		// Choosing a random card
 		int randomCard = rand() % 52;
 		// and change it to the current card
 		Card temp = deck[i];
@@ -101,13 +101,13 @@ int main7_6()
 		deck[randomCard] = temp;
 	}
 
-	// show the shuffled deck
+	// Show the shuffled deck
 	cout << "The shuffled deck: \n";
 	for (i = 0; i < 52; i++)
 	{
 		deck[i].display();
 		cout << " ";
-		// start a new line after every 13 cards
+		// Start a new line after every 13 cards
 		if (!((i + 1) % 13)) {
 			cout << endl;
 		}

@@ -13,10 +13,10 @@ public:
 	Matrix(int rows, int colunms) : matrixRows(rows), 
 		matrixColumns(colunms){}
 	
-	// putel gets the matrix rows and colunms,
+	// Putel gets the matrix rows and colunms,
 	// and the array value
 	void putel(int rows, int colunms, int arrayValue);
-	// getel returns the matrix rows and colunms
+	// Getel returns the matrix rows and colunms
 	int getel(int rows, int colunms);
 
 private:

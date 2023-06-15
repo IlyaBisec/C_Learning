@@ -9,11 +9,11 @@ public:
 
 	Money():mNumber(0){}
 
-	// convert money line to long double
+	// Convert money line to long double
 	void mstold();
-	// summation of two types of Money type
+	// Summation of two types of Money type
 	void madd(Money money1, Money money2);
-	// show results
+	// Show results
 	void display() const;
 
 private:

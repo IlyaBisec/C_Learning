@@ -9,9 +9,9 @@ class SafeArray
 {
 
 public:
-	// putel gets the array index and the index value
+	// Putel gets the array index and the index value
 	void putel(int index, int indexValue);
-	// getel gets the array index and returns the index value
+	// Getel gets the array index and returns the index value
 	int getel(int index);
 
 private:

@@ -20,7 +20,7 @@ void SafeArray::putel(int index, int indexValue)
 {
 	if (index < 0 || index > LIMIT - 1)
 	{
-		// alert
+		// Alert
 		std::cout << "Overflow array \n";
 		// or close app 
 	}
@@ -31,7 +31,7 @@ int SafeArray::getel(int index)
 {
 	if (index < 0 || index > LIMIT - 1)
 	{
-		// alert
+		// Alert
 		std::cout << "Overflow array \n";
 		// or close app 
 	}

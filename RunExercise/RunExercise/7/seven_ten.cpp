@@ -44,7 +44,7 @@ void Money::madd(Money money1, Money money2)
 
 void Money::display() const
 {
-	// write floating-point values in fixed-point notation.
+	// Write floating-point values in fixed-point notation.
 	std::cout << std::setiosflags(std::ios::fixed)
 		// Following the decimal point, as many 
 		// digits as necessary are written to match

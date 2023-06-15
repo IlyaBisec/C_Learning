@@ -5,7 +5,7 @@
 
 int main7_4()
 {
-	void maxInt(int* values, int size); // prototype
+	void maxInt(int* values, int size); // Prototype
 
 	int arrayOfValues[5];
 

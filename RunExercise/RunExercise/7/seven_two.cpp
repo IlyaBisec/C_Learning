@@ -17,7 +17,7 @@ int main7_2()
 	
 	} while (choice != 'n');
 
-	// ouput data of array
+	// Ouput data of array
 	for (int i = 0; i < countOfWorkers; i++)
 	{
 		std::cout << "\nNumber of worker " << i+1;

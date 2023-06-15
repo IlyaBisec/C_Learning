@@ -8,9 +8,9 @@ class Queue
 public:
 	Queue() { m_Head = m_Tail = 0; }
 	
-	// put to stack
+	// Put to stack
 	void putQueue(int valueOfQueue);
-	// get from stack
+	// Get from stack
 	int getQueue();
 
 private:
