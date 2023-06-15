@@ -20,11 +20,17 @@
 // FractionPart::averageValue(values, SIZE);
 class FractionPart
 {
+private:
+
+	static const int SIZE = 10;
+	double m_values[SIZE];
+
 public:
+
 	// Get values from user, get size of array
 	// and writing to the array
-	void getData(double values[], int size = 10);
+	void getData();
 	// Using previously recorded data to find the 
 	// average value
-	void averageValue(double values[], int size = 10);
+	void averageValue();
 };

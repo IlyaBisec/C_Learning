@@ -17,9 +17,9 @@ public:
 	// and the array value
 	void putel(int rows, int colunms, int arrayValue);
 	// Getel returns the matrix rows and colunms
-	int getel(int rows, int colunms);
+	int getel(int rows, int colunms) const;
 	// Checking the matrix against overflow
-	void checkOverflow(int rows, int colunms)const;
+	void checkOverflow(int rows, int colunms) const;
 
 private:
 

@@ -2,32 +2,29 @@
 
 int main7_5()
 {
-	const int SIZE = 10;
-	double values[SIZE];
-
 	FractionPart fraction;
-
-	fraction.getData(values, 10);
-	fraction.averageValue(values, 10);
-
+	fraction.getData();
+	fraction.averageValue();
 
 	return 0;
 }
 
-void FractionPart::getData(double values[], int size)
+void FractionPart::getData()
 {
+	FractionPart fraction;
 	std::cout << "Input values: \n";
-	for (int i = 0; i < size; i++)
-		std::cin >> values[i];
+	for (int i = 0; i < fraction.SIZE; i++)
+		std::cin >> fraction.m_values[i];
 }
 
-void FractionPart::averageValue(double values[], int size)
+void FractionPart::averageValue()
 {
+	FractionPart fraction;
 	double total = 0;
 
-	for (int i = 0; i < size; i++)
-		total += values[i];
-	double average = total / size;
+	for (int i = 0; i < fraction.SIZE; i++)
+		total += fraction.m_values[i];
+	double average = total / fraction.SIZE;
 
 	std::cout << "Average value: "<<average;
 }
