@@ -2,46 +2,91 @@
 
 #include "seven_eight.h"
 
-int main7_8()
+int main()
 {
-	Queue queue;
-
-	int temp = 12345;    
-
-	queue.putQueue(7, temp);
-	temp = queue.getQueue(7);
-
-	std::cout << temp;
-
-	queue.putQueue(-5, temp); // Error, overflow queue 
+	Queue queue;   
+	
+	
+	std::cout << "Input number: \n";
+	int userInput;
+	std::cin >> userInput;
+	for(int i = 0; i < userInput; i++)
+		// Added elements to the queue
+		queue.putQueue(i);
+	// Added more items to the queue
+	queue.putQueue(2);
+	// Displayed the queue
+	queue.outQueue(queue);
+	// Displayed size of queue
+	queue.sizeQueue();
+	// Displayed the farthest element
+	queue.frontQueue();
+	// And the nearest element
+	queue.backQueue();
+	// Deleted element
+	queue.popQueue();
+	queue.outQueue(queue);
+	queue.sizeQueue();
 
 	return 0;
 }
 
-void Queue::putQueue(int index, int valueOfQueue)
+void Queue::putQueue(int valueOfQueue)
 {
-	if ((index >= 0) && index < k_MAX)
+	if (m_Tail + 1 == m_Head || (m_Tail + 1 == k_MAX && !m_Head))
 	{
-		m_Queue[index] = valueOfQueue;
-	}
-	else {
-		std::cout << "\nOverflo array..index " << index << " Out of boder "
-			<< k_MAX - 1;
+		std::cout << "Overflow queue\n";
 		exit(1);
-	}
+	} 
+
+	m_Tail++;
+	if (m_Tail == k_MAX)
+		m_Tail = 0;
+
+	m_Queue[m_Tail] = valueOfQueue;
 }
 
-
-int Queue::getQueue(int index)
+int Queue::popQueue()
 {
-	if ((index >= 0) && index < k_MAX)
+	if (m_Head == m_Tail)
 	{
-		return m_Queue[index];
-	}
-	else {
-		std::cout << "Overflo array..index " << index << " Out of boder "
-			<< k_MAX - 1;
-		exit(1);
-	}
+		std::cout << "Queue is empty \n";
+		return m_Queue[m_Head];
+	} 
+	m_Head++;
+	if (m_Head == k_MAX)
+	{
+		m_Head = 0;
+	}	
+}
+
+void Queue::sizeQueue()
+{
+	int size = 0;
 	
+	for (int i = m_Head; i < m_Tail; i++)
+		size++;
+	std::cout<<size<<"\n";
 }
+
+int Queue::frontQueue()
+{
+	std::cout << m_Queue[m_Tail] << "\n";;
+	return m_Queue[m_Tail];
+}
+
+int Queue::backQueue()
+{
+	std::cout << m_Queue[m_Head + 1]<<"\n";
+	return m_Queue[m_Head + 1];
+}
+
+void Queue::outQueue(const Queue& queue)
+{
+	for (int i = queue.m_Head + 1; i < queue.m_Tail + 1; i++)
+	{
+		std::cout << " " << queue.m_Queue[i];
+	}
+	std::cout <<"\n";
+}
+
