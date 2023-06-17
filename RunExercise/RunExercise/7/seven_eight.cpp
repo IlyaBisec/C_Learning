@@ -6,79 +6,80 @@ int main()
 {
 	Queue queue;   
 	
-	
-	std::cout << "Input number: \n";
-	int userInput;
-	std::cin >> userInput;
-	for(int i = 0; i < userInput; i++)
-		// Added elements to the queue
-		queue.putQueue(i);
-	// Added more items to the queue
-	queue.putQueue(2);
-	// Displayed the queue
+	// Overflow queue
+	queue.putQueue(8);
 	queue.outQueue(queue);
-	// Displayed size of queue
-	queue.sizeQueue();
-	// Displayed the farthest element
-	queue.frontQueue();
-	// And the nearest element
-	queue.backQueue();
-	// Deleted element
-	queue.popQueue();
+	queue.getQueue(5);
 	queue.outQueue(queue);
-	queue.sizeQueue();
+	queue.putQueue(6);
+	queue.outQueue(queue);
+	queue.putQueue(1);
+	queue.outQueue(queue);
+
+	 // Queue is empty
+	queue.putQueue(8);
+	queue.outQueue(queue);
+	queue.getQueue(5);
+	queue.outQueue(queue);
+	queue.putQueue(6);
+	queue.outQueue(queue);
+	queue.getQueue(10);
+	queue.outQueue(queue);
+	queue.getQueue(1);
+	queue.outQueue(queue);
+
 
 	return 0;
 }
 
 void Queue::putQueue(int valueOfQueue)
 {
-	if (m_Tail + 1 == m_Head || (m_Tail + 1 == k_MAX && !m_Head))
+	/*if (m_Length == k_MAX)
 	{
 		std::cout << "Overflow queue\n";
 		exit(1);
-	} 
+	}*/
 
-	m_Tail++;
-	if (m_Tail == k_MAX)
-		m_Tail = 0;
+	// Filling
+	for (int i = 0; i < valueOfQueue; i++) {
+		m_Queue[++m_Tail] = i;
+		m_Length++;
 
-	m_Queue[m_Tail] = valueOfQueue;
+		if (m_Length == k_MAX)
+		{
+			std::cout << "Overflow queue\n";
+			exit(1);
+		}
+	}
+
+	// If end of queue == end of array
+	// then it moves to the beginning of the array
+	if (m_Tail == k_MAX - 1)
+		m_Tail = -1;
 }
 
-int Queue::popQueue()
+void Queue::getQueue(int valueOfQueue)
 {
-	if (m_Head == m_Tail)
-	{
-		std::cout << "Queue is empty \n";
-		return m_Queue[m_Head];
-	} 
-	m_Head++;
-	if (m_Head == k_MAX)
-	{
-		m_Head = 0;
-	}	
-}
-
-void Queue::sizeQueue()
-{
-	int size = 0;
 	
-	for (int i = m_Head; i < m_Tail; i++)
-		size++;
-	std::cout<<size<<"\n";
-}
+	for (int i = 0; i < valueOfQueue; i++) {
+		m_Queue[m_Head++] = i;
+		m_Length--;
 
-int Queue::frontQueue()
-{
-	std::cout << m_Queue[m_Tail] << "\n";;
-	return m_Queue[m_Tail];
-}
+		if (m_Length == 0)
+		{
+			std::cout << "Queue is empty \n";
+			exit(1);
+		}
+	}
 
-int Queue::backQueue()
-{
-	std::cout << m_Queue[m_Head + 1]<<"\n";
-	return m_Queue[m_Head + 1];
+
+	// If, after the queue element, the index of the beginning of the array
+	// is located behind the end of the array, then it is moved to the beginning
+	// of the array
+	if (m_Head == k_MAX)
+		m_Head = 0;
+	
+	//return valueOfQueue;
 }
 
 void Queue::outQueue(const Queue& queue)
@@ -87,6 +88,8 @@ void Queue::outQueue(const Queue& queue)
 	{
 		std::cout << " " << queue.m_Queue[i];
 	}
-	std::cout <<"\n";
+	std::cout << "\n";
 }
+
+
 

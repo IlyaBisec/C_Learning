@@ -6,21 +6,15 @@ class Queue
 {
 
 public:
-	Queue() { m_Head = m_Tail = 0; }
+	Queue() { m_Head = 0;  m_Tail = 0; m_Length = 0; }
 	
 	// Puts to queue, push analog
 	void putQueue(int valueOfQueue);
 	// Shows results
 	void outQueue(const Queue& queue);
-	// Gets size of queue
-	void sizeQueue();
+	// Gets from queue
+	void getQueue(int valueOfQueue);
 
-	// Delete element from queue
-	int popQueue();
-	// Returns the farthest element of the queue
-	int frontQueue();
-	// Returns the nearest element of the queue
-	int backQueue();
 
 private:
 
@@ -28,4 +22,5 @@ private:
 
 	int m_Queue[k_MAX];
 	int m_Head, m_Tail;
+	int m_Length;
 };
