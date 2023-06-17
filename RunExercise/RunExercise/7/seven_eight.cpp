@@ -60,7 +60,6 @@ void Queue::putQueue(int valueOfQueue)
 
 void Queue::getQueue(int valueOfQueue)
 {
-	
 	for (int i = 0; i < valueOfQueue; i++) {
 		m_Queue[m_Head++] = i;
 		m_Length--;
@@ -72,14 +71,11 @@ void Queue::getQueue(int valueOfQueue)
 		}
 	}
 
-
 	// If, after the queue element, the index of the beginning of the array
 	// is located behind the end of the array, then it is moved to the beginning
 	// of the array
 	if (m_Head == k_MAX)
 		m_Head = 0;
-	
-	//return valueOfQueue;
 }
 
 void Queue::outQueue(const Queue& queue)
