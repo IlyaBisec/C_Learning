@@ -21,7 +21,7 @@ int& BoundaryDeterminant::operator[](int index)
 	return SafeArray::operator[](index - m_lowBoundary);
 }
 
-int main()
+int main9_6()
 {
 	int lower, upper;
 
