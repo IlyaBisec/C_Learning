@@ -6,6 +6,8 @@ int main7_8()
 {
 	Queue queue;
 
+	//Add scenaries in methods
+
 	// Queue is empty
 	queue.getQueue();
 	
