@@ -2,30 +2,18 @@
 
 #include "seven_eight.h"
 
-int main7_8()
+int main()
 {
 	Queue queue;
 
 	//Add scenaries in methods
-
-	// Queue is empty
-	queue.getQueue();
 	
-	// Adds elements
-	queue.putQueue(8);
-	queue.putQueue(3);
-	queue.putQueue(4);
-	queue.putQueue(2);
-	queue.putQueue(1);
-
-	queue.outQueue();
-
-	queue.getQueue(); // Delete 1 element
-	queue.outQueue(); // The contents of the queue of four elements
-	
-
-	// Queue overflow
-	queue.putQueue(10);
+	queue.test_EmptyQueue();
+	queue.test_AddElementsToQueue();
+	queue.test_GetElementsFromQueue();
+	queue.test_MaxSizeQueue();
+	queue.test_OverflowQueue();
+	queue.test_AnotherTypesQueue();
 
 	return 0;
 }
@@ -66,9 +54,11 @@ int Queue::getQueue()
 		}
 		else m_Head++;
 
-		std::cout << "Queue item removed: "<<element << "\n";
+		std::cout << "Queue item removed: " << element << "\n";
 		return element;
 	}
+		
+	
 }
 
 void Queue::outQueue() const
@@ -90,10 +80,13 @@ void Queue::outQueue() const
 			<< "Index tail: " << m_Tail << "\n";
 	}
 	
+
+	
+	
 }
 
 bool Queue::isOverflow() const {
-	if (m_Length == k_MAX || m_Head == 0 && m_Tail == k_MAX - 1) {
+	if (m_Head == 0 && m_Tail == k_MAX - 1) {
 		return true;
 	}
 	return false;
@@ -101,10 +94,95 @@ bool Queue::isOverflow() const {
 
 bool Queue::isEmpty() const
 {
-	if (m_Length == 0 || m_Head == -1)
+	if (m_Head == -1)
 		return true;
 	else
 		return false;
+}
+
+
+
+void Queue::test_EmptyQueue()
+{
+	getQueue();
+}
+
+void Queue::test_AddElementsToQueue()
+{
+	putQueue(8);
+	putQueue(3);
+	putQueue(4);
+	putQueue(2);
+	putQueue(1);
+
+	outQueue();
+}
+
+void Queue::test_GetElementsFromQueue()
+{
+	putQueue(1);
+	putQueue(2);
+	putQueue(3);
+	putQueue(4);
+
+	outQueue();
+
+	getQueue();
+
+	outQueue();
+}
+
+void Queue::test_MaxSizeQueue()
+{
+	putQueue(1000);
+	putQueue(227);
+	putQueue(-300);
+	putQueue(445);
+	putQueue(5);
+
+	outQueue();
+}
+
+void Queue::test_OverflowQueue()
+{
+	putQueue(1000);
+	putQueue(227);
+	putQueue(-300);
+	putQueue(445);
+	putQueue(5782);
+	putQueue(5000); // Overflow
+
+	outQueue();
+}
+
+void Queue::test_AnotherTypesQueue()
+{
+	putQueue(1000.0);
+	putQueue(227);
+	putQueue(445.0f);
+
+	outQueue();
+}
+
+void Queue::test_Main()
+{
+	// Queue is empty
+	getQueue();
+
+	// Adds elements
+	putQueue(8);
+	putQueue(3);
+	putQueue(4);
+	putQueue(2);
+	putQueue(1);
+
+	outQueue();
+
+	getQueue(); // Delete 1 element
+	outQueue(); // The contents of the queue of four elements
+
+	// Queue overflow
+	putQueue(10);
 }
 
 
