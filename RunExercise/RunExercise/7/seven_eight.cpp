@@ -288,6 +288,7 @@ void Queue::test_scen2()
 	// Overflow exception, program exit
 	putQueue(10000);
 
+	// Summ = 16, 17'st - overfow
 }
 
 void Queue::test_scen3()
@@ -330,6 +331,8 @@ void Queue::test_scen3()
 	getQueue();
 	getQueue();
 	// Empty exception, program exit
+	// Puts 14
+	// Gets 15
 	getQueue();
 
 }
