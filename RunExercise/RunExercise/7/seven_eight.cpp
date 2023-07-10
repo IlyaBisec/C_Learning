@@ -8,12 +8,17 @@ int main()
 
 	//Add scenaries in methods
 	
-	queue.test_EmptyQueue();
+	/*queue.test_EmptyQueue();
 	queue.test_AddElementsToQueue();
 	queue.test_GetElementsFromQueue();
 	queue.test_MaxSizeQueue();
 	queue.test_OverflowQueue();
-	queue.test_AnotherTypesQueue();
+	queue.test_AnotherTypesQueue();*/
+
+	queue.test_scen1();
+	queue.test_scen2();
+	queue.test_scen3();
+
 
 	return 0;
 }
@@ -109,6 +114,8 @@ void Queue::test_EmptyQueue()
 
 void Queue::test_AddElementsToQueue()
 {
+	// Queue size = 5
+
 	putQueue(8);
 	putQueue(3);
 	putQueue(4);
@@ -120,6 +127,8 @@ void Queue::test_AddElementsToQueue()
 
 void Queue::test_GetElementsFromQueue()
 {
+	// Queue size = 5
+
 	putQueue(1);
 	putQueue(2);
 	putQueue(3);
@@ -134,6 +143,8 @@ void Queue::test_GetElementsFromQueue()
 
 void Queue::test_MaxSizeQueue()
 {
+	// Queue size = 5
+
 	putQueue(1000);
 	putQueue(227);
 	putQueue(-300);
@@ -145,6 +156,8 @@ void Queue::test_MaxSizeQueue()
 
 void Queue::test_OverflowQueue()
 {
+	// Queue size = 5
+
 	putQueue(1000);
 	putQueue(227);
 	putQueue(-300);
@@ -157,6 +170,8 @@ void Queue::test_OverflowQueue()
 
 void Queue::test_AnotherTypesQueue()
 {
+	// Queue size = 5
+
 	putQueue(1000.0);
 	putQueue(227);
 	putQueue(445.0f);
@@ -185,4 +200,136 @@ void Queue::test_Main()
 	putQueue(10);
 }
 
+// Scenaries
+void Queue::test_scen1()
+{
+	// Queue size = 10
 
+	// Puts = 3 
+	putQueue(1000);
+	putQueue(2000);
+	putQueue(3000); 
+
+	// Gets = 2
+	getQueue();
+	getQueue(); 
+
+	// Puts =  4 
+	putQueue(5000);
+	putQueue(6000);
+	putQueue(7000);
+	putQueue(8000);
+
+	// Gets = 5
+	getQueue();
+	getQueue();
+	getQueue();
+	getQueue();
+	getQueue();
+
+	// Queue's size = 0
+	// Puts = 9 
+	putQueue(112);
+	putQueue(121);
+	putQueue(131);
+	putQueue(141);
+	putQueue(151);
+	putQueue(161);
+	putQueue(171);
+	putQueue(181);
+	putQueue(191);
+
+	// Gets = 2
+	getQueue();
+	getQueue();
+
+	// Puts = 3 
+	putQueue(1111);
+	putQueue(231);
+	putQueue(4444);
+
+	// Queue's size = 10
+	// Summ = 18
+
+}
+
+void Queue::test_scen2()
+{
+	// Queue size = 10
+
+	// Puts = 3 
+	putQueue(1000);
+	putQueue(2000);
+	putQueue(3000);
+
+	// Gets = 2
+	getQueue();
+	getQueue();
+
+	// Puts =  4 
+	putQueue(5000);
+	putQueue(6000);
+	putQueue(7000);
+	putQueue(8000);
+
+	// Gets = 5
+	getQueue();
+	getQueue();
+	getQueue();
+	getQueue();
+	getQueue();
+
+	// Queue's size = 0
+	// Puts one more 9
+	for (int i = 1; i <= 9; i++)
+		putQueue(i);
+
+	putQueue(-1111); 
+	// Overflow exception, program exit
+	putQueue(10000);
+
+}
+
+void Queue::test_scen3()
+{
+	// Queue size = 10
+
+	// Puts = 3 
+	putQueue(1000);
+	putQueue(2000);
+	putQueue(3000);
+
+	// Gets = 2
+	getQueue();
+	getQueue();
+
+	// Puts =  4 
+	putQueue(5000);
+	putQueue(6000);
+	putQueue(7000);
+	putQueue(8000);
+
+	// Gets = 5
+	getQueue();
+	getQueue();
+	getQueue();
+	getQueue();
+	getQueue();
+
+	// Queue's size = 0
+	// Puts one more 7
+	for (int i = 1; i <= 7; i++)
+		putQueue(i);
+
+	// Gets 8 elements
+	getQueue();
+	getQueue();
+	getQueue();
+	getQueue();
+	getQueue();
+	getQueue();
+	getQueue();
+	// Empty exception, program exit
+	getQueue();
+
+}

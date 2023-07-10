@@ -39,10 +39,16 @@ public:
 	void test_AnotherTypesQueue();
 
 	void test_Main();
+
+	void test_scen1();
+
+	void test_scen2();
+
+	void test_scen3();
 	
 private:
 
-	enum { k_MAX = 5 };
+	enum { k_MAX = 10 };
 
 	int m_Queue[k_MAX];
 	int m_Head, m_Tail;
