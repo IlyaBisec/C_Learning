@@ -7,7 +7,7 @@ int main()
 	Queue queue;
 
 	//Add scenaries in methods
-	
+
 	/*queue.test_EmptyQueue();
 	queue.test_AddElementsToQueue();
 	queue.test_GetElementsFromQueue();
@@ -32,10 +32,10 @@ void Queue::putQueue(int element)
 		exit(1);
 	}
 	else {
-		if (m_Head == -1) m_Head = 0;
-		m_Tail++;
+		if (m_Front == -1) m_Front = 0;
+		m_Back++;
 
-		m_Queue[m_Tail] = element;
+		m_Queue[m_Back] = element;
 		std::cout << "Added queue element: " << element << "\n";
 	}
 }
@@ -50,20 +50,20 @@ int Queue::getQueue()
 		exit(1);
 	}
 	else {
-		element = m_Queue[m_Head];
+		element = m_Queue[m_Front];
 
-		if (m_Head >= m_Tail)
+		if (m_Front >= m_Back)
 		{
-			m_Head = -1;
-			m_Tail = -1;
+			m_Front = -1;
+			m_Back = -1;
 		}
-		else m_Head++;
+		else m_Front++;
 
 		std::cout << "Queue item removed: " << element << "\n";
 		return element;
 	}
-		
-	
+
+
 }
 
 void Queue::outQueue() const
@@ -76,22 +76,22 @@ void Queue::outQueue() const
 	}
 	else {
 		std::cout << std::endl
-			<< "Index front: " << m_Head;
+			<< "Index front: " << m_Front;
 		std::cout << std::endl
 			<< "Elements: ";
-		for (i = m_Head; i <= m_Tail; i++)
+		for (i = m_Front; i <= m_Back; i++)
 			std::cout << m_Queue[i] << "  ";
 		std::cout << std::endl
-			<< "Index tail: " << m_Tail << "\n";
+			<< "Index tail: " << m_Back << "\n";
 	}
-	
 
-	
-	
+
+
+
 }
 
 bool Queue::isOverflow() const {
-	if (m_Head == 0 && m_Tail == k_MAX - 1) {
+	if (m_Front == 0 && m_Back == k_MAX - 1) {
 		return true;
 	}
 	return false;
@@ -99,11 +99,13 @@ bool Queue::isOverflow() const {
 
 bool Queue::isEmpty() const
 {
-	if (m_Head == -1)
+	if (m_Front == -1)
 		return true;
 	else
 		return false;
 }
+
+#pragma region Tests
 
 
 
@@ -208,11 +210,11 @@ void Queue::test_scen1()
 	// Puts = 3 
 	putQueue(1000);
 	putQueue(2000);
-	putQueue(3000); 
+	putQueue(3000);
 
 	// Gets = 2
 	getQueue();
-	getQueue(); 
+	getQueue();
 
 	// Puts =  4 
 	putQueue(5000);
@@ -284,7 +286,7 @@ void Queue::test_scen2()
 	for (int i = 1; i <= 9; i++)
 		putQueue(i);
 
-	putQueue(-1111); 
+	putQueue(-1111);
 	// Overflow exception, program exit
 	putQueue(10000);
 
@@ -336,3 +338,4 @@ void Queue::test_scen3()
 	getQueue();
 
 }
+#pragma endregion

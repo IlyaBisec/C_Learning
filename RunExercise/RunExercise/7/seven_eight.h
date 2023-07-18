@@ -2,11 +2,14 @@
 
  #pragma once
 
+// Refactor queue
+
 class Queue
 {
 
 public:
-	Queue() { m_Head = -1;  m_Tail = -1; m_Length = 0; }
+	Queue() { m_Front =  m_Back = 0; //m_Length = 0;
+	}
 	
 	// Puts to queue, push analog
 	void putQueue(int element);
@@ -14,6 +17,7 @@ public:
 	void outQueue()const;
 	// Gets from queue
 	int  getQueue();
+
 
 	//Checks Queue status
 	bool isOverflow() const;
@@ -48,9 +52,11 @@ public:
 	
 private:
 
-	enum { k_MAX = 10 };
+	enum { k_MAX = 5 };
 
 	int m_Queue[k_MAX];
-	int m_Head, m_Tail;
-	int m_Length;
+	int m_Front, m_Back, count;
+	//int m_Length;
 };
+
+

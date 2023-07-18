@@ -188,5 +188,6 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="7\tasks7.txt" />
+    <Text Include="7\old code.txt" />
   </ItemGroup>
 </Project>
