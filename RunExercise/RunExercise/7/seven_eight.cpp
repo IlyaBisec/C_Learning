@@ -6,19 +6,7 @@ int main()
 {
 	Queue queue;
 
-	//Add scenaries in methods
-
-	/*queue.test_EmptyQueue();
-	queue.test_AddElementsToQueue();
-	queue.test_GetElementsFromQueue();
-	queue.test_MaxSizeQueue();
-	queue.test_OverflowQueue();
-	queue.test_AnotherTypesQueue();*/
-
-	queue.test_scen1();
-	queue.test_scen2();
-	queue.test_scen3();
-
+	queue.test_scen5();
 
 	return 0;
 }
@@ -32,17 +20,24 @@ void Queue::putQueue(int element)
 		exit(1);
 	}
 	else {
-		if (m_Front == -1) m_Front = 0;
-		m_Back++;
-
-		m_Queue[m_Back] = element;
 		std::cout << "Added queue element: " << element << "\n";
+		
+		m_Back = (m_Back + 1) % k_SIZE;
+		m_QueueArray[m_Back] = element;
+		m_Count++;
 	}
+}
+
+void Queue::getInfo()
+{
+	std::cout << "\n";
+	std::cout << "The front element is " << getFront() << "\n";
+	std::cout << "The queue size is " << getSize() << "\n";
+	std::cout << "\n";
 }
 
 int Queue::getQueue()
 {
-	int element;
 
 	if (isEmpty())
 	{
@@ -50,292 +45,266 @@ int Queue::getQueue()
 		exit(1);
 	}
 	else {
-		element = m_Queue[m_Front];
-
-		if (m_Front >= m_Back)
-		{
-			m_Front = -1;
-			m_Back = -1;
-		}
-		else m_Front++;
-
+		int element = m_QueueArray[m_Front];
 		std::cout << "Queue item removed: " << element << "\n";
+
+		m_Front = (m_Front + 1) % k_SIZE;
+		m_Count--;
+
 		return element;
 	}
-
-
 }
 
-void Queue::outQueue() const
+int Queue::getFront()
 {
-	int i;
 	if (isEmpty())
 	{
 		std::cout << "Queue is empty \n";
 		exit(1);
 	}
-	else {
-		std::cout << std::endl
-			<< "Index front: " << m_Front;
-		std::cout << std::endl
-			<< "Elements: ";
-		for (i = m_Front; i <= m_Back; i++)
-			std::cout << m_Queue[i] << "  ";
-		std::cout << std::endl
-			<< "Index tail: " << m_Back << "\n";
-	}
 
+	return m_QueueArray[m_Front];
+}
 
-
-
+int Queue::getSize() const
+{
+	return m_Count;
 }
 
 bool Queue::isOverflow() const {
-	if (m_Front == 0 && m_Back == k_MAX - 1) {
-		return true;
-	}
-	return false;
+	return (getSize() == k_SIZE);
 }
 
 bool Queue::isEmpty() const
 {
-	if (m_Front == -1)
-		return true;
-	else
-		return false;
+	return (getSize() == 0);
 }
 
-#pragma region Tests
 
 
-
-void Queue::test_EmptyQueue()
-{
-	getQueue();
-}
-
-void Queue::test_AddElementsToQueue()
-{
-	// Queue size = 5
-
-	putQueue(8);
-	putQueue(3);
-	putQueue(4);
-	putQueue(2);
-	putQueue(1);
-
-	outQueue();
-}
-
-void Queue::test_GetElementsFromQueue()
-{
-	// Queue size = 5
-
-	putQueue(1);
-	putQueue(2);
-	putQueue(3);
-	putQueue(4);
-
-	outQueue();
-
-	getQueue();
-
-	outQueue();
-}
-
-void Queue::test_MaxSizeQueue()
-{
-	// Queue size = 5
-
-	putQueue(1000);
-	putQueue(227);
-	putQueue(-300);
-	putQueue(445);
-	putQueue(5);
-
-	outQueue();
-}
-
-void Queue::test_OverflowQueue()
-{
-	// Queue size = 5
-
-	putQueue(1000);
-	putQueue(227);
-	putQueue(-300);
-	putQueue(445);
-	putQueue(5782);
-	putQueue(5000); // Overflow
-
-	outQueue();
-}
-
-void Queue::test_AnotherTypesQueue()
-{
-	// Queue size = 5
-
-	putQueue(1000.0);
-	putQueue(227);
-	putQueue(445.0f);
-
-	outQueue();
-}
-
-void Queue::test_Main()
-{
-	// Queue is empty
-	getQueue();
-
-	// Adds elements
-	putQueue(8);
-	putQueue(3);
-	putQueue(4);
-	putQueue(2);
-	putQueue(1);
-
-	outQueue();
-
-	getQueue(); // Delete 1 element
-	outQueue(); // The contents of the queue of four elements
-
-	// Queue overflow
-	putQueue(10);
-}
-
-// Scenaries
 void Queue::test_scen1()
 {
-	// Queue size = 10
+	//getQueue();
 
-	// Puts = 3 
-	putQueue(1000);
-	putQueue(2000);
-	putQueue(3000);
+	putQueue(1);
+	putQueue(2);
+	putQueue(3);
+	putQueue(4);
+	putQueue(5);
+	//putQueue(56);
 
-	// Gets = 2
-	getQueue();
-	getQueue();
+	getInfo();
 
-	// Puts =  4 
-	putQueue(5000);
-	putQueue(6000);
-	putQueue(7000);
-	putQueue(8000);
-
-	// Gets = 5
-	getQueue();
-	getQueue();
 	getQueue();
 	getQueue();
 	getQueue();
 
-	// Queue's size = 0
-	// Puts = 9 
-	putQueue(112);
-	putQueue(121);
-	putQueue(131);
-	putQueue(141);
-	putQueue(151);
-	putQueue(161);
-	putQueue(171);
-	putQueue(181);
-	putQueue(191);
+	putQueue(6);
+	putQueue(7);
+	putQueue(8);
 
-	// Gets = 2
+	getInfo();
+
+	getQueue();
 	getQueue();
 	getQueue();
 
-	// Puts = 3 
-	putQueue(1111);
-	putQueue(231);
-	putQueue(4444);
+	putQueue(9);
+	putQueue(10);
+	putQueue(11);
 
-	// Queue's size = 10
-	// Summ = 18
+	getInfo();
 
+	getQueue();
+	getQueue();
+	getQueue();
+	getQueue();
+
+	getInfo();
 }
 
 void Queue::test_scen2()
 {
-	// Queue size = 10
+	//getQueue();
 
-	// Puts = 3 
-	putQueue(1000);
-	putQueue(2000);
-	putQueue(3000);
+	putQueue(1);
+	putQueue(2);
+	putQueue(3);
+	putQueue(4);
+	putQueue(5);
+	//putQueue(56);
 
-	// Gets = 2
-	getQueue();
-	getQueue();
-
-	// Puts =  4 
-	putQueue(5000);
-	putQueue(6000);
-	putQueue(7000);
-	putQueue(8000);
-
-	// Gets = 5
 	getQueue();
 	getQueue();
 	getQueue();
 	getQueue();
 	getQueue();
 
-	// Queue's size = 0
-	// Puts one more 9
-	for (int i = 1; i <= 9; i++)
-		putQueue(i);
+	putQueue(6);
 
-	putQueue(-1111);
-	// Overflow exception, program exit
-	putQueue(10000);
+	getInfo();
 
-	// Summ = 16, 17'st - overfow
+	getQueue();
+
+	putQueue(7);
+	putQueue(8);
+	putQueue(9);
+
+	getInfo();
+
+	getQueue();
+	getQueue();
+	getQueue();
+
+	getInfo();
+
+	getQueue();
+
+	getInfo();
 }
 
 void Queue::test_scen3()
 {
-	// Queue size = 10
+	//getQueue();
 
-	// Puts = 3 
-	putQueue(1000);
-	putQueue(2000);
-	putQueue(3000);
+	putQueue(1);
+	putQueue(2);
+	//putQueue(56);
 
-	// Gets = 2
-	getQueue();
 	getQueue();
 
-	// Puts =  4 
-	putQueue(5000);
-	putQueue(6000);
-	putQueue(7000);
-	putQueue(8000);
+	putQueue(3);
+	putQueue(4);
 
-	// Gets = 5
-	getQueue();
-	getQueue();
-	getQueue();
+	getInfo();
+
 	getQueue();
 	getQueue();
 
-	// Queue's size = 0
-	// Puts one more 7
-	for (int i = 1; i <= 7; i++)
-		putQueue(i);
+	putQueue(7);
+	putQueue(8);
+	putQueue(9);
 
-	// Gets 8 elements
+	getInfo();
+
 	getQueue();
 	getQueue();
-	getQueue();
-	getQueue();
-	getQueue();
-	getQueue();
-	getQueue();
-	// Empty exception, program exit
-	// Puts 14
-	// Gets 15
 	getQueue();
 
+	getInfo();
+
+	getQueue();
+
+	getInfo();
 }
-#pragma endregion
+
+void Queue::test_scen4()
+{
+	//getQueue();
+
+	putQueue(1);
+
+	getQueue();
+
+	putQueue(2);
+	putQueue(3);
+
+	getInfo();
+
+	getQueue();
+
+	putQueue(4);
+	putQueue(5);
+	putQueue(6);
+
+	getInfo();
+
+	getQueue();
+	getQueue();
+
+	putQueue(7);
+	putQueue(8);
+	putQueue(9);
+	putQueue(10);
+
+	getInfo();
+
+	getQueue();
+
+	getInfo();
+}
+
+void Queue::test_scen5()
+{
+	//getQueue();
+
+	putQueue(1);
+
+	getInfo();
+
+	putQueue(2);
+
+	getInfo();
+
+	getQueue();
+
+	putQueue(3);
+	putQueue(4);
+
+	getInfo();
+
+	getQueue();
+	getQueue();
+
+	getInfo();
+
+	putQueue(7);
+	putQueue(8);
+	putQueue(9);
+	putQueue(10);
+
+	getInfo();
+
+	getQueue();
+	getQueue();
+	getQueue();
+
+	getInfo();
+
+	putQueue(11);
+	putQueue(12);
+	putQueue(13);
+
+	getInfo();
+
+	getQueue();
+	getQueue();
+	getQueue();
+	getQueue();
+
+	getInfo();
+
+	putQueue(14);
+	putQueue(15);
+	putQueue(16);
+	putQueue(17);
+
+	getInfo();
+
+	getQueue();
+	getQueue();
+	getQueue();
+	getQueue();
+	getQueue();
+
+	getInfo();
+
+	putQueue(18);
+
+	getQueue();
+	getQueue();
+	getQueue();
+	getQueue();
+	getQueue();
+	getQueue();
+}
