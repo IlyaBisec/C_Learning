@@ -138,6 +138,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="10\10_1.cpp" />
+    <ClCompile Include="10\10_2.cpp" />
+    <ClCompile Include="10\10_3.cpp" />
+    <ClCompile Include="10\10_4.cpp" />
     <ClCompile Include="7\seven_eight.cpp" />
     <ClCompile Include="7\seven_five.cpp" />
     <ClCompile Include="7\seven_four.cpp" />
@@ -169,6 +173,10 @@
     <ClCompile Include="9\9_9.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="10\10_1.h" />
+    <ClInclude Include="10\10_2.h" />
+    <ClInclude Include="10\10_3.h" />
+    <ClInclude Include="10\10_4.h" />
     <ClInclude Include="7\seven_eight.h" />
     <ClInclude Include="7\seven_five.h" />
     <ClInclude Include="7\seven_nine.h" />
@@ -198,6 +206,7 @@
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="10\tasks 10.txt" />
     <Text Include="7\old code.txt" />
     <Text Include="7\tasks7.txt" />
   </ItemGroup>
