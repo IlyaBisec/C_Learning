@@ -1,0 +1,47 @@
+# Файл CLANG-FORMAT, созданный Visual Studio
+
+# Параметры стиля в этом файле являются наиболее безопасными для репликации
+# текущей конфигурации форматирования IDE из меню "Сервис" > "Параметры". Тем не менее 
+# необходимо проверить следующие параметры стиля:
+# AfterClass; AfterControlStatement; AfterEnum; AfterFunction; AfterNamespace; 
+# AfterStruct; AfterUnion
+
+AccessModifierOffset: -4
+AlignAfterOpenBracket: DontAlign
+AllowShortBlocksOnASingleLine: true
+AllowShortFunctionsOnASingleLine: All
+BasedOnStyle: Microsoft
+BraceWrapping:
+  AfterClass: false    # TODO: проверьте
+  AfterControlStatement: false    # TODO: проверьте
+  AfterEnum: false    # TODO: проверьте
+  AfterFunction: true    # TODO: проверьте
+  AfterNamespace: false    # TODO: проверьте
+  AfterStruct: false    # TODO: проверьте
+  AfterUnion: false    # TODO: проверьте
+  BeforeCatch: false
+  BeforeElse: false
+  IndentBraces: false
+  SplitEmptyFunction: false
+  SplitEmptyRecord: false
+BreakBeforeBraces: Custom
+ColumnLimit: 80
+Cpp11BracedListStyle: false
+FixNamespaceComments: false
+IndentCaseLabels: false
+IndentPPDirectives: None
+IndentWidth: 4
+MaxEmptyLinesToKeep: 10
+NamespaceIndentation: All
+PointerAlignment: Right
+SortIncludes: false
+SortUsingDeclarations: false
+SpaceAfterCStyleCast: false
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeParens: ControlStatements
+SpaceInEmptyParentheses: false
+SpacesInCStyleCastParentheses: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+TabWidth: 4
+UseTab: true

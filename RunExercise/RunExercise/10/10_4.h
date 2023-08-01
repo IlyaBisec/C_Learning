@@ -1,4 +1,4 @@
-// List
+// Linked List
 
 #pragma once
 #include "..\stdafx.h"
@@ -12,11 +12,12 @@ namespace TenFour
 		Link* next; // Pointer on the next element of linklist
 	};
 
+
 	class LinkList
 	{
 	public:
 		LinkList() { m_First = NULL; }
-		~LinkList(){}
+		~LinkList();
 
 		void addItem(int data);
 		void display();
