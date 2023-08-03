@@ -67,6 +67,7 @@ int compstr(const char *stringA, const char *stringB)
 	{
 		return -1;
 	}
-	else
+	else {
 		return 1;
+	}
 }
