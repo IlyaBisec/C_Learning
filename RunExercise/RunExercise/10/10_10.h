@@ -1,5 +1,4 @@
 #pragma once
-
 // Two classes that simulate working with variables andpointers.
 // In this case, the computer's memory should be modeled using arrays.
 // Then the array index will be analogous to the address in the computer's
