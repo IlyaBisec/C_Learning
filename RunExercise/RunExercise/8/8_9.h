@@ -8,6 +8,8 @@
 //class Casterian;
 //class Polar;
 
+/*Но есть всё те же проблемы, что и в предыдущих.
+Плюс - код не компилируется.*/
 
 class Polar
 {
@@ -16,7 +18,7 @@ public:
 	Polar() :m_Angle(0), m_Radius(0){}
 	Polar(double angle, double radius) :m_Angle(angle),
 		m_Radius(radius){}
-	Polar(const Casterian& cartes)
+	Polar(const Casterian &cartes)
 	{
 		double x = cartes.getCoordinateX();
 		double y = cartes.getCoordinateY();

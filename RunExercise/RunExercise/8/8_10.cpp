@@ -50,7 +50,7 @@ void Sterling::putSterling() const
 		<< "." << m_Pens << "\n";
 }
 
-Sterling Sterling::operator +(Sterling sterling)
+Sterling Sterling::operator+(const Sterling &sterling)
 {
 	int sumPens = (m_Pounds * 20 * 12 + mShilling * 12 + m_Pens) +
 		(sterling.m_Pounds * 20 * 12 + sterling.mShilling * 12 + sterling.m_Pens);
@@ -61,10 +61,11 @@ Sterling Sterling::operator +(Sterling sterling)
 	return Sterling(pounds, shilling, pens);
 }
 
-Sterling Sterling::operator -(Sterling sterling)
+Sterling Sterling::operator-(const Sterling &sterling)
 {
 	int sumPens = (m_Pounds * 20 * 12 + mShilling * 12 + m_Pens) -
 		(sterling.m_Pounds * 20 * 12 + sterling.mShilling * 12 + sterling.m_Pens);
+	
 	long pounds = sumPens / (20 * 12);
 	int shilling = sumPens % (20 * 12) / 12;
 	int pens = sumPens % (20 * 12) % 12;
@@ -72,10 +73,11 @@ Sterling Sterling::operator -(Sterling sterling)
 	return Sterling(pounds, shilling, pens);
 }
 
-Sterling Sterling::operator *(double sterling)
+Sterling Sterling::operator*(double amount)
 {
 	int sumPens = (m_Pounds *20 * 12 + mShilling * 
-		12 + m_Pens)*(sterling);
+		12 + m_Pens) * (amount);
+	
 	long pounds = sumPens / (20 * 12);
 	int shilling = sumPens % (20 * 12) / 12;
 	int pens = sumPens % (20 * 12) % 12;
@@ -83,10 +85,12 @@ Sterling Sterling::operator *(double sterling)
 	return Sterling(pounds, shilling, pens);
 }
 
-Sterling Sterling::operator /(Sterling sterling)
+double Sterling::operator/(const Sterling &quantityTimes)
 {
 	int sumPens = (m_Pounds * 20 * 12 + mShilling * 12 + m_Pens) /
-		(sterling.m_Pounds * 20 * 12 + sterling.mShilling * 12 + sterling.m_Pens);
+		(quantityTimes.m_Pounds * 20 * 12 +
+		quantityTimes.mShilling * 12 + quantityTimes.m_Pens);
+	
 	long pounds = sumPens / (20 * 12);
 	int shilling = sumPens % (20 * 12) / 12;
 	int pens = sumPens % (20 * 12) % 12;
@@ -94,9 +98,9 @@ Sterling Sterling::operator /(Sterling sterling)
 	return Sterling(pounds, shilling, pens);
 }
 
-Sterling Sterling::operator /(double sterling)
+Sterling Sterling::operator/(double amount)
 {
-	int sumPens = (m_Pounds * 20 * 12 + mShilling * 12 + m_Pens) / (sterling);
+	int sumPens = (m_Pounds * 20 * 12 + mShilling * 12 + m_Pens) / (amount);
 	long pounds = sumPens / (20 * 12);
 	int shilling = sumPens % (20 * 12) / 12;
 	int pens = sumPens % (20 * 12) % 12;
