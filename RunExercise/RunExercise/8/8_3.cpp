@@ -16,7 +16,7 @@ int main8_3()
 }
 
 
-Time Time::operator+(Time time)
+Time Time::operator+(const Time &time)
 {
 	long totalSeconds = (mHours*3600)+(mMinutes*60)+
 		mSeconds+(time.mHours * 3600) + (time.mMinutes * 60) +time.mSeconds;

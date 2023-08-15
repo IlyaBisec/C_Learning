@@ -92,7 +92,7 @@ void NewFraction::lowTerms()
     denominator /= greatCommonDivisor;
 }
 
-NewFraction NewFraction::operator+(NewFraction fraction)
+NewFraction NewFraction::operator+(const NewFraction &fraction)
 {
     int numerator = m_Numerator * fraction.m_Denominator + m_Denominator
         * fraction.m_Numerator;
@@ -100,7 +100,7 @@ NewFraction NewFraction::operator+(NewFraction fraction)
     return NewFraction(numerator, denominator);
 }
 
-NewFraction NewFraction::operator-(NewFraction fraction)
+NewFraction NewFraction::operator-(const NewFraction &fraction)
 {
     int numerator = m_Numerator * fraction.m_Denominator - m_Denominator
         * fraction.m_Numerator;
@@ -108,14 +108,14 @@ NewFraction NewFraction::operator-(NewFraction fraction)
     return NewFraction(numerator, denominator);
 }
 
-NewFraction NewFraction::operator*(NewFraction fraction)
+NewFraction NewFraction::operator*(const NewFraction &fraction)
 {
     int numerator = m_Numerator * fraction.m_Denominator;
     int denominator = m_Denominator * fraction.m_Denominator;
     return NewFraction(numerator, denominator);
 }
 
-NewFraction NewFraction::operator/(NewFraction fraction)
+NewFraction NewFraction::operator/(const NewFraction &fraction)
 {
     int numerator = m_Numerator * fraction.m_Denominator;
     int denominator = m_Denominator * fraction.m_Numerator;

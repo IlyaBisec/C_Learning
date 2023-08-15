@@ -7,9 +7,9 @@ int main8_2()
 
 	String thirdLine;
 
-	firstLine.display();
-	secondLine.display();
-	thirdLine.display();
+	firstLine.displayString();
+	secondLine.displayString();
+	thirdLine.displayString();
 
 	thirdLine = firstLine += secondLine;
 
@@ -19,7 +19,7 @@ int main8_2()
 	return 0;
 }
 
-String String::operator += (String string) const
+String String::operator+=(const String &string) const
 {
 	String tempString;
 
@@ -39,7 +39,7 @@ String String::operator += (String string) const
 	return tempString;
 }
 
-void String::display()
+void String::displayString() const 
 {
 	std::cout << mString;
 }

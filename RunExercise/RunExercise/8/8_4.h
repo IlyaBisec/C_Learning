@@ -13,23 +13,23 @@ public:
 	Int(long double temp) : m_Temp(temp){}
 
 	// Show result
-	void displayInt() { std::cout << m_Temp <<"\n"; }
+	void displayInt() const { std::cout << m_Temp <<"\n"; }
 	// Check overflow
 	void checkOverflow(long double valueOverflow);
 	
 	// Arithmetic operations
 	
 	// Summation
-	Int operator + (Int temp);
+	Int operator+(const Int &temp);
 
 	// Subtraction
-	Int operator - (Int temp);
+	Int operator-(const Int &temp);
 
 	// Division
-	Int operator / (Int temp);
+	Int operator/(const Int &temp);
 
 	// Increase
-	Int operator * (Int temp);
+	Int operator*(const Int &temp);
 
 private:
 

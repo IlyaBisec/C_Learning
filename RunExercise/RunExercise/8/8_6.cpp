@@ -28,7 +28,7 @@ int main8_6()
 }
 
 
-NewTime NewTime::operator+(NewTime time)
+NewTime NewTime::operator+(const NewTime &time)
 {
 	long totalSeconds = (m_Hours * 3600) + (m_Minutes * 60) +
 		m_Seconds + (time.m_Hours * 3600) + (time.m_Minutes * 60) + time.m_Seconds;
@@ -40,7 +40,7 @@ NewTime NewTime::operator+(NewTime time)
 	return NewTime(hours, minutes, seconds);
 }
 
-NewTime NewTime::operator-(NewTime time)
+NewTime NewTime::operator-(const NewTime &time)
 {
 	long totalSeconds = ((m_Hours * 3600) + (m_Minutes * 60) +
 		m_Seconds) - ((time.m_Hours * 3600) + (time.m_Minutes * 60) + time.m_Seconds);
@@ -52,7 +52,7 @@ NewTime NewTime::operator-(NewTime time)
 	return NewTime(hours, minutes, seconds);
 }
 
-NewTime NewTime::operator*(NewTime time)
+NewTime NewTime::operator*(const NewTime &time)
 {
 	long totalSeconds = ((m_Hours * 3600) + (m_Minutes * 60) +
 		m_Seconds) * ((time.m_Hours * 3600) + (time.m_Minutes * 60) + time.m_Seconds);

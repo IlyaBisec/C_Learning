@@ -28,7 +28,7 @@ int main8_1()
 	return 0;
 }
 
-Distance Distance::operator + (Distance distance) const
+Distance Distance::operator+(const Distance &distance) const
 {
 	int feet = mFeet + distance.mFeet;
 	float inches = mInches + distance.mInches;
@@ -42,7 +42,7 @@ Distance Distance::operator + (Distance distance) const
 	return Distance(feet, inches);
 }
 
-Distance Distance::operator - (Distance distance) const
+Distance Distance::operator-(const Distance &distance) const
 {
 	int feet = mFeet - distance.mFeet;
 	float inches = mInches - distance.mInches;

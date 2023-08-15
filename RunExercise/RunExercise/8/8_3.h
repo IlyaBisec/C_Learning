@@ -17,7 +17,7 @@ public:
 	void displayTime() const
 	{std::cout << mHours << ":" << mMinutes << ":" << mSeconds << "\n";}
 
-	Time operator + (Time time);
+	Time operator + (const Time &time);
 
 private:
 

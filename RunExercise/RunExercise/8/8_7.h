@@ -20,10 +20,10 @@ public:
         std::cout << m_Numerator << "/" << m_Denominator << std::endl;
     };
 
-    NewFraction operator + (NewFraction fraction);
-    NewFraction operator - (NewFraction fraction);
-    NewFraction operator * (NewFraction fraction);
-    NewFraction operator / (NewFraction fraction);
+    NewFraction operator+  (const NewFraction &fraction);
+    NewFraction operator - (const NewFraction &fraction);
+    NewFraction operator * (const NewFraction &fraction);
+    NewFraction operator / (const NewFraction &fraction);
 
 private:
     int m_Numerator, m_Denominator;

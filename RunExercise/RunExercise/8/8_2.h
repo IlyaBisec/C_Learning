@@ -14,9 +14,9 @@ public:
 	// in this case, it will result in a E0415 error and a memory leak
 	String(const char line[]) { strcpy_s(mString, line); }
 
-	String operator += (String string)const;
+	String operator += (const String &string) const;
 
-	void display();
+	void displayString() const;
 private:
 
 	enum { SIZE = 80 };

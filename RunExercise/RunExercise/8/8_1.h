@@ -15,8 +15,8 @@ public:
 	void getDistance();
 	void showDistance() const;
 	
-	Distance operator+ (Distance distance) const;
-	Distance operator- (Distance distance) const;
+	Distance operator+ (const Distance &distance) const;
+	Distance operator- (const Distance &distance) const;
 
 private:
 
