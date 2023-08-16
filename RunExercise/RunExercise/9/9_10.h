@@ -41,7 +41,7 @@ class PairStack : public StackChild
 {
 public:
 	// Pushing in stack unit from two variables
-	void push(Pair unit);
+	void push(const Pair &unit);
 	// Poping two variables from unit
 	Pair pop();
 };

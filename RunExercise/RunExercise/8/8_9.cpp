@@ -1,6 +1,6 @@
 #include "8_9.h"
 
-int main8_9()
+int main()
 {
 	Polar polarX, polarY, resultPolarCoordinate;
 	Casterian coordinateX, coordinateY, resultCoordinate;

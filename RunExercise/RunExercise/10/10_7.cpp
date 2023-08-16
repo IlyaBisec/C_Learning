@@ -37,7 +37,7 @@ namespace TenSeven {
 		cout << "Input name: "; cin >> m_Name; cout;
 		cout << "Input salary: "; cin >> m_Salary; cout << "\n";
 	}
-	void Person::printData()
+	void Person::printData() const
 	{
 		cout << "Name: " << m_Name<<"\n";
 		cout << "Salary: " << m_Salary << "\n";

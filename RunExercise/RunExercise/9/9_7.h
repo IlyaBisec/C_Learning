@@ -42,10 +42,11 @@ public:
 	CounterPostFix(int counter) : CounterDec(counter)
 	{}
 	// From CounterDec -> CounterPostFix
-	CounterPostFix(CounterDec counterDec) : CounterDec(counterDec.getCount())
+	CounterPostFix(const CounterDec &counterDec) : CounterDec(counterDec.getCount())
 	{}
 	// From CounterBase -> CounterPostFix 
-	CounterPostFix(CounterBase counterBase) : CounterDec(counterBase.getCount())
+	CounterPostFix(const CounterBase &counterBase)
+		: CounterDec(counterBase.getCount())
 	{}
 
 	// Postfix

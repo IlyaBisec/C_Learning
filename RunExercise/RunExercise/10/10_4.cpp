@@ -45,7 +45,7 @@ namespace TenFour
 		m_First = ptr_newLink;
 	}
 	
-	void LinkList::display()
+	void LinkList::display() const
 	{
 		Link * ptr_currentLink = m_First;
 		while (ptr_currentLink)

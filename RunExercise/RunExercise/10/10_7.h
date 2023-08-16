@@ -14,7 +14,7 @@ namespace TenSeven {
 	public:
 		
 		void setData();
-		void printData();
+		void printData() const;
 
 		float getSalary() const;
 

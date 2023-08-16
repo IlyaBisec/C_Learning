@@ -64,7 +64,7 @@ int StackChild::pop()
 }
 
 // Pushing in stack unit from two variables
-void PairStack::push(Pair unit)
+void PairStack::push(const Pair &unit)
 {
 	StackChild::push(unit.x);
 	StackChild::push(unit.y);

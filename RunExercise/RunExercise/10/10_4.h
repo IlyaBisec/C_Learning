@@ -20,7 +20,7 @@ namespace TenFour
 		~LinkList();
 
 		void addItem(int data);
-		void display();
+		void display() const;
 
 	private:
 		Link* m_First;
