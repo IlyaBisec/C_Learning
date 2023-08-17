@@ -25,6 +25,7 @@ protected:
 class Pstring : public String
 {
 public:
-	Pstring(const char line[]);
+	//line[]
+	Pstring(const char *line);
 };
 

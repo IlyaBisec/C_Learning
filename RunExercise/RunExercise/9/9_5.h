@@ -64,13 +64,13 @@ namespace NineThree {
 	private:
 		double m_Compensations;
 
-		enum PaymentPeriod
+		enum EPaymentPeriod
 		{
-			k_hourly, 
-			k_weekly,
-			k_monthly
+			Hourly, 
+			Weekly,
+			Monthly
 		};
-		PaymentPeriod paymentPeriod;
+		EPaymentPeriod paymentPeriod;
 	};
 
 	class ManagerClone : public EmployeeClone

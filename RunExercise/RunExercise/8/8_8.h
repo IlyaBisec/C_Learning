@@ -10,7 +10,7 @@ class NewSafeArray
 {
 public:
 
-	// function return reference
+	// Function return reference
 	int& operator [](int index);
 
 private:

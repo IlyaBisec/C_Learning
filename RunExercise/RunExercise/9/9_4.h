@@ -72,9 +72,9 @@ namespace NineFour {
 
 	private:
 
-		enum DiskType
+		enum EDiskType
 		{
-			k_CD, k_DvD
+			CD, DvD
 		};
 	};
 

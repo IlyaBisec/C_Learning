@@ -88,7 +88,7 @@ namespace NineFour {
 
 	void Disk::getData()
 	{
-		DiskType diskType;
+		EDiskType diskType;
 		char choiceType;
 
 		Publication::getData();
@@ -98,22 +98,22 @@ namespace NineFour {
 
 		if (choiceType = 'c')
 		{
-			diskType = k_CD;
+			diskType = CD;
 		}
-		else diskType = k_DvD;
+		else diskType = DvD;
 
 	}
 
 	void Disk::putData() const
 	{
-		DiskType diskType;
+		EDiskType diskType;
 		char choiceType;
 
 		Publication::putData();
 
 		std::cout << "Disk type: \n";
 
-		if (choiceType = k_CD)
+		if (choiceType = CD)
 		{
 			std::cout << "CD";
 		}
