@@ -8,57 +8,26 @@
 //class Casterian;
 //class Polar;
 
-/*Но есть всё те же проблемы, что и в предыдущих.
-Плюс - код не компилируется.*/
+namespace EightNine {
 
-class Polar
-{
-public:
+	// Интересный способ получить пи
+	static const double PI = acos(-1.0);
 
-	Polar() :m_Angle(0), m_Radius(0){}
-	Polar(double angle, double radius) :m_Angle(angle),
-		m_Radius(radius){}
-	Polar(const Casterian &cartes)
-	{
-		double x = cartes.getCoordinateX();
-		double y = cartes.getCoordinateY();
+	class Polar {
+	public:
 
-		m_Angle = tan(y / x);
-		m_Radius = hypot(x, y);
-	}
+		Polar() : m_Angle(0), m_Radius(0) {}
+		
+		void getData(bool radians);
+		void putData(bool radians) const;
 
-	void getCoordinate();
-	void displayPolar();
+		Polar operator+(const Polar &polar) const;
+	private:
 
-	double getAngle() const;
-	double getRadius() const;
+		double m_Angle;
+		double m_Radius;
 
-private:
-	double m_Angle;
-	double m_Radius;
+		
+	};
 
-};
-
-class Casterian
-{
-public:
-
-	Casterian() :mX(0), mY(0){}
-	Casterian(double x, double y):mX(x), mY(y){}
-	Casterian(const Polar& polar)
-	{
-		double angle = polar.getAngle();
-		double radius = polar.getRadius();
-		mX = radius * cos(angle);
-		mY = radius * sin(angle);
-	}
-
-	Casterian operator +(Casterian coordinate);
-
-	double getCoordinateX()const;
-	double getCoordinateY()const;
-
-private:
-	double mX;
-	double mY;
-};
+}

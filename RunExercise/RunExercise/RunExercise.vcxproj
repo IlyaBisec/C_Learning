@@ -224,9 +224,6 @@
     <Text Include="7\old code.txt" />
     <Text Include="7\tasks7.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include=".clang-format" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

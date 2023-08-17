@@ -20,29 +20,35 @@ class Time
 {
 public:
 
-	Time() : mHours(0), mMinutes(0), mSeconds(0) {}
-	Time(unsigned int hours, unsigned int minutes, unsigned int seconds) :
-		mHours(hours), mMinutes(minutes), mSeconds(seconds) {}
+	Time() : m_Hours(0), m_Minutes(0), m_Seconds(0) {}
+	Time(long seconds) { convertSecondsToTime(seconds); }
+	Time(int hours, int minutes, int seconds) :
+		m_Hours(hours), m_Minutes(minutes), m_Seconds(seconds) {}
+
+	long convertTimeToSeconds()const;
+	void convertSecondsToTime(long inputSeconds);
 
 	void displayTime() const
 	{
-		std::cout << mHours << ":" << mMinutes << ":" << mSeconds << "\n";
+		std::cout << m_Hours << ":" << m_Minutes << ":" << m_Seconds << "\n";
 	}
+	void addTime(const Time &time1, const Time &time2);
 
 	//Time operator + (Time time);
 
-	// unary operations
-	
-	// postfix
+	// Unary operations
+	Time operator+(const Time &time) const;
+
+	// Postfix
 	Time operator++(int);
 	Time operator--(int);
 
-	// prefix
+	// Prefix
 	Time operator++();
 	Time operator--();
 
 private:
 
-	unsigned int mHours, mMinutes, mSeconds;
+	int m_Hours, m_Minutes, m_Seconds;
 
 };
