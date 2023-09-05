@@ -24,7 +24,7 @@ int main8_4()
 
 
 
-void Int::checkOverflow(long double valueOverflow)
+void Int::checkOverflow(long double valueOverflow) const
 {
 	// int size
 	if (valueOverflow > 2147483648 && valueOverflow < -2147483648)
@@ -36,7 +36,7 @@ void Int::checkOverflow(long double valueOverflow)
 }
 
 
-Int Int::operator+(const Int &temp)
+Int Int::operator+(const Int &temp) const
 {
 	long double returnValue = m_Temp + temp.m_Temp;
 
@@ -45,7 +45,7 @@ Int Int::operator+(const Int &temp)
 	return returnValue;
 }
 
-Int Int::operator-(const Int &temp)
+Int Int::operator-(const Int &temp) const
 {
 	long double returnValue = m_Temp - temp.m_Temp;
 
@@ -54,7 +54,7 @@ Int Int::operator-(const Int &temp)
 	return returnValue;
 }
 
-Int Int::operator/(const Int &temp)
+Int Int::operator/(const Int &temp) const
 {
 	long double returnValue = m_Temp / temp.m_Temp;
 
@@ -63,7 +63,7 @@ Int Int::operator/(const Int &temp)
 	return returnValue;
 }
 
-Int Int::operator*(const Int &temp)
+Int Int::operator*(const Int &temp) const
 {
 	long double returnValue = m_Temp * temp.m_Temp;
 

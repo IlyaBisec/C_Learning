@@ -19,7 +19,7 @@ int main8_2()
 	return 0;
 }
 
-String String::operator+=(const String &string) const
+String String::operator+=(const String &string)
 {
 	String tempString;
 
@@ -36,7 +36,7 @@ String String::operator+=(const String &string) const
 		exit(1);
 	}
 
-	return tempString;
+	return *this;
 }
 
 void String::displayString() const 

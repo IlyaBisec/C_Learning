@@ -50,7 +50,7 @@ void Sterling::putSterling() const
 		<< "." << m_Pens << "\n";
 }
 
-Sterling Sterling::operator+(const Sterling &sterling)
+Sterling Sterling::operator+(const Sterling &sterling) const
 {
 	int sumPens = (m_Pounds * 20 * 12 + mShilling * 12 + m_Pens) +
 		(sterling.m_Pounds * 20 * 12 + sterling.mShilling * 12 + sterling.m_Pens);
@@ -61,7 +61,7 @@ Sterling Sterling::operator+(const Sterling &sterling)
 	return Sterling(pounds, shilling, pens);
 }
 
-Sterling Sterling::operator-(const Sterling &sterling)
+Sterling Sterling::operator-(const Sterling &sterling) const
 {
 	int sumPens = (m_Pounds * 20 * 12 + mShilling * 12 + m_Pens) -
 		(sterling.m_Pounds * 20 * 12 + sterling.mShilling * 12 + sterling.m_Pens);
@@ -73,7 +73,7 @@ Sterling Sterling::operator-(const Sterling &sterling)
 	return Sterling(pounds, shilling, pens);
 }
 
-Sterling Sterling::operator*(double amount)
+Sterling Sterling::operator*(double amount) const
 {
 	int sumPens = (m_Pounds *20 * 12 + mShilling * 
 		12 + m_Pens) * (amount);
@@ -85,7 +85,7 @@ Sterling Sterling::operator*(double amount)
 	return Sterling(pounds, shilling, pens);
 }
 
-double Sterling::operator/(const Sterling &quantityTimes)
+double Sterling::operator/(const Sterling &quantityTimes) const
 {
 	int sumPens = (m_Pounds * 20 * 12 + mShilling * 12 + m_Pens) /
 		(quantityTimes.m_Pounds * 20 * 12 +
@@ -98,7 +98,7 @@ double Sterling::operator/(const Sterling &quantityTimes)
 	return Sterling(pounds, shilling, pens);
 }
 
-Sterling Sterling::operator/(double amount)
+Sterling Sterling::operator/(double amount) const
 {
 	int sumPens = (m_Pounds * 20 * 12 + mShilling * 12 + m_Pens) / (amount);
 	long pounds = sumPens / (20 * 12);

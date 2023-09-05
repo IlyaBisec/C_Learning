@@ -20,9 +20,9 @@ public:
 	}
 
 	// arithmetic operations
-	NewTime operator+(const NewTime &time);
-	NewTime operator-(const NewTime &time);
-	NewTime operator*(const NewTime &time);
+	NewTime operator+(const NewTime &time) const;
+	NewTime operator-(const NewTime &time) const;
+	NewTime operator*(const NewTime &time) const;
 
 	// unary operations
 

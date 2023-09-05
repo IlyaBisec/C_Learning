@@ -15,21 +15,21 @@ public:
 	// Show result
 	void displayInt() const { std::cout << m_Temp <<"\n"; }
 	// Check overflow
-	void checkOverflow(long double valueOverflow);
+	void checkOverflow(long double valueOverflow) const;
 	
 	// Arithmetic operations
 	
 	// Summation
-	Int operator+(const Int &temp);
+	Int operator+(const Int &temp) const;
 
 	// Subtraction
-	Int operator-(const Int &temp);
+	Int operator-(const Int &temp) const;
 
 	// Division
-	Int operator/(const Int &temp);
+	Int operator/(const Int &temp) const;
 
 	// Increase
-	Int operator*(const Int &temp);
+	Int operator*(const Int &temp) const;
 
 private:
 

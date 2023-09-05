@@ -29,12 +29,12 @@ public:
 	void getSterling();
 	void putSterling() const;
 
-	Sterling operator+(const Sterling &sterling);
-	Sterling operator-(const Sterling &sterling);
-	double operator/(const Sterling &quantityTimes); // Количество раз
+	Sterling operator+(const Sterling &sterling) const;
+	Sterling operator-(const Sterling &sterling) const;
+	double operator/(const Sterling &quantityTimes) const; // Количество раз
 
-	Sterling operator*(double amount);
-	Sterling operator/(double amount);
+	Sterling operator*(double amount) const;
+	Sterling operator/(double amount) const;
 
 	operator double();
 
