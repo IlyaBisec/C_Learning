@@ -1,48 +1,67 @@
 #include "8_5.h"
 
 
-int main8_5()
+int main()
 {
+	//Time timeFirst(1, 5, 1), timeSecond(2, 4, 5);
+	//Time time4, tempTime;
+
+	//time4.addTime(timeFirst, timeSecond);
+	//std::cout << "add: ";
+	//time4.displayTime(); std::cout << "\n";
+	//
+	//tempTime = timeFirst + timeSecond;
+	//std::cout << "+: ";
+	//tempTime.displayTime(); std::cout << "\n";
+
+	//Time tFive, TSix;
+	//
+	//// ++
+
+	//tFive = ++time4;
+	//std::cout << "++5: ";
+	//tFive.displayTime(); std::cout << "\n";
+	//std::cout << "++4: ";
+	//time4.displayTime(); std::cout << "\n";
+	//
+	//TSix = tempTime++;
+	//std::cout << "6++: ";
+	//TSix.displayTime(); std::cout << "\n";
+	//std::cout << "temp++: ";
+	//tempTime.displayTime(); std::cout << "\n";
+
+	//// --
+
+	//tFive = --time4;
+	//std::cout << " --5: ";
+	//tFive.displayTime(); std::cout << "\n";
+	//std::cout << "--4: ";
+	//time4.displayTime(); std::cout << "\n";
+
+	//TSix = tempTime--;
+	//std::cout << "6--: ";
+	//TSix.displayTime(); std::cout << "\n";
+	//std::cout << "temp--: ";
+	//tempTime.displayTime(); std::cout << "\n";
+
+	//return 0;
+
+
 	Time timeFirst(1, 5, 1), timeSecond(2, 4, 5);
-	Time time4, tempTime;
+	Time timeSum(3, 9, 6), tempTime;
 
-	time4.addTime(timeFirst, timeSecond);
-	std::cout << "add: ";
-	time4.displayTime(); std::cout << "\n";
-	
-	tempTime = timeFirst + timeSecond;
-	std::cout << "+: ";
-	tempTime.displayTime(); std::cout << "\n";
+	//timeSum = timeFirst + timeSecond;
 
-	Time tFive, TSix;
-	
-	// ++
+	timeFirst.displayTime();
+	timeSecond.displayTime();
+	timeSum.displayTime(); // 3 9 6
 
-	tFive = ++time4;
-	std::cout << "++5: ";
-	tFive.displayTime(); std::cout << "\n";
-	std::cout << "++4: ";
-	time4.displayTime(); std::cout << "\n";
-	
-	TSix = tempTime++;
-	std::cout << "6++: ";
-	TSix.displayTime(); std::cout << "\n";
-	std::cout << "temp++: ";
-	tempTime.displayTime(); std::cout << "\n";
+	++timeSum; timeSum.displayTime(); //  4 10 7
+	--timeSum; timeSum.displayTime(); // 3 9 6
 
-	// --
-
-	tFive = --time4;
-	std::cout << " --5: ";
-	tFive.displayTime(); std::cout << "\n";
-	std::cout << "--4: ";
-	time4.displayTime(); std::cout << "\n";
-
-	TSix = tempTime--;
-	std::cout << "6--: ";
-	TSix.displayTime(); std::cout << "\n";
-	std::cout << "temp--: ";
-	tempTime.displayTime(); std::cout << "\n";
+	tempTime = timeSum++; tempTime.displayTime(); // 0,0,0
+	tempTime = timeSum--; tempTime.displayTime(); // 0,0,0
+	 
 
 	return 0;
 }
@@ -84,22 +103,32 @@ Time Time::operator+(const Time &time) const
 
 Time Time::operator++(int)
 {
-	long total, temp;
+	/*long total, temp;
 	total = convertTimeToSeconds();
 	temp = total++;
 	convertSecondsToTime(total);
 
-	return Time(temp);
+	return Time(temp);*/
+
+	Time time;
+	++(*this);
+	return time;
+
+	//return Time(m_Hours--, m_Minutes--, m_Seconds--);
 }
 
 Time Time::operator--(int)
 {
-	long total, temp;
+	/*long total, temp;
 	total = convertTimeToSeconds();
 	temp = total--;
 	convertSecondsToTime(total);
 
-	return Time(temp);
+	return Time(temp);*/
+
+	Time time;
+	--(*this);
+	return time;
 
 	//return Time(m_Hours--, m_Minutes--, m_Seconds--);
 }
@@ -108,22 +137,28 @@ Time Time::operator--(int)
 
 Time Time::operator++()
 {
-	long total, temp;
+	/*long total, temp;
 	total = convertTimeToSeconds();
 	temp = ++total;
 	convertSecondsToTime(total);
 
-	return Time(temp);
+	return Time(temp);*/
+	
+	return (*this);
+
 	//return Time(++m_Hours, ++m_Minutes, ++m_Seconds);
 }
 
 Time Time::operator--()
 {
-	long total, temp;
+	/*long total, temp;
 	total = convertTimeToSeconds();
 	temp = --total;
 	convertSecondsToTime(total);
 	
-	return Time(temp);
-	//return Time(--m_Hours, --m_Minutes, --m_Seconds);
+	return Time(temp);*/
+
+	//return (*this);
+
+	return Time(--m_Hours, --m_Minutes, --m_Seconds);
 }
