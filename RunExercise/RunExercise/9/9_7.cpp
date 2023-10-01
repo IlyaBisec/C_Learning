@@ -1,5 +1,7 @@
 #include "9_7.h"
 
+//ch
+
 int main9_7()
 {
 	CounterPostFix post_alpha;                          
@@ -34,9 +36,11 @@ int main9_7()
 	return 0;
 }
 
-CounterDec CounterDec::operator--()
+CounterDec &CounterDec::operator--()
 {
-	return CounterDec(--p_Count);
+	CounterDec counretDec;
+	--counretDec;
+	return (*this);
 }
 
 
@@ -45,17 +49,25 @@ unsigned int CounterBase::getCount() const
 	return p_Count;
 }
 
-CounterBase CounterBase::operator++()
+CounterBase &CounterBase::operator++()
 {
-	return CounterDec(++p_Count);
+	CounterDec counretDec;
+	++counretDec;
+	return (*this);
+	//return CounterDec(++p_Count);
+
 }
 
 CounterPostFix CounterPostFix::operator--(int)
 {
-	return CounterDec(p_Count--);
+	CounterPostFix counter;
+	--(*this);
+	return counter;
 }
 
 CounterPostFix CounterPostFix::operator++(int)
 {
-	return CounterDec(p_Count++);
+	CounterPostFix counter;
+	++(*this);
+	return counter;
 }

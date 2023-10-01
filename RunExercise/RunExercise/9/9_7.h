@@ -15,7 +15,7 @@ public:
 	unsigned int getCount() const;
 
 	// Increase
-	CounterBase operator++();
+	CounterBase& operator++();
 
 protected:
 	unsigned int p_Count;
@@ -30,7 +30,7 @@ public:
 	CounterDec(int counter): CounterBase(counter)
 	{}
 	// Decrease
-	CounterDec operator--();
+	CounterDec& operator--();
 };
 
 class CounterPostFix : public CounterDec

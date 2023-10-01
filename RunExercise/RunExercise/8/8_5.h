@@ -44,8 +44,8 @@ public:
 	Time operator--(int);
 
 	// Prefix
-	Time operator++();
-	Time operator--();
+	Time &operator++();
+	Time &operator--();
 
 private:
 

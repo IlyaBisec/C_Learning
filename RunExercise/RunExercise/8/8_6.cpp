@@ -70,22 +70,51 @@ NewTime NewTime::operator*(const NewTime &time) const
 
 NewTime NewTime::operator++(int)
 {
-	return NewTime(m_Hours++, m_Minutes++, m_Seconds++);
+	NewTime time;
+	++(*this);
+	return time;
 }
 
 NewTime NewTime::operator--(int)
 {
-	return NewTime(m_Hours--, m_Minutes--, m_Seconds--);
+	NewTime time;
+	--(*this);
+	return time;
 }
 
 // prefix
 
-NewTime NewTime::operator++()
+NewTime &NewTime::operator++()
 {
-	return NewTime(++m_Hours, ++m_Minutes, ++m_Seconds);
+	++m_Seconds;
+	if (m_Seconds >= 60)
+	{
+		m_Seconds = 60;
+		++m_Minutes;
+
+		if (m_Minutes >= 60)
+		{
+			m_Minutes = 60;
+			++m_Hours;
+		}
+	}
+
+	return (*this);
 }
 
-NewTime NewTime::operator--()
+NewTime &NewTime::operator--()
 {
-	return NewTime(--m_Hours, --m_Minutes, --m_Seconds);
+	--m_Hours;
+	if (m_Hours <= 0)
+	{
+		m_Hours = 0;
+		--m_Minutes;
+		if (m_Minutes <= 0)
+		{
+			m_Minutes = 0;
+			--m_Seconds;
+		}
+	}
+
+	return (*this);
 }

@@ -3,65 +3,16 @@
 
 int main()
 {
-	//Time timeFirst(1, 5, 1), timeSecond(2, 4, 5);
-	//Time time4, tempTime;
+	Time time;
+	int sec = 59;
 
-	//time4.addTime(timeFirst, timeSecond);
-	//std::cout << "add: ";
-	//time4.displayTime(); std::cout << "\n";
-	//
-	//tempTime = timeFirst + timeSecond;
-	//std::cout << "+: ";
-	//tempTime.displayTime(); std::cout << "\n";
+	time = sec;
 
-	//Time tFive, TSix;
-	//
-	//// ++
+	(++(++(++time)));
+	time.displayTime();
 
-	//tFive = ++time4;
-	//std::cout << "++5: ";
-	//tFive.displayTime(); std::cout << "\n";
-	//std::cout << "++4: ";
-	//time4.displayTime(); std::cout << "\n";
-	//
-	//TSix = tempTime++;
-	//std::cout << "6++: ";
-	//TSix.displayTime(); std::cout << "\n";
-	//std::cout << "temp++: ";
-	//tempTime.displayTime(); std::cout << "\n";
-
-	//// --
-
-	//tFive = --time4;
-	//std::cout << " --5: ";
-	//tFive.displayTime(); std::cout << "\n";
-	//std::cout << "--4: ";
-	//time4.displayTime(); std::cout << "\n";
-
-	//TSix = tempTime--;
-	//std::cout << "6--: ";
-	//TSix.displayTime(); std::cout << "\n";
-	//std::cout << "temp--: ";
-	//tempTime.displayTime(); std::cout << "\n";
-
-	//return 0;
-
-
-	Time timeFirst(1, 5, 1), timeSecond(2, 4, 5);
-	Time timeSum(3, 9, 6), tempTime;
-
-	//timeSum = timeFirst + timeSecond;
-
-	timeFirst.displayTime();
-	timeSecond.displayTime();
-	timeSum.displayTime(); // 3 9 6
-
-	++timeSum; timeSum.displayTime(); //  4 10 7
-	--timeSum; timeSum.displayTime(); // 3 9 6
-
-	tempTime = timeSum++; tempTime.displayTime(); // 0,0,0
-	tempTime = timeSum--; tempTime.displayTime(); // 0,0,0
-	 
+	(--(--(--time)));
+	time.displayTime();
 
 	return 0;
 }
@@ -103,62 +54,53 @@ Time Time::operator+(const Time &time) const
 
 Time Time::operator++(int)
 {
-	/*long total, temp;
-	total = convertTimeToSeconds();
-	temp = total++;
-	convertSecondsToTime(total);
-
-	return Time(temp);*/
-
 	Time time;
 	++(*this);
 	return time;
 
-	//return Time(m_Hours--, m_Minutes--, m_Seconds--);
 }
 
 Time Time::operator--(int)
 {
-	/*long total, temp;
-	total = convertTimeToSeconds();
-	temp = total--;
-	convertSecondsToTime(total);
-
-	return Time(temp);*/
-
 	Time time;
 	--(*this);
 	return time;
 
-	//return Time(m_Hours--, m_Minutes--, m_Seconds--);
 }
 
 // Prefix
 
-Time Time::operator++()
+Time &Time::operator++()
 {
-	/*long total, temp;
-	total = convertTimeToSeconds();
-	temp = ++total;
-	convertSecondsToTime(total);
+	++m_Seconds;
+	if (m_Seconds >= 60)
+	{
+		m_Seconds = 60;
+		++m_Minutes;
 
-	return Time(temp);*/
-	
-	return (*this);
+		if (m_Minutes >= 60)
+		{
+			m_Minutes = 60;
+			++m_Hours;
+		}
+	}
 
-	//return Time(++m_Hours, ++m_Minutes, ++m_Seconds);
+	return (*this);		
 }
 
-Time Time::operator--()
+Time &Time::operator--()
 {
-	/*long total, temp;
-	total = convertTimeToSeconds();
-	temp = --total;
-	convertSecondsToTime(total);
-	
-	return Time(temp);*/
+	--m_Hours;
+	if (m_Hours <= 0)
+	{
+		m_Hours = 0;
+		--m_Minutes;
+		if (m_Minutes <= 0)
+		{
+			m_Minutes = 0;
+			--m_Seconds;
+		}
+	}
 
-	//return (*this);
-
-	return Time(--m_Hours, --m_Minutes, --m_Seconds);
+	return (*this);
 }

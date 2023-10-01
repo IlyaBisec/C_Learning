@@ -31,8 +31,8 @@ public:
 	NewTime operator--(int);
 
 	// prefix
-	NewTime operator++();
-	NewTime operator--();
+	NewTime &operator++();
+	NewTime &operator--();
 
 private:
 
