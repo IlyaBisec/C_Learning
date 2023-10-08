@@ -14,6 +14,6 @@ public:
 
 private:
 
-	std::string m_NameOfWorker;
-	long m_NumberOfWorker;
+	std::string m_nameOfWorker;
+	long m_numberOfWorker;
 };

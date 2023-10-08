@@ -22,7 +22,7 @@ int main10_10()
 
 int Float::operator&() const
 {
-	return m_Address;
+	return m_address;
 }
 
 float &PointerFloat::operator*() const

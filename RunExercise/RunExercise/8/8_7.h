@@ -7,17 +7,17 @@
 class NewFraction
 {
 public:
-    NewFraction() :m_Numerator(0), m_Denominator(0)
+    NewFraction() :m_numerator(0), m_denominator(0)
     {}
-    NewFraction(int numerator, int denominator) : m_Numerator(numerator),
-        m_Denominator(denominator)
+    NewFraction(int numerator, int denominator) : m_numerator(numerator),
+        m_denominator(denominator)
     {}
 
     void getFraction();
     void lowTerms();
     void displayFraction()const
     {
-        std::cout << m_Numerator << "/" << m_Denominator << std::endl;
+        std::cout << m_numerator << "/" << m_denominator << std::endl;
     };
 
     NewFraction operator + (const NewFraction &fraction) const;
@@ -26,5 +26,5 @@ public:
     NewFraction operator / (const NewFraction &fraction) const;
 
 private:
-    int m_Numerator, m_Denominator;
+    int m_numerator, m_denominator;
 };

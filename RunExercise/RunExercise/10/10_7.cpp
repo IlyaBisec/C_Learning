@@ -34,17 +34,17 @@ namespace TenSeven {
 	
 	void Person::setData()
 	{
-		cout << "Input name: "; cin >> m_Name; cout;
-		cout << "Input salary: "; cin >> m_Salary; cout << "\n";
+		cout << "Input name: "; cin >> m_name; cout;
+		cout << "Input salary: "; cin >> m_salary; cout << "\n";
 	}
 	void Person::printData() const
 	{
-		cout << "Name: " << m_Name<<"\n";
-		cout << "Salary: " << m_Salary << "\n";
+		cout << "Name: " << m_name<<"\n";
+		cout << "Salary: " << m_salary << "\n";
 	}
 	float Person::getSalary() const
 	{
-		return m_Salary;
+		return m_salary;
 	}
 
 	// The salSort(); function for sorting pointers in the array

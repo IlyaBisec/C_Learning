@@ -19,13 +19,13 @@ int main7_7()
 void SafeArray::putel(int index, int indexValue)
 {
 	checkOverflow(index);
-	m_Array[index] = indexValue;
+	m_array[index] = indexValue;
 }
 
 int SafeArray::getel(int index) const
 {
 	checkOverflow(index);
-	return m_Array[index];
+	return m_array[index];
 }
 
 void SafeArray::checkOverflow(int index) const

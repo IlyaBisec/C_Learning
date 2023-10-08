@@ -20,13 +20,13 @@ public:
 
 	void set(int number, Suit sut)
 	{
-		m_Number = number;
+		m_number = number;
 		suit = sut;
 	}
 	void display();
 
 private:
-	int m_Number;
+	int m_number;
 	Suit suit;
 
 };
@@ -34,11 +34,11 @@ private:
 // Show card
 void Card::display()
 {
-	if (m_Number >= 2 && m_Number <= 10)
-		cout << m_Number;
+	if (m_number >= 2 && m_number <= 10)
+		cout << m_number;
 	else 
 	{
-		switch (m_Number)
+		switch (m_number)
 		{
 			case jack: cout << 'J'; break;
 			case queen: cout << 'Q'; break;

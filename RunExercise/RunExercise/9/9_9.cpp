@@ -46,30 +46,30 @@ namespace NineNine
 	void Student::getData()
 	{
 		std::cout<<"Input title of the school: ";
-		std::cin >> m_NameSchool;
+		std::cin >> m_nameSchool;
 
 		std::cout << "Input degree of the education: \n";
-		std::cin >> m_Degree;
+		std::cin >> m_degree;
 	}
 	void Student::putData() const
 	{
-		std::cout << "Educational institution: "<<m_NameSchool;
-		std::cout << "The lvl of education recieved: " << m_Degree;
+		std::cout << "Educational institution: "<<m_nameSchool;
+		std::cout << "The lvl of education recieved: " << m_degree;
 	}
 
 	void Employee::getData()
 	{
 		std::cout << "Enter name: ";
-		std::cin.get(m_Name, LENGTH);
+		std::cin.get(m_name, LENGTH);
 
 		std::cout << "Enter number: ";
-		std::cin >> m_Number;
+		std::cin >> m_number;
 		std::cout << "\n";
 	}
 	void Employee::putData() const
 	{
-		std::cout << "Name: " << m_Name << "\n";
-		std::cout << "Number: " << m_Number << "\n";
+		std::cout << "Name: " << m_name << "\n";
+		std::cout << "Number: " << m_number << "\n";
 	}
 
 	void Manager::getData()
@@ -77,10 +77,10 @@ namespace NineNine
 		Employee::getData();
 
 		std::cout << "Enter title of manager: ";
-		std::cin.get(m_Title, LENGTH);
+		std::cin.get(m_title, LENGTH);
 
 		std::cout << "Enter dues at the golf club: ";
-		std::cin >> m_Dues;
+		std::cin >> m_dues;
 		std::cout << "\n";
 
 		Student::getData();
@@ -89,8 +89,8 @@ namespace NineNine
 	{
 		Employee::putData();
 
-		std::cout << "Title of mananer: " << m_Title << "\n";
-		std::cout << "Dues: " << m_Dues << "\n";
+		std::cout << "Title of mananer: " << m_title << "\n";
+		std::cout << "Dues: " << m_dues << "\n";
 
 		Student::putData();
 	}
@@ -120,7 +120,7 @@ namespace NineNine
 		Employee::getData();
 
 		std::cout << "Enter count of publications: ";
-		std::cin >> m_Publications;
+		std::cin >> m_publications;
 		std::cout << "\n";
 
 		Student::getData();
@@ -129,7 +129,7 @@ namespace NineNine
 	{
 		Employee::putData();
 
-		std::cout << "Count of publications: " << m_Publications << "\n";
+		std::cout << "Count of publications: " << m_publications << "\n";
 
 		Student::putData();
 	}

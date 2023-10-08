@@ -38,7 +38,7 @@ void Int::checkOverflow(long double valueOverflow) const
 
 Int Int::operator+(const Int &temp) const
 {
-	long double returnValue = m_Temp + temp.m_Temp;
+	long double returnValue = m_temp + temp.m_temp;
 
 	checkOverflow(returnValue);
 	
@@ -47,7 +47,7 @@ Int Int::operator+(const Int &temp) const
 
 Int Int::operator-(const Int &temp) const
 {
-	long double returnValue = m_Temp - temp.m_Temp;
+	long double returnValue = m_temp - temp.m_temp;
 
 	checkOverflow(returnValue);
 
@@ -56,7 +56,7 @@ Int Int::operator-(const Int &temp) const
 
 Int Int::operator/(const Int &temp) const
 {
-	long double returnValue = m_Temp / temp.m_Temp;
+	long double returnValue = m_temp / temp.m_temp;
 
 	checkOverflow(returnValue);
 
@@ -65,7 +65,7 @@ Int Int::operator/(const Int &temp) const
 
 Int Int::operator*(const Int &temp) const
 {
-	long double returnValue = m_Temp * temp.m_Temp;
+	long double returnValue = m_temp * temp.m_temp;
 
 	checkOverflow(returnValue);
 

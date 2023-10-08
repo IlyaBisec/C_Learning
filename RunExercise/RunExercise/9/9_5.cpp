@@ -66,17 +66,17 @@ namespace NineThree
 	void NineThree::Employee::getData()
 	{
 		std::cout << "Enter name: ";
-		std::cin.get(m_Name, LENGTH);
+		std::cin.get(m_name, LENGTH);
 
 		std::cout << "Enter number: ";
-		std::cin >> m_Number;
+		std::cin >> m_number;
 		std::cout << "\n";
 	}
 
 	void NineThree::Employee::putData() const
 	{
-		std::cout << "Name: "<<m_Name<<"\n";
-		std::cout << "Number: " << m_Number << "\n";
+		std::cout << "Name: "<<m_name<<"\n";
+		std::cout << "Number: " << m_number << "\n";
 	}
 
 	void NineThree::Manager::getData()
@@ -84,10 +84,10 @@ namespace NineThree
 		Employee::getData();
 
 		std::cout << "Enter title of manager: ";
-		std::cin.get(m_Title, LENGTH);
+		std::cin.get(m_title, LENGTH);
 
 		std::cout << "Enter dues at the golf club: ";
-		std::cin >> m_Dues;
+		std::cin >> m_dues;
 		std::cout << "\n";
 	}
 
@@ -95,8 +95,8 @@ namespace NineThree
 	{
 		Employee::putData();
 
-		std::cout << "Title of mananer: " << m_Title << "\n";
-		std::cout << "Dues: " << m_Dues << "\n";
+		std::cout << "Title of mananer: " << m_title << "\n";
+		std::cout << "Dues: " << m_dues << "\n";
 	}
 
 	void NineThree::Scientist::getData()
@@ -104,7 +104,7 @@ namespace NineThree
 		Employee::getData();
 
 		std::cout << "Enter count of publications: ";
-		std::cin >> m_Publications;
+		std::cin >> m_publications;
 		std::cout << "\n";
 	}
 
@@ -112,7 +112,7 @@ namespace NineThree
 	{
 		Employee::putData();
 
-		std::cout << "Count of publications: " << m_Publications << "\n";
+		std::cout << "Count of publications: " << m_publications << "\n";
 	}
 
 	// Defence of modification the source class
@@ -125,7 +125,7 @@ namespace NineThree
 		Employee::getData();
 
 		std::cout << "Enter compensations: ";
-		std::cin >> m_Compensations;
+		std::cin >> m_compensations;
 
 		std::cout << "Enter work payment period(the first letter";
 		std::cout << " from hourly, weekly, monthly): \n";
@@ -152,7 +152,7 @@ namespace NineThree
 		Employee::putData();
 
 		std::cout << "Compensations: ";
-		std::cout << m_Compensations;
+		std::cout << m_compensations;
 
 		std::cout << "Payment period: \n";
 		std::cin >> userInputChoice;
@@ -175,10 +175,10 @@ namespace NineThree
 		Employee::getData();
 
 		std::cout << "Enter title of manager: ";
-		std::cin.get(m_Title, LENGTH);
+		std::cin.get(m_title, LENGTH);
 
 		std::cout << "Enter dues at the golf club: ";
-		std::cin >> m_Dues;
+		std::cin >> m_dues;
 		std::cout << "\n";
 	}
 
@@ -186,8 +186,8 @@ namespace NineThree
 	{
 		Employee::putData();
 
-		std::cout << "Title of mananer: " << m_Title << "\n";
-		std::cout << "Dues: " << m_Dues << "\n";
+		std::cout << "Title of mananer: " << m_title << "\n";
+		std::cout << "Dues: " << m_dues << "\n";
 	}
 
 	void NineThree::ScientistClone::getData()
@@ -195,7 +195,7 @@ namespace NineThree
 		Employee::getData();
 
 		std::cout << "Enter count of publications: ";
-		std::cin >> m_Publications;
+		std::cin >> m_publications;
 		std::cout << "\n";
 	}
 
@@ -203,7 +203,7 @@ namespace NineThree
 	{
 		Employee::putData();
 
-		std::cout << "Count of publications: " << m_Publications << "\n";
+		std::cout << "Count of publications: " << m_publications << "\n";
 	}
 
 }

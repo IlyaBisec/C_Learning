@@ -46,7 +46,7 @@ CounterDec &CounterDec::operator--()
 
 unsigned int CounterBase::getCount() const
 {
-	return p_Count;
+	return p_count;
 }
 
 CounterBase &CounterBase::operator++()

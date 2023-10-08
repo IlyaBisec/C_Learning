@@ -10,6 +10,7 @@ int main7_1()
 
 	char value[STRING_MAX_WIDTH];
 	std::cout << "Input your stritng: \n";
+
 	// With spacebars
 	std::cin.get(value, STRING_MAX_WIDTH);	// Bad good code
 	

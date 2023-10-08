@@ -19,8 +19,8 @@ namespace NineFour {
 		void putData() const;
 
 	protected:
-		char p_Title[LENGTH];
-		float p_Price;
+		char p_title[LENGTH];
+		float p_price;
 	};
 
 	class Sales
@@ -41,13 +41,13 @@ namespace NineFour {
 	{
 	public:
 
-		Book() :m_CountPage(0) {}
+		Book() :m_countPage(0) {}
 
 		void getData();
 		void putData() const;
 
 	private:
-		int m_CountPage; // count of page
+		int m_countPage; // count of page
 
 	};
 
@@ -55,12 +55,12 @@ namespace NineFour {
 	{
 	public:
 
-		Type() :m_RecordTime(0) {}
+		Type() :m_recordTime(0) {}
 
 		void getData();
 		void putData() const;
 	private:
-		float m_RecordTime;	// recording time in minutes
+		float m_recordTime;	// recording time in minutes
 	};
 
 	class Disk :private Publication, private Sales

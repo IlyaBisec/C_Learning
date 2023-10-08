@@ -20,8 +20,8 @@ namespace TenSeven {
 
 	protected:
 
-		string m_Name;
-		float m_Salary;
+		string m_name;
+		float m_salary;
 
 	};
 

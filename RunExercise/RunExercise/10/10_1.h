@@ -15,14 +15,14 @@ public:
 
 private:
     
-    static const int m_Size = 5;
-    float m_Array[m_Size];
+    static const int m_size = 5;
+    float m_array[m_size];
 
     float *m_ptrFloat;
 
-    char m_Choice;
-    int m_Number = 0;
-    float m_Total = 0.0; 
-    float m_Average;
+    char m_choice;
+    int m_number = 0;
+    float m_total = 0.0; 
+    float m_average;
 
 };

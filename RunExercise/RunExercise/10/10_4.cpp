@@ -20,13 +20,13 @@ namespace TenFour
 
 	LinkList::~LinkList()
 	{
-		Link *ptr_currentLink = m_First;
+		Link *ptr_currentLink = m_first;
 		while (ptr_currentLink)
 		{
-			m_First = ptr_currentLink->next;
+			m_first = ptr_currentLink->next;
 			delete ptr_currentLink;
 			cout << "Element deleted\n";
-			ptr_currentLink = m_First;
+			ptr_currentLink = m_first;
 		}
 	}
 	void LinkList::addItem(int data)
@@ -40,14 +40,14 @@ namespace TenFour
 
 		Link *ptr_newLink = new Link;
 		ptr_newLink->data = data;
-		ptr_newLink->next = m_First;
+		ptr_newLink->next = m_first;
 
-		m_First = ptr_newLink;
+		m_first = ptr_newLink;
 	}
 	
 	void LinkList::display() const
 	{
-		Link * ptr_currentLink = m_First;
+		Link * ptr_currentLink = m_first;
 		while (ptr_currentLink)
 		{
 			cout << ptr_currentLink->data << "\n";

@@ -14,20 +14,20 @@ void Pointers::calculateArithmeticMean()
 {
 	do
 	{
-		if (m_Number > m_Size){
-			cout << "Overflow, max size is "<<m_Size<<"\n"; exit(0);
+		if (m_number > m_size){
+			cout << "Overflow, max size is "<<m_size<<"\n"; exit(0);
 		}
 
 		cout << "Input value: \n";
-		cin >> *(m_Array + m_Number++);
+		cin >> *(m_array + m_number++);
 		cout << "Continue(y/n)?";
-		cin >> m_Choice;
+		cin >> m_choice;
 
-	} while (m_Choice != 'n');
+	} while (m_choice != 'n');
 	
-	for (int i = 0; i < m_Number; i++)
-		m_Total += *(m_Array + i);
+	for (int i = 0; i < m_number; i++)
+		m_total += *(m_array + i);
 
-	m_Average = m_Total / m_Number;
-	cout << "Average: " << m_Average << "\n";
+	m_average = m_total / m_number;
+	cout << "Average: " << m_average << "\n";
 }

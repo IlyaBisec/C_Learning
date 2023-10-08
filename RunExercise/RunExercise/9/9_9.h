@@ -16,8 +16,8 @@ namespace NineNine
 		void putData() const;
 
 	private:
-		char m_NameSchool[LENGTH];
-		char m_Degree[LENGTH];
+		char m_nameSchool[LENGTH];
+		char m_degree[LENGTH];
 	};
 
 	class Employee
@@ -27,21 +27,21 @@ namespace NineNine
 		void putData() const;
 
 	private:
-		char m_Name[LENGTH];
-		unsigned long m_Number;
+		char m_name[LENGTH];
+		unsigned long m_number;
 	};
 
 	class Manager : public Employee, private Student
 	{
 	public:
-		Manager() :m_Dues(0) {}
+		Manager() :m_dues(0) {}
 
 		void getData();
 		void putData() const;
 
 	private:
-		char m_Title[LENGTH]; // Manager's position
-		double m_Dues;		  // Sum of dues at the golf club
+		char m_title[LENGTH]; // Manager's position
+		double m_dues;		  // Sum of dues at the golf club
 	};
 	
 	class Executive : private Manager
@@ -61,12 +61,12 @@ namespace NineNine
 	class Scientist : public Employee, private Student
 	{
 	public:
-		Scientist() :m_Publications(0) {}
+		Scientist() :m_publications(0) {}
 
 		void getData();
 		void putData() const;
 	private:
-		int m_Publications;	// Count of publications
+		int m_publications;	// Count of publications
 	};
 
 	class Laborer :public Employee

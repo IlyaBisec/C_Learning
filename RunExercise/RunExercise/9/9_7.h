@@ -9,8 +9,8 @@
 class CounterBase
 {
 public:
-	CounterBase(): p_Count(){}
-	CounterBase(int counter):p_Count(counter){}
+	CounterBase(): p_count(){}
+	CounterBase(int counter):p_count(counter){}
 
 	unsigned int getCount() const;
 
@@ -18,7 +18,7 @@ public:
 	CounterBase& operator++();
 
 protected:
-	unsigned int p_Count;
+	unsigned int p_count;
 };
 
 class CounterDec : public CounterBase

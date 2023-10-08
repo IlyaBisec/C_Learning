@@ -17,5 +17,5 @@ public:
 	void checkOverflow(int index)const;
 
 private:
-	int m_Array[LIMIT];
+	int m_array[LIMIT];
 };

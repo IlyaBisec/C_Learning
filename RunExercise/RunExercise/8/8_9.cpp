@@ -21,9 +21,9 @@ namespace EightNine {
 	void Polar::getData(bool radians)
 	{
 		std::cout << "Input radius: ";
-		std::cin >> m_Radius;
+		std::cin >> m_radius;
 
-		if (m_Radius < 0) {
+		if (m_radius < 0) {
 			std::cout << "Radius < 0!\n";
 			exit(1);
 		}
@@ -31,25 +31,25 @@ namespace EightNine {
 		if (radians)
 		{
 			std::cout << "Input angle in the radians: ";
-			std::cin >> m_Angle;
+			std::cin >> m_angle;
 		}
 		else
 		{
 			std::cout << "Input angle in the degrees: ";
 			int tempDeg;
 			std::cin >> tempDeg;
-			m_Angle = tempDeg * PI / 180;
+			m_angle = tempDeg * PI / 180;
 		}
 	}
 
 	void Polar::putData(bool radians) const
 	{
-		std::cout << "Radius: " << m_Radius << "\n";
+		std::cout << "Radius: " << m_radius << "\n";
 
 		if (radians)
-			std::cout << "Angle in the radians: " << m_Angle << "\n";
+			std::cout << "Angle in the radians: " << m_angle << "\n";
 		else
-			std::cout << "Angle in the degrees: " << m_Angle * PI / 180 << "\n";
+			std::cout << "Angle in the degrees: " << m_angle * PI / 180 << "\n";
 
 
 	}
@@ -57,19 +57,19 @@ namespace EightNine {
 	Polar Polar::operator+(const Polar &polar) const
 	{
 		// Convert polar coordinates of the first point into Cartesian
-		double x = m_Radius * cos(m_Angle);
-		double y = m_Radius * sin(m_Angle);
+		double x = m_radius * cos(m_angle);
+		double y = m_radius * sin(m_angle);
 
 		// Convert the polar coordinates of the second point into Cartesian
 		// and add with Cartesian coordinates of the first point
-		x += polar.m_Radius * cos(polar.m_Angle);
-		y += polar.m_Radius * sin(polar.m_Angle);
+		x += polar.m_radius * cos(polar.m_angle);
+		y += polar.m_radius * sin(polar.m_angle);
 
 		// Convert Cartesian coordinates of the new point into polar
 		Polar result;
 
-		result.m_Radius = sqrt(x * x + y * y);
-		result.m_Angle = atan2(y, x);
+		result.m_radius = sqrt(x * x + y * y);
+		result.m_angle = atan2(y, x);
 
 		return result;
 	}

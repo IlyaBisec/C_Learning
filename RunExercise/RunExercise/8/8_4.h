@@ -9,11 +9,11 @@ class Int
 {
 public:
 
-	Int() { m_Temp = 0; }
-	Int(long double temp) : m_Temp(temp){}
+	Int() { m_temp = 0; }
+	Int(long double temp) : m_temp(temp){}
 
 	// Show result
-	void displayInt() const { std::cout << m_Temp <<"\n"; }
+	void displayInt() const { std::cout << m_temp <<"\n"; }
 	// Check overflow
 	void checkOverflow(long double valueOverflow) const;
 	
@@ -33,5 +33,5 @@ public:
 
 private:
 
-	long double m_Temp;
+	long double m_temp;
 };

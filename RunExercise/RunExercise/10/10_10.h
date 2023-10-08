@@ -35,7 +35,7 @@ public:
 	Float(float value)
 	{
 		fl_Memory[fl_Top] = value;
-		m_Address = fl_Top;
+		m_address = fl_Top;
 		fl_Top++;
 	}
 
@@ -43,7 +43,7 @@ public:
 
 private:
 	// The address in memory where the value of variable is stored
-	int m_Address;
+	int m_address;
 };
 
 

@@ -16,13 +16,13 @@ int main7_9()
 void Matrix::putel(int rows, int colunms, int arrayValue)
 {
 	checkOverflow(rows, colunms);
-	m_Array[rows][colunms] = arrayValue;
+	m_array[rows][colunms] = arrayValue;
 }
 
 int Matrix::getel(int rows, int colunms) const
 {
 	checkOverflow(rows, colunms);
-	return m_Array[rows][colunms];
+	return m_array[rows][colunms];
 }
 
 void Matrix::checkOverflow(int rows, int colunms) const

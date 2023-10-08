@@ -26,25 +26,25 @@ namespace NineEight
 	void Date::getData()
 	{
 		std::cout << "Input D.M.Y: \n";
-		std::cin >> m_Day >> m_Month >> m_Year;
+		std::cin >> m_day >> m_month >> m_year;
 	}
 	void Date::displayData() const
 	{
-		std::cout << m_Day << "." << m_Month << "." << m_Year << "\n";
+		std::cout << m_day << "." << m_month << "." << m_year << "\n";
 	}
 
 	void Publication::getData()
 	{
 		std::cout << "Input title: ";
-		std::cin.get(m_Title, LENGTH);
+		std::cin.get(m_title, LENGTH);
 
 		std::cout << "Input price: ";
-		std::cin >> m_Price;
+		std::cin >> m_price;
 	}
 	void Publication::displayData() const
 	{
-		std::cout << "Title: " << m_Title << "\n";
-		std::cout << "Price: " << m_Price << "\n";
+		std::cout << "Title: " << m_title << "\n";
+		std::cout << "Price: " << m_price << "\n";
 	}
 	
 	void Publication2::getData()
@@ -52,7 +52,7 @@ namespace NineEight
 		Publication::getData();
 
 		std::cout << "Input date of publication: ";
-		publicationDate.getData();
+		m_publicationDate.getData();
 		
 		std::cout<< "\n";
 	}
@@ -61,7 +61,7 @@ namespace NineEight
 		Publication::displayData();
 
 		std::cout << "Date of publication: ";
-		publicationDate.displayData();
+		m_publicationDate.displayData();
 
 		std::cout << "\n";
 	}
@@ -71,13 +71,13 @@ namespace NineEight
 		Publication2::getData();
 
 		std::cout << "Input count of page: ";
-		std::cin >> m_CountOfPages;
+		std::cin >> m_countOfPages;
 	}
 	void Book::displayData() const
 	{
 		Publication2::displayData();
 
-		std::cout << "Count of page: " << m_CountOfPages << "\n";
+		std::cout << "Count of page: " << m_countOfPages << "\n";
 	}
 
 	void Type::getData()
@@ -85,12 +85,12 @@ namespace NineEight
 		Publication2::getData();
 
 		std::cout << "Input recording time in minutes: ";
-		std::cin >> m_RecordTime;
+		std::cin >> m_recordTime;
 	}
 	void Type::displayData() const
 	{
 		Publication2::displayData();
 
-		std::cout << "Recording time in minutes: " << m_RecordTime << "\n";
+		std::cout << "Recording time in minutes: " << m_recordTime << "\n";
 	}
 }

@@ -21,14 +21,14 @@ int main()
 
 long Time::convertTimeToSeconds() const
 {
-	return (m_Hours * 3600 + m_Minutes * 60 + m_Seconds);
+	return (m_hours * 3600 + m_minutes * 60 + m_seconds);
 }
 
 void Time::convertSecondsToTime(long inputSeconds)
 {
-	m_Hours = inputSeconds / 3600;
-	m_Minutes = (inputSeconds % 3600) / 60;
-	m_Seconds = (inputSeconds % 3600) % 60;
+	m_hours = inputSeconds / 3600;
+	m_minutes = (inputSeconds % 3600) / 60;
+	m_seconds = (inputSeconds % 3600) % 60;
 }
 
 // Adding two given times and storing the result
@@ -72,16 +72,16 @@ Time Time::operator--(int)
 
 Time &Time::operator++()
 {
-	++m_Seconds;
-	if (m_Seconds >= 60)
+	++m_seconds;
+	if (m_seconds >= 60)
 	{
-		m_Seconds = 60;
-		++m_Minutes;
+		m_seconds = 60;
+		++m_minutes;
 
-		if (m_Minutes >= 60)
+		if (m_minutes >= 60)
 		{
-			m_Minutes = 60;
-			++m_Hours;
+			m_minutes = 60;
+			++m_hours;
 		}
 	}
 
@@ -90,15 +90,15 @@ Time &Time::operator++()
 
 Time &Time::operator--()
 {
-	--m_Hours;
-	if (m_Hours <= 0)
+	--m_hours;
+	if (m_hours <= 0)
 	{
-		m_Hours = 0;
-		--m_Minutes;
-		if (m_Minutes <= 0)
+		m_hours = 0;
+		--m_minutes;
+		if (m_minutes <= 0)
 		{
-			m_Minutes = 0;
-			--m_Seconds;
+			m_minutes = 0;
+			--m_seconds;
 		}
 	}
 

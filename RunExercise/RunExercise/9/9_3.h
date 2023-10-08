@@ -16,8 +16,8 @@ public:
 	void putData() const;
 
 protected:
-	char p_Title[LENGTH];
-	float p_Price;
+	char p_title[LENGTH];
+	float p_price;
 };
 
 class Sales
@@ -38,12 +38,12 @@ class NewBook : private NewPublication, private Sales
 {
 public:
 
-	NewBook():m_CountPage(0){}
+	NewBook():m_countPage(0){}
 
 	void getData();
 	void putData() const;
 private:
-	int m_CountPage; // count of page
+	int m_countPage; // count of page
 
 };
 
@@ -51,12 +51,12 @@ class NewType : private NewPublication, private Sales
 {
 public:
 
-	NewType() :m_RecordTime(0) {}
+	NewType() :m_recordTime(0) {}
 
 	void getData();
 	void putData() const;
 private:
-	float m_RecordTime;	// recording time in minutes
+	float m_recordTime;	// recording time in minutes
 };
 
 

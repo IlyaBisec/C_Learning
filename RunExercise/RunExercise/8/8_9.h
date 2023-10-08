@@ -16,7 +16,7 @@ namespace EightNine {
 	class Polar {
 	public:
 
-		Polar() : m_Angle(0), m_Radius(0) {}
+		Polar() : m_angle(0), m_radius(0) {}
 		
 		void getData(bool radians);
 		void putData(bool radians) const;
@@ -24,8 +24,8 @@ namespace EightNine {
 		Polar operator+(const Polar &polar) const;
 	private:
 
-		double m_Angle;
-		double m_Radius;
+		double m_angle;
+		double m_radius;
 
 		
 	};

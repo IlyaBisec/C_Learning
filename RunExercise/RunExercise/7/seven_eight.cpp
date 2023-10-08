@@ -22,9 +22,9 @@ void Queue::putQueue(int element)
 	else {
 		std::cout << "Added queue element: " << element << "\n";
 		
-		m_Back = (m_Back + 1) % k_SIZE;
-		m_QueueArray[m_Back] = element;
-		m_Count++;
+		m_back = (m_back + 1) % k_SIZE;
+		m_QueueArray[m_back] = element;
+		m_count++;
 	}
 }
 
@@ -45,11 +45,11 @@ int Queue::getQueue()
 		exit(1);
 	}
 	else {
-		int element = m_QueueArray[m_Front];
+		int element = m_QueueArray[m_front];
 		std::cout << "Queue item removed: " << element << "\n";
 
-		m_Front = (m_Front + 1) % k_SIZE;
-		m_Count--;
+		m_front = (m_front + 1) % k_SIZE;
+		m_count--;
 
 		return element;
 	}
@@ -63,12 +63,12 @@ int Queue::getFront()
 		exit(1);
 	}
 
-	return m_QueueArray[m_Front];
+	return m_QueueArray[m_front];
 }
 
 int Queue::getSize() const
 {
-	return m_Count;
+	return m_count;
 }
 
 bool Queue::isOverflow() const {

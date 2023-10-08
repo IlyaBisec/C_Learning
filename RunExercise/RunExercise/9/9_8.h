@@ -15,7 +15,7 @@ namespace NineEight
 		void displayData() const;
 
 	private:
-		int m_Day, m_Month, m_Year;
+		int m_day, m_month, m_year;
 	};
 
 	class Publication
@@ -25,8 +25,8 @@ namespace NineEight
 		void displayData() const;
 
 	private:
-		char m_Title[LENGTH];
-		float m_Price;
+		char m_title[LENGTH];
+		float m_price;
 	};
 	
 	class Publication2 : public Publication
@@ -35,7 +35,7 @@ namespace NineEight
 		void getData();
 		void displayData() const;
 	private:
-		Date publicationDate;
+		Date m_publicationDate;
 	};
 
 	class Book : public Publication2
@@ -45,7 +45,7 @@ namespace NineEight
 		void displayData() const;
 
 	private:
-		int m_CountOfPages;
+		int m_countOfPages;
 	};
 
 	class Type : Publication2
@@ -55,6 +55,6 @@ namespace NineEight
 		void displayData() const;
 
 	private:
-		float m_RecordTime;	// recording time in minutes
+		float m_recordTime;	// recording time in minutes
 	};
 }

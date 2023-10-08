@@ -23,6 +23,6 @@ public:
 
 private:
 
-	int m_Array[10][10];
+	int m_array[10][10];
 
 };

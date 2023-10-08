@@ -34,12 +34,12 @@ int main9_10()
 
 void Stack::push(int var)
 {
-	p_Stack[++p_Top] = var;
+	p_stack[++p_Top] = var;
 }
 
 int Stack::pop()
 {
-	return p_Stack[p_Top--];
+	return p_stack[p_Top--];
 }
 
 void StackChild::push(int var)

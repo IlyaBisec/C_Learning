@@ -16,13 +16,13 @@ namespace TenFour
 	class LinkList
 	{
 	public:
-		LinkList() { m_First = NULL; }
+		LinkList() { m_first = NULL; }
 		~LinkList();
 
 		void addItem(int data);
 		void display() const;
 
 	private:
-		Link* m_First;
+		Link* m_first;
 	};
 }

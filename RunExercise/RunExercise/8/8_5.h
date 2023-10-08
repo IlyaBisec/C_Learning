@@ -20,17 +20,17 @@ class Time
 {
 public:
 
-	Time() : m_Hours(0), m_Minutes(0), m_Seconds(0) {}
+	Time() : m_hours(0), m_minutes(0), m_seconds(0) {}
 	Time(long seconds) { convertSecondsToTime(seconds); }
 	Time(int hours, int minutes, int seconds) :
-		m_Hours(hours), m_Minutes(minutes), m_Seconds(seconds) {}
+		m_hours(hours), m_minutes(minutes), m_seconds(seconds) {}
 
 	long convertTimeToSeconds()const;
 	void convertSecondsToTime(long inputSeconds);
 
 	void displayTime() const
 	{
-		std::cout << m_Hours << ":" << m_Minutes << ":" << m_Seconds << "\n";
+		std::cout << m_hours << ":" << m_minutes << ":" << m_seconds << "\n";
 	}
 	void addTime(const Time &time1, const Time &time2);
 
@@ -49,6 +49,6 @@ public:
 
 private:
 
-	int m_Hours, m_Minutes, m_Seconds;
+	int m_hours, m_minutes, m_seconds;
 
 };

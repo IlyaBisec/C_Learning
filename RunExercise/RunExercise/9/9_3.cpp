@@ -22,16 +22,16 @@ int main9_3()
 void NewPublication::getData()
 {
 	std::cout << "Input title: ";
-	std::cin.get(p_Title, LENGTH);
+	std::cin.get(p_title, LENGTH);
 
 	std::cout << "Input price: ";
-	std::cin >> p_Price;
+	std::cin >> p_price;
 }
 
 void NewPublication::putData() const
 {
-	std::cout << "Title: " << p_Title << "\n";
-	std::cout << "Price: " << p_Price << "\n";
+	std::cout << "Title: " << p_title << "\n";
+	std::cout << "Price: " << p_price << "\n";
 }
 
 void Sales::getData()
@@ -56,7 +56,7 @@ void NewBook::getData()
 	NewPublication::getData();
 
 	std::cout << "Input count of page: ";
-	std::cin >> m_CountPage;
+	std::cin >> m_countPage;
 
 	Sales::getData();
 }
@@ -65,7 +65,7 @@ void NewBook::putData() const
 {
 	NewPublication::putData();
 
-	std::cout << "Count of page: " << m_CountPage << "\n";
+	std::cout << "Count of page: " << m_countPage << "\n";
 
 	Sales::putData();
 }
@@ -74,14 +74,14 @@ void NewType::getData()
 {
 
 	std::cout << "Input recording time in minutes: ";
-	std::cin >> m_RecordTime;
+	std::cin >> m_recordTime;
 
 	Sales::getData();
 }
 
 void NewType::putData() const
 {
-	std::cout << "Recording time in minutes: " << m_RecordTime << "\n";
+	std::cout << "Recording time in minutes: " << m_recordTime << "\n";
 	
 	Sales::putData();
 }

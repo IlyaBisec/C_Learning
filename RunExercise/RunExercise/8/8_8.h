@@ -14,5 +14,5 @@ public:
 	int& operator [](int index);
 
 private:
-	int m_Array[LIMIT];
+	int m_array[LIMIT];
 };

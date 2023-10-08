@@ -10,9 +10,9 @@ class Queue
 public:
 	Queue() 
 	{ 
-		m_Front = 0;
-		m_Back = -1;
-		m_Count = 0;
+		m_front = 0;
+		m_back = -1;
+		m_count = 0;
 	}
 	
 	// Puts to queue, push analog
@@ -41,8 +41,8 @@ private:
 	enum { k_SIZE = 5 }; // Max size of queue
 
 	int m_QueueArray[k_SIZE]; // Array for storing elements of queue
-	int m_Front, m_Back, 
-		m_Count;			  // Current size of queue
+	int m_front, m_back, 
+		m_count;			  // Current size of queue
 
 };
 
