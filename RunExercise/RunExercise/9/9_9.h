@@ -7,8 +7,6 @@
 
 namespace NineNine
 {
-	const int LENGTH = 80;
-
 	class Student
 	{
 	public:

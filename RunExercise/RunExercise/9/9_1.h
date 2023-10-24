@@ -4,8 +4,6 @@
 
 #include "..\stdafx.h"
 
-const int LENGTH = 80;
-
 class Publication
 {
 public:

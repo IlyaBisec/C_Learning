@@ -7,3 +7,5 @@
 #include <stdlib.h>
 #include <string>
 #include <cstring>
+
+constexpr int LENGTH = 80;

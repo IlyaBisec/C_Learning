@@ -18,7 +18,6 @@ public:
 	operator char* ();
 
 protected:
-	enum { LENGTH = 80 };
 	char p_line[LENGTH];
 };
 

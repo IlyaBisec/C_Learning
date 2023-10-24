@@ -4,8 +4,6 @@
 
 #include "..\stdafx.h"
 
-const int LENGTH = 80;
-
 // classes conflict. because I added 'New' 
 // to classes
 

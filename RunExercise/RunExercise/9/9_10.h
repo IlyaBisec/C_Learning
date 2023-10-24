@@ -22,7 +22,7 @@ public:
 	int pop();
 
 protected:
-	static const int p_MAX = 7;
+	static constexpr int p_MAX = 7;
 
 	int p_stack[p_MAX];
 	int p_Top;

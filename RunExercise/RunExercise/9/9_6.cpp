@@ -7,7 +7,12 @@ int& SafeArray::operator[](int index)
 		std::cout << "Input index error\n";
 		exit(1);
 	}
-	return m_Array[index];
+	return m_array[index];
+}
+
+const int &SafeArray::operator[](int index) const
+{
+	return (const_cast<SafeArray &>(*this))[index];
 }
 
 

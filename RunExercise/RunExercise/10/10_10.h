@@ -16,14 +16,14 @@
 using namespace std;
 
 // Part of the computer's memory that can only store 'float' type real numbers
-const int fl_SIZE = 100;  // Count of places tp store numbers
+constexpr int fl_SIZE = 100;  // Count of places tp store numbers
 float fl_Memory[fl_SIZE]; // Part of the computer's memory
 int fl_Top = 0;			  // Next free place in this part of the computer's memory
 
 
 // Part of the computer's memory that can only store addresses
 // (addresses of any values in the computer's memory are also stored in memory)
-const int pointer_SIZE = 100;	   // Count of places tp store addresses
+constexpr int pointer_SIZE = 100;	   // Count of places tp store addresses
 int pointer_Memory[pointer_SIZE];  // Part of the computer's memory
 int pointer_Top = 0;			   // Next free place in this part of the computer's memory
 

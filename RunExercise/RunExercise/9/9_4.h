@@ -7,8 +7,6 @@
 
 namespace NineFour {
 
-	const int LENGTH = 80;
-
 	// classes conflict. because I added 'namespace' 
 	// in this file
 
@@ -26,7 +24,7 @@ namespace NineFour {
 	class Sales
 	{
 	private:
-		static const int COUNT_MONTH = 3;
+		static constexpr int COUNT_MONTH = 3;
 
 	public:
 		// total sum for last 3 months

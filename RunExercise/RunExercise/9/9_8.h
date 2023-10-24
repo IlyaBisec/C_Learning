@@ -6,8 +6,6 @@
 
 namespace NineEight
 {
-	const int LENGTH = 80;
-
 	class Date
 	{
 	public:

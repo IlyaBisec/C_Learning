@@ -6,7 +6,7 @@
 
 #include "..\stdafx.h"
 
-const int SIZE = 100;
+constexpr int SIZE = 100;
 
 // A class that implements a "safe array"
 class SafeArray
@@ -14,9 +14,10 @@ class SafeArray
 public:
 	
 	int& operator[](int index);
+	const int &operator [](int index) const;
 
 	private:
-		int m_Array[SIZE];
+		int m_array[SIZE];
 };
 
 // Derived from the original safearray class, implementing

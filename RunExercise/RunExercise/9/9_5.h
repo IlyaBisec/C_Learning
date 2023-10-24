@@ -7,8 +7,6 @@
 
 namespace NineThree {
 
-	const int LENGTH = 80;
-
 	// Source class
 
 	class Employee
