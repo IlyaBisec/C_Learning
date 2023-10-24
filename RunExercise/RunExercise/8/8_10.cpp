@@ -111,7 +111,7 @@ Sterling Sterling::operator/(double amount) const
 Sterling::operator double()
 {
 	float sum = m_pens + m_shilling * 12 + (m_pounds * 20) * 12;
-	double funt = (sum / 2.4) / 100;
+	float funt = (sum / 2.4) / 100;
 	
 	return funt;
 }

@@ -19,7 +19,7 @@ int main8_2()
 	return 0;
 }
 
-String String::operator+=(const String &string)
+String &String::operator+=(const String &string)
 {
 	String tempString;
 

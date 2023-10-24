@@ -27,4 +27,6 @@ public:
 
 private:
     int m_numerator, m_denominator;
+
+    void lowTermss(int num, int denum);
 };

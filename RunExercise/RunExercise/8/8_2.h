@@ -14,7 +14,7 @@ public:
 	// in this case, it will result in a E0415 error and a memory leak
 	String(const char line[]) { strcpy_s(mString, line); }
 
-	String operator += (const String &string);
+	String &operator += (const String &string);
 
 	void displayString() const;
 private:

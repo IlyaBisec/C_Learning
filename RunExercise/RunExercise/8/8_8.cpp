@@ -2,7 +2,6 @@
 
 int main8_8()
 {
-	NewSafeArray safeArray;
 	int upper, lower, down, difference = 0;
 
 	std::cout << "Enter upper limit\n";
@@ -10,30 +9,34 @@ int main8_8()
 	std::cout << "Enter lower limit\n";
 	std::cin >> lower;
 
-	difference = upper - 100;
-	down = lower;
+	NewSafeArray safeArray(lower, upper);
 
-	for (int i = lower - difference;
-		i < upper - difference; i++)
+	for (int i = lower; i <= upper; i++)
 	{
-		safeArray[i] = (down++) * 10;
+		safeArray[i] = i * 10;
 	}
-
-	for (int i = lower - difference;
-		i < upper - difference; i++)
+	// Show elenents
+	for (int element = lower; element <= upper; element++)
 	{
-		int temp = safeArray[i];
-		std::cout << "Element " << lower++ << " equal "<< temp <<"\n";
+		int temp = safeArray[element];
+		std::cout << "Element " << element << " equal " << temp << "\n";
 	}
 
 	return 0;
 }
 
-int& NewSafeArray::operator[](int index)
+int &NewSafeArray::operator[](int index)
 {
-	if (index < 0 || index > LIMIT)
+	if (index < m_lowerBound || index > m_upperBound)
 	{
 		std::cout << "Index error\n";
 		exit(1);
 	}
+	return m_array[index - m_lowerBound];
 }
+
+const int &NewSafeArray::operator[](int index) const
+{
+	return (const_cast<NewSafeArray &>(*this))[index];
+}
+

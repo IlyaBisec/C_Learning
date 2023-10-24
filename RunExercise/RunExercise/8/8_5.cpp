@@ -1,7 +1,7 @@
 #include "8_5.h"
 
 
-int main()
+int main8_5()
 {
 	Time time;
 	int sec = 59;
