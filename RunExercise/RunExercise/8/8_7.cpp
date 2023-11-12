@@ -57,7 +57,7 @@ void NewFraction::getFraction()
     }
 }
 
-void NewFraction::lowTerms()
+void NewFraction::lowTerms() const
 {
     long numerator, denominator, temp, greatCommonDivisor;
 
@@ -92,49 +92,13 @@ void NewFraction::lowTerms()
     denominator /= greatCommonDivisor;
 }
 
-void NewFraction::lowTermss(int num, int denum)
-{
-    long numerator, denominator, temp, greatCommonDivisor;
-
-    // using non-negative values 
-    numerator = labs(num);
-    denominator = labs(denum);
-
-    if (denominator == 0)   // check denominator          
-    {
-        std::cout << "Invalid value \n"; exit(1);
-    }
-    else if (numerator == 0)     // check numerator 
-    {
-        numerator = 0; denominator = 1; return;
-    }
-    while (numerator != 0)
-    {
-        // if numerator > denominator
-        if (numerator < denominator)
-        {
-            temp = numerator;
-            numerator = denominator;
-            denominator = temp;
-        } //swap them
-
-        numerator = numerator - denominator;
-    }
-    greatCommonDivisor = denominator;
-
-    // divide by the greatgest common divisor
-    numerator /= greatCommonDivisor;
-    denominator /= greatCommonDivisor;
-}
-
 NewFraction NewFraction::operator+(const NewFraction &fraction) const
 {
     int numerator = m_numerator * fraction.m_denominator + m_denominator
         * fraction.m_numerator;
     int denominator = m_denominator * fraction.m_denominator;
 
-    NewFraction frac;
-    frac.lowTermss(numerator, denominator);
+    lowTerms();
     return NewFraction(numerator, denominator);
 }
 
@@ -144,8 +108,7 @@ NewFraction NewFraction::operator-(const NewFraction &fraction) const
         * fraction.m_numerator;
     int denominator = m_denominator * fraction.m_denominator;
 
-    NewFraction frac;
-    frac.lowTermss(numerator, denominator);
+    lowTerms();
     return NewFraction(numerator, denominator);
 }
 
@@ -154,8 +117,7 @@ NewFraction NewFraction::operator*(const NewFraction &fraction) const
     int numerator = m_numerator * fraction.m_denominator;
     int denominator = m_denominator * fraction.m_denominator;
 
-    NewFraction frac;
-    frac.lowTermss(numerator, denominator);
+	lowTerms();
     return NewFraction(numerator, denominator);
 }
 
@@ -164,7 +126,6 @@ NewFraction NewFraction::operator/(const NewFraction &fraction) const
     int numerator = m_numerator * fraction.m_denominator;
     int denominator = m_denominator * fraction.m_numerator;
 
-    NewFraction frac;
-    frac.lowTermss(numerator, denominator);
-    return NewFraction(numerator, denominator);
+	lowTerms();
+	return NewFraction(numerator, denominator);
 }

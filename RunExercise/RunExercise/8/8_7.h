@@ -14,7 +14,6 @@ public:
     {}
 
     void getFraction();
-    void lowTerms();
     void displayFraction()const
     {
         std::cout << m_numerator << "/" << m_denominator << std::endl;
@@ -28,5 +27,5 @@ public:
 private:
     int m_numerator, m_denominator;
 
-    void lowTermss(int num, int denum);
+    void lowTerms() const;
 };
