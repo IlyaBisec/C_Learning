@@ -1,17 +1,26 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include "8_2.h"
+ 
 
 int main8_2()
 {
-	String firstLine = "\nHey!";
-	String secondLine  = "I'm here!";
+	std::cout << "\n";
+	String a = "ABC";
+	String b  = "DEF";
 
-	String thirdLine;
+	String c;
 
-	firstLine.displayString();
-	secondLine.displayString();
-	thirdLine.displayString();
+	a.displayString();
+	b.displayString();
 
-	thirdLine = firstLine += secondLine;
+	c = a += b;
+	a.displayString();
+	c.displayString();
+
+	c += a;
+	c.displayString();
+
 
 	std::cout << "\n";
 	std::cin.get();
@@ -19,29 +28,27 @@ int main8_2()
 	return 0;
 }
 
-String &String::operator+=(const String &string)
-{
-	String tempString;
 
-	if (strlen(mString) + strlen(string.mString) < SIZE)
-	{
-		// Copying content of the first line
-		strcpy_s(tempString.mString, mString);
-	
-		// and adding content of the second line
-		strcat_s(tempString.mString, mString);
-	}
-	else {
-		std::cout << "Overflow \n";
-		exit(1);
-	}
+String &String::operator+=(const String &right)
+{
+	size_t newSize = this->m_size + right.m_size;
+	char *temp = new char[newSize + 1];
+
+	strcpy(temp, this->m_string);
+	strcat(temp, right.m_string);
+
+	delete[] this->m_string;
+
+	this->m_string = temp;
+	this->m_size = newSize;
+
 
 	return *this;
 }
 
 void String::displayString() const 
 {
-	std::cout << mString;
+	std::cout << m_string<<"\n";
 }
 
 
