@@ -61,33 +61,33 @@ void NewFraction::lowTerms() const
 {
     long numerator, denominator, temp, greatCommonDivisor;
 
-    // using non-negative values 
+    // Using non-negative values 
     numerator = labs(m_numerator);           
     denominator = labs(m_denominator);
 
-    if (denominator == 0)   // check denominator          
+    if (denominator == 0)   // Check denominator          
     {
         std::cout << "Invalid value \n"; exit(1);
     }
-    else if (numerator == 0)     // check numerator 
+    else if (numerator == 0)     // Check numerator 
     {
         numerator = 0; denominator = 1; return;
     }
     while (numerator != 0)
     {
-        // if numerator > denominator
+        // If numerator > denominator
         if (numerator < denominator)
         {
             temp = numerator; 
             numerator = denominator; 
             denominator = temp;
-        } //swap them
+        } //Swap them
 
         numerator = numerator - denominator;
     }
     greatCommonDivisor = denominator;  
 
-    // divide by the greatgest common divisor
+    // Divide by the greatgest common divisor
     numerator /= greatCommonDivisor;        
     denominator /= greatCommonDivisor;
 }

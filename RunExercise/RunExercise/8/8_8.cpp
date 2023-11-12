@@ -15,7 +15,7 @@ int main8_8()
 	{
 		safeArray[i] = i * 10;
 	}
-	// Show elenents
+	// Show elements
 	for (int element = lower; element <= upper; element++)
 	{
 		int temp = safeArray[element];

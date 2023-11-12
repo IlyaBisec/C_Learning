@@ -1,6 +1,5 @@
 // The opertation of converting
-// objects of the 'Sterling' class 
-// to the double type
+// objects of the 'Sterling' class  to the double type
 
 #pragma once
 
@@ -14,7 +13,7 @@ public:
 		m_pens(0){}
 	Sterling(double funt)
 	{
-		// converting
+		// Converting
 		m_pounds = static_cast<long>(funt);
 		
 		long deschast = funt - m_pounds;

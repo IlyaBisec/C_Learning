@@ -100,7 +100,7 @@ namespace NineFour {
 		{
 			diskType = CD;
 		}
-		else diskType = DvD;
+		else diskType = DVD;
 
 	}
 

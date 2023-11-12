@@ -72,7 +72,7 @@ namespace NineFour {
 
 		enum EDiskType
 		{
-			CD, DvD
+			CD, DVD
 		};
 	};
 
