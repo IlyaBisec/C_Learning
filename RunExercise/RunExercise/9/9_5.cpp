@@ -3,19 +3,17 @@
 int main9_5()
 {
 	// Source
-	NineThree::Manager manager;
+	NineThree::Manager manager, manager2;
 	NineThree::Scientist scientist;
 	NineThree::Laborer laborer;
-
-	// Clones
-	NineThree::ManagerClone managerClone;
-	NineThree::ScientistClone scientistClone;
-	NineThree::LaborerClone laborerClone;
 
 	// Input
 
 	std::cout << "Input info about the manager\n";
 	manager.getData();
+
+	std::cout << "Input info about the manager 2\n";
+	manager2.getData();
 
 	std::cout << "Input info about the scientist\n";
 	scientist.getData();
@@ -23,21 +21,14 @@ int main9_5()
 	std::cout << "Input info about the laborer\n";
 	laborer.getData();
 
-	// Clone
-
-	std::cout << "Input info about the manager clone\n";
-	managerClone.getData();
-
-	std::cout << "Input info about the scientist clone\n";
-	scientistClone.getData();
-
-	std::cout << "Input info about the laborer clone\n";
-	laborerClone.getData();
 
 	// Output
 
 	std::cout << "Output info about the manager\n";
 	manager.putData();
+
+	std::cout << "Output info about the manager 2\n";
+	manager2.putData();
 
 	std::cout << "Output info about the scientist\n";
 	scientist.putData();
@@ -45,16 +36,6 @@ int main9_5()
 	std::cout << "Output info about the laborer\n";
 	laborer.putData();
 
-	// Clone
-
-	std::cout << "Output info about the manager\n";
-	managerClone.putData();
-
-	std::cout << "Output info about the scientist\n";
-	managerClone.putData();
-
-	std::cout << "Output info about the laborer\n";
-	managerClone.putData();
 
 	return 0;
 }
@@ -81,7 +62,7 @@ namespace NineThree
 
 	void NineThree::Manager::getData()
 	{
-		Employee::getData();
+		EmployeeClone::getData();
 
 		std::cout << "Enter title of manager: ";
 		std::cin.get(m_title, LENGTH);
@@ -93,7 +74,7 @@ namespace NineThree
 
 	void NineThree::Manager::putData() const
 	{
-		Employee::putData();
+		EmployeeClone::putData();
 
 		std::cout << "Title of mananer: " << m_title << "\n";
 		std::cout << "Dues: " << m_dues << "\n";
@@ -101,7 +82,7 @@ namespace NineThree
 
 	void NineThree::Scientist::getData()
 	{
-		Employee::getData();
+		EmployeeClone::getData();
 
 		std::cout << "Enter count of publications: ";
 		std::cin >> m_publications;
@@ -110,7 +91,7 @@ namespace NineThree
 
 	void NineThree::Scientist::putData() const
 	{
-		Employee::putData();
+		EmployeeClone::putData();
 
 		std::cout << "Count of publications: " << m_publications << "\n";
 	}
@@ -170,41 +151,7 @@ namespace NineThree
 		}
 	}
 
-	void NineThree::ManagerClone::getData()
-	{
-		Employee::getData();
-
-		std::cout << "Enter title of manager: ";
-		std::cin.get(m_title, LENGTH);
-
-		std::cout << "Enter dues at the golf club: ";
-		std::cin >> m_dues;
-		std::cout << "\n";
-	}
-
-	void NineThree::ManagerClone::putData() const
-	{
-		Employee::putData();
-
-		std::cout << "Title of mananer: " << m_title << "\n";
-		std::cout << "Dues: " << m_dues << "\n";
-	}
-
-	void NineThree::ScientistClone::getData()
-	{
-		Employee::getData();
-
-		std::cout << "Enter count of publications: ";
-		std::cin >> m_publications;
-		std::cout << "\n";
-	}
-
-	void NineThree::ScientistClone::putData() const
-	{
-		Employee::putData();
-
-		std::cout << "Count of publications: " << m_publications << "\n";
-	}
+	
 
 }
 	
