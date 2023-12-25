@@ -1,15 +1,32 @@
-#pragma once
+#define _CRT_SECURE_NO_WARNINGS
 #include "9_2.h"
+
 
 int main9_2()
 {
-	Pstring longLine = "Learning to program has no more to do with designing interactive software than learning to touch type has to do with writing poetry\n";
-	std::cout << "Long line: \n";
-	longLine.display();
+	Pstring s1;
+
+	char longLine[] = "Good programmers write code that humans can understand";	
+	s1 = longLine;
+
+	s1.display();
+
+	Pstring s2 = " Heheh!";
+
+	std::cout << static_cast<char *>(s2);
+	std::cout << std::endl;
+
+	// For testing the protective properties of the Pstring class in
+	// case of object definition
+	// with strings longer than (LENGTH - 1)
+
+	// Very long string
+	Pstring s3 =
+		"Learning to program has no more to do with designing interactive "
+		"software than learning to touch type has to do with writing poetry";
 	
-	Pstring shortLine = "hello world";
-	std::cout << "Short line: \n";
-	shortLine.display();
+	s3.display();
+	std::cout << std::endl;
 
 	return 0;
 }
@@ -24,18 +41,19 @@ String::operator char* ()
 	return p_line;
 }
 
-Pstring::Pstring(const char *line)
+Pstring::Pstring(const char str[])
 {
-	// if the line is too long 
-	if (strlen(line) > LENGTH - 1)
+	if(strlen(str) < LENGTH) 
 	{
-		for (int i = 0; i < LENGTH; i++)
+		strcpy(p_line, str);
+	} 
+	else
+	{
+		int i;
+		for (i = 0; i < LENGTH - 1; i++)
 		{
-			p_line[i] = line[i];
-			p_line[i] = '\0';
-		} 
-	}
-	else {
-		String(line);
+			p_line[i] = str[i];
+		}
+		p_line[i] = '\0';
 	}
 }

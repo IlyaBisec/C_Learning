@@ -3,8 +3,6 @@
 
 #include "..\stdafx.h"
 
-
-
 class String
 {
 public:
@@ -25,6 +23,7 @@ class Pstring : public String
 {
 public:
 	//line[]
-	Pstring(const char *line);
+	Pstring() : String(){};
+	Pstring(const char str[]);
 };
 
