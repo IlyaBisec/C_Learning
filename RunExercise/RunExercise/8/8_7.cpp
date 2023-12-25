@@ -57,7 +57,7 @@ void NewFraction::getFraction()
     }
 }
 
-void NewFraction::lowTerms() const
+void NewFraction::lowTerms()
 {
     long numerator, denominator, temp, greatCommonDivisor;
 
@@ -90,6 +90,9 @@ void NewFraction::lowTerms() const
     // Divide by the greatgest common divisor
     numerator /= greatCommonDivisor;        
     denominator /= greatCommonDivisor;
+
+    m_numerator = numerator;
+	m_denominator = denominator;
 }
 
 NewFraction NewFraction::operator+(const NewFraction &fraction) const
@@ -98,8 +101,10 @@ NewFraction NewFraction::operator+(const NewFraction &fraction) const
         * fraction.m_numerator;
     int denominator = m_denominator * fraction.m_denominator;
 
-    lowTerms();
-    return NewFraction(numerator, denominator);
+    
+    NewFraction temp_fraction(numerator, denominator);
+	temp_fraction.lowTerms();
+	return temp_fraction;
 }
 
 NewFraction NewFraction::operator-(const NewFraction &fraction) const
@@ -108,8 +113,9 @@ NewFraction NewFraction::operator-(const NewFraction &fraction) const
         * fraction.m_numerator;
     int denominator = m_denominator * fraction.m_denominator;
 
-    lowTerms();
-    return NewFraction(numerator, denominator);
+    NewFraction temp_fraction(numerator, denominator);
+	temp_fraction.lowTerms();
+	return temp_fraction;
 }
 
 NewFraction NewFraction::operator*(const NewFraction &fraction) const
@@ -117,8 +123,9 @@ NewFraction NewFraction::operator*(const NewFraction &fraction) const
     int numerator = m_numerator * fraction.m_denominator;
     int denominator = m_denominator * fraction.m_denominator;
 
-	lowTerms();
-    return NewFraction(numerator, denominator);
+    NewFraction temp_fraction(numerator, denominator);
+	temp_fraction.lowTerms();
+	return temp_fraction;
 }
 
 NewFraction NewFraction::operator/(const NewFraction &fraction) const
@@ -126,6 +133,7 @@ NewFraction NewFraction::operator/(const NewFraction &fraction) const
     int numerator = m_numerator * fraction.m_denominator;
     int denominator = m_denominator * fraction.m_numerator;
 
-	lowTerms();
-	return NewFraction(numerator, denominator);
+    NewFraction temp_fraction(numerator, denominator);
+	temp_fraction.lowTerms();
+	return temp_fraction;
 }

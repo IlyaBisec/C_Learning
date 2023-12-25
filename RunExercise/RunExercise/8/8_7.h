@@ -27,5 +27,5 @@ public:
 private:
     int m_numerator, m_denominator;
 
-    void lowTerms() const;
+    void lowTerms();
 };
