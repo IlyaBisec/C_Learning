@@ -14,6 +14,7 @@ namespace NineEight
 
 	private:
 		int m_day, m_month, m_year;
+		char m_separate = '.';
 	};
 
 	class Publication

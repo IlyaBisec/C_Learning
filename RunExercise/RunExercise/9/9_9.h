@@ -29,10 +29,10 @@ namespace NineNine
 		unsigned long m_number;
 	};
 
-	class Manager : public Employee, private Student
+	class Manager : private Employee, private Student
 	{
 	public:
-		Manager() :m_dues(0) {}
+		//Manager() :m_dues(0) {}
 
 		void getData();
 		void putData() const;
@@ -56,10 +56,10 @@ namespace NineNine
 		unsigned long m_shares; 
 	};
 
-	class Scientist : public Employee, private Student
+	class Scientist : private Employee, private Student
 	{
 	public:
-		Scientist() :m_publications(0) {}
+		//Scientist() :m_publications(0) {}
 
 		void getData();
 		void putData() const;

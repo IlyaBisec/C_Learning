@@ -31,6 +31,15 @@ int main9_7()
 	post_beta--;                                 
 	std::cout << "counter 2: " << post_beta.getCount() << "\n"; // 96
 
+	CounterPostFix post_5 = post_alpha++;
+	std::cout << "counter 5: " << post_5.getCount() << "\n";	 // 
+	std::cout << "counter 1: " << post_alpha.getCount() << "\n"; // 
+
+	CounterPostFix post_6 = post_beta--;
+	std::cout << "counter 5: " << post_6.getCount() << "\n";	 //
+	std::cout << "counter 1: " << post_beta.getCount() << "\n"; // 
+
+
 	std::cout << "\n";
 
 	return 0;

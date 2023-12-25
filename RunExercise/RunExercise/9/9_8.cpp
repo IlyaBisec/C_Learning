@@ -26,7 +26,7 @@ namespace NineEight
 	void Date::getData()
 	{
 		std::cout << "Input D.M.Y: \n";
-		std::cin >> m_day >> m_month >> m_year;
+		std::cin >> m_day >> m_separate >> m_month >> m_separate >> m_year;
 	}
 	void Date::displayData() const
 	{

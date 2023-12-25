@@ -9,7 +9,7 @@
 class CounterBase
 {
 public:
-	CounterBase(): p_count(){}
+	CounterBase(): p_count(0){}
 	CounterBase(int counter):p_count(counter){}
 
 	unsigned int getCount() const;
