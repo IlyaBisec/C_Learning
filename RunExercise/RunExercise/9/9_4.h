@@ -74,6 +74,8 @@ namespace NineFour {
 		{
 			CD, DVD
 		};
+
+		EDiskType diskType;
 	};
 
 }

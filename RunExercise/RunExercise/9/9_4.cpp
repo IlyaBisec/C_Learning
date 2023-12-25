@@ -42,17 +42,14 @@ namespace NineFour {
 	{
 		std::cout << "Please input total sum for last 3 months \n";
 
-		for (int i = 1; i <= COUNT_MONTH; i++)
-		{
-			std::cout << "Month: " << i << "\n";
-			std::cin >> totalSum[i];
-		}
+		std::cout << "Enter the sales revenue for 3 months (separated by a space): "<<"\n";
+		std::cin >> totalSum[0] >> totalSum[1] >> totalSum[2];
 	}
 
 	void Sales::putData() const
 	{
-		std::cout << "total sum for last 3 months: "
-			<< totalSum << "\n";
+		std::cout << "total sum for last 3 months: \n";
+		std::cout << totalSum[0] << " " << totalSum[1] << " " << totalSum[2]<<std::endl;
 	}
 
 	void Book::getData()
@@ -61,6 +58,7 @@ namespace NineFour {
 
 		std::cout << "Input count of page: ";
 		std::cin >> m_countPage;
+		Sales::getData();
 	}
 
 	void Book::putData() const
@@ -68,11 +66,12 @@ namespace NineFour {
 		Publication::putData();
 
 		std::cout << "Count of page: " << m_countPage << "\n";
+		Sales::putData();
 	}
 
 	void Type::getData()
 	{
-
+		Publication::getData();
 		std::cout << "Input recording time in minutes: ";
 		std::cin >> m_recordTime;
 
@@ -81,6 +80,7 @@ namespace NineFour {
 
 	void Type::putData() const
 	{
+		Publication::putData();
 		std::cout << "Recording time in minutes: " << m_recordTime << "\n";
 
 		Sales::putData();
@@ -88,7 +88,6 @@ namespace NineFour {
 
 	void Disk::getData()
 	{
-		EDiskType diskType;
 		char choiceType;
 
 		Publication::getData();
@@ -96,31 +95,27 @@ namespace NineFour {
 		std::cout << "Input the type of disk: ";
 		std::cin >> choiceType;
 
-		if (choiceType = 'c')
+		switch (choiceType) 
 		{
+		case 'c':
 			diskType = CD;
+			break;
+		case 'd':
+			diskType = DVD;
+			break;
+		default:
+			diskType = CD;
+			break;
 		}
-		else diskType = DVD;
 
+		Sales::getData();
 	}
 
 	void Disk::putData() const
 	{
-		EDiskType diskType;
-		char choiceType;
-
 		Publication::putData();
 
-		std::cout << "Disk type: \n";
-
-		if (choiceType = CD)
-		{
-			std::cout << "CD";
-		}
-		else 
-		{
-			std::cout << "DVD";
-		}
-
+		std::cout << "Disk type: \n"<<((diskType == CD) ? "CD":"DVD")<<std::endl;
+		Sales::putData();
 	}
 }
