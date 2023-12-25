@@ -38,17 +38,16 @@ void Sales::getData()
 {
 	std::cout << "Please input total sum for last 3 months \n";
 
-	for (int i = 1; i <= COUNT_MONTH; i++)
-	{
-		std::cout << "Month: " << i << "\n";
-		std::cin >> totalSum[i];
-	}
+	std::cout << "Enter the sales revenue for 3 months (separated by a space): "<<"\n";
+	std::cin >> totalSum[0] >> totalSum[1] >> totalSum[2];
+	
 }
 
 void Sales::putData() const
 {
-	std::cout << "total sum for last 3 months: "
-		<< totalSum << "\n";
+	std::cout << "total sum for last 3 months: \n";
+	std::cout << totalSum[0] << " " << totalSum[1] << " " << totalSum[2]<<std::endl;
+	
 }
 
 void NewBook::getData()
