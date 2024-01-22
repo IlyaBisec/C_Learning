@@ -114,11 +114,11 @@ namespace NineThree
 
 		switch (userInputChoice)
 		{
-		case 'h': paymentPeriod = Hourly;
+		case 'h': paymentPeriod = EPaymentPeriod::Hourly;
 			break;
-		case 'w': paymentPeriod = Weekly;
+		case 'w': paymentPeriod = EPaymentPeriod::Weekly;
 			break;
-		case 'm': paymentPeriod = Monthly;
+		case 'm': paymentPeriod = EPaymentPeriod::Monthly;
 			break;
 		default: std::cout << "Error input"; exit(1);
 			break;

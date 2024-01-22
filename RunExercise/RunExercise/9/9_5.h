@@ -32,7 +32,7 @@ namespace NineThree {
 	private:
 		double m_compensations;
 
-		enum EPaymentPeriod {
+		enum class EPaymentPeriod {
 			Hourly,
 			Weekly,
 			Monthly
