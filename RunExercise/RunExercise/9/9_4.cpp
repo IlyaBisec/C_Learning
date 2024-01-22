@@ -98,13 +98,13 @@ namespace NineFour {
 		switch (choiceType) 
 		{
 		case 'c':
-			diskType = CD;
+			diskType = EDiskType::CD;
 			break;
 		case 'd':
-			diskType = DVD;
+			diskType = EDiskType::DVD;
 			break;
 		default:
-			diskType = CD;
+			diskType = EDiskType::CD;
 			break;
 		}
 
@@ -115,7 +115,7 @@ namespace NineFour {
 	{
 		Publication::putData();
 
-		std::cout << "Disk type: \n"<<((diskType == CD) ? "CD":"DVD")<<std::endl;
+		std::cout << "Disk type: \n"<<((diskType == EDiskType::CD) ? "CD":"DVD")<<std::endl;
 		Sales::putData();
 	}
 }

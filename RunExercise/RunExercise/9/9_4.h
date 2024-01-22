@@ -70,7 +70,7 @@ namespace NineFour {
 
 	private:
 
-		enum EDiskType
+		enum class EDiskType
 		{
 			CD, DVD
 		};
