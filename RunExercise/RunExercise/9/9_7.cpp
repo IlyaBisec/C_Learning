@@ -4,41 +4,20 @@
 
 int main9_7()
 {
-	CounterPostFix post_alpha;                          
-	CounterPostFix post_beta(100);
-	std::cout <<"counter 1: " << post_alpha.getCount() << "\n"; // 0
-	std::cout << "counter 2: " << post_beta.getCount() << "\n"; // 100
+	int i = 10;
+	//int j = (--(--i))++;
+	int j = (--(++i))++;
+	j = (++(++i))--;
 
-	// Prefix Test
-	++post_alpha; ++post_alpha; ++post_alpha;                
-	std::cout << "counter 1: " << post_alpha.getCount() << "\n"; // 3
+	std::cout << i << "\n";
+	std::cout << j << "\n";
 
-	--post_beta; --post_beta;                  
-	std::cout << "counter 2: " << post_beta.getCount() << "\n"; // 98
+	CounterDec ñ1(10);                          
+	CounterPostFix ñ2((--ñ1).getCount());
 
-	CounterPostFix post_cetta = ++post_alpha;
-	std::cout << "counter 3: " << post_cetta.getCount() << "\n"; // 4
-	std::cout << "counter 1: " << post_alpha.getCount() << "\n"; // 4
-
-
-	CounterPostFix post_fetta = --post_beta;
-	std::cout << "counter 4: " << post_fetta.getCount() << "\n"; // 97
-	std::cout << "counter 2: " << post_beta.getCount() << "\n";  // 97
-
-	post_alpha++;                               
-	std::cout << "counter 1: " << post_alpha.getCount() << "\n"; // 5
-
-	post_beta--;                                 
-	std::cout << "counter 2: " << post_beta.getCount() << "\n"; // 96
-
-	CounterPostFix post_5 = post_alpha++;
-	std::cout << "counter 5: " << post_5.getCount() << "\n";	 // 
-	std::cout << "counter 1: " << post_alpha.getCount() << "\n"; // 
-
-	CounterPostFix post_6 = post_beta--;
-	std::cout << "counter 5: " << post_6.getCount() << "\n";	 //
-	std::cout << "counter 1: " << post_beta.getCount() << "\n"; // 
-
+	std::cout << ñ1.getCount() << "\n";
+	std::cout << ñ2.getCount() << "\n";
+	
 
 	std::cout << "\n";
 
@@ -47,8 +26,7 @@ int main9_7()
 
 CounterDec &CounterDec::operator--()
 {
-	CounterDec counretDec;
-	--counretDec;
+	--p_count;
 	return (*this);
 }
 
