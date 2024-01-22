@@ -15,7 +15,6 @@ struct Pair
 class Stack
 {
 public:
-	Stack() { p_Top = -1; }
 
 	void push(int var);
 	
@@ -25,7 +24,7 @@ protected:
 	static constexpr int p_MAX = 7;
 
 	int p_stack[p_MAX];
-	int p_Top;
+	int p_Top = - 1;
 };
 
 class StackChild : public Stack
