@@ -43,17 +43,10 @@ String::operator char* ()
 
 Pstring::Pstring(const char str[])
 {
-	if(strlen(str) < LENGTH) 
+	int i;
+	for (i = 0; i < LENGTH - 1; i++)
 	{
-		strcpy(p_line, str);
-	} 
-	else
-	{
-		int i;
-		for (i = 0; i < LENGTH - 1; i++)
-		{
-			p_line[i] = str[i];
-		}
-		p_line[i] = '\0';
+		p_line[i] = str[i];
 	}
+	p_line[i] = '\0';
 }
