@@ -14,7 +14,7 @@ class SafeArray
 public:
 	
 	int& operator[](int index);
-	const int &operator [](int index) const;
+	int &operator [](int index) const;
 
 	private:
 		int m_array[SIZE];
@@ -36,6 +36,7 @@ public:
 	}
 
 	int& operator[](int index);
+	const int &operator[](int index) const;
 
 private:
 

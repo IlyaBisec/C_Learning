@@ -10,7 +10,7 @@ int& SafeArray::operator[](int index)
 	return m_array[index];
 }
 
-const int &SafeArray::operator[](int index) const
+int &SafeArray::operator[](int index) const
 {
 	return (const_cast<SafeArray &>(*this))[index];
 }
@@ -24,6 +24,11 @@ int& BoundaryDeterminant::operator[](int index)
 		exit(1);
 	}
 	return SafeArray::operator[](index - m_lowBoundary);
+}
+
+const int &BoundaryDeterminant::operator[](int index) const
+{
+	return (const_cast<BoundaryDeterminant &>(*this))[index];
 }
 
 int main9_6()
