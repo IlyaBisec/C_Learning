@@ -2,12 +2,17 @@
 
 //ch
 
-int main9_7()
+int main()
 {
 	int i = 10;
+	//int j = (--i * (++i)) + (--(++(i)));
 	//int j = (--(--i))++;
-	int j = (--(++i))++;
-	j = (++(++i))--;
+	//int j = (--(++i))++;
+	//j = (++(++i))--;
+
+	int j = --i;
+	j = (++i)--;
+	j = ++i - i++;
 
 	std::cout << i << "\n";
 	std::cout << j << "\n";
