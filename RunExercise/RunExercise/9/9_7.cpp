@@ -2,7 +2,7 @@
 
 //ch
 
-int main()
+int main9_7()
 {
 	int i = 10;
 	//int j = (--i * (++i)) + (--(++(i)));
