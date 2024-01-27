@@ -1,4 +1,6 @@
 #pragma once
+// Overloads the multiplication operator so that two distances can be multiplied, 
+// also making this friend function so that this expression Wdist = 7.5*dist2 is characteristic
 
 #include "../stdafx.h"
 
@@ -8,6 +10,7 @@ namespace chapter_11 {
 	{
 	public:
 		Distance(): m_feet(0),m_inches(0.0){}
+		// Converting float to distance
 		Distance(float temp_feet)
 		{
 			m_feet = static_cast<int>(temp_feet);
