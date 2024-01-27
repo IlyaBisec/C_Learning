@@ -1,8 +1,11 @@
 #pragma once
 
+//  ласс из 11_1
+// Adding the isOversize() method, which points to objects that have exceeded the allowed size
+
 #include "../stdafx.h"
 
-namespace chapter_11 {
+namespace chapter_11_4 {
 
 	class Publication
 	{
@@ -40,7 +43,7 @@ namespace chapter_11 {
 		int m_countPage; // count of page
 	};
 
-	class Type : public Book
+	class Type : public Publication
 	{
 	public:
 		void getData();
