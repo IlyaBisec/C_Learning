@@ -150,7 +150,9 @@
     <ClCompile Include="10\10_9.cpp" />
     <ClCompile Include="11\11_1.cpp" />
     <ClCompile Include="11\11_2.cpp" />
+    <ClCompile Include="11\11_3.cpp" />
     <ClCompile Include="11\11_4.cpp" />
+    <ClCompile Include="11\11_5.cpp" />
     <ClCompile Include="7\seven_eight.cpp" />
     <ClCompile Include="7\seven_five.cpp" />
     <ClCompile Include="7\seven_four.cpp" />
