@@ -1,9 +1,12 @@
 #pragma once
 
+// An array of one size is assigned an array of another (larger or smaller) size
+
 #include "../stdafx.h"
 
 namespace chapter_11 {
 
+	// A class that models a regular array of integers
 	class OwnArray
 	{
 	public:
@@ -48,48 +51,9 @@ namespace chapter_11 {
 		}
 
 	private:
-		int		*m_pointer;	// Pointer on the content array
-		int		m_size;		// Count of elements in array
+		int		*m_pointer;	// Pointer to the contents of the array
+		int		m_size;		// The number of elements in the array
 	};
 }
 
 
-int main11_3()
-{
-	const int SIZE = 10;
-	chapter_11::OwnArray ownArray(SIZE);
-
-	for (int j = 0; j < SIZE; j++)
-		ownArray[j] = j * j;
-
-	std::cout << "array 1 = "; ownArray.display(); std::wcout << std::endl;
-
-	// Copy Constructor test
-	chapter_11::OwnArray array2(ownArray);
-	std::cout << "array 2 = "; ownArray.display(); std::wcout << std::endl;
-
-	// arr==arr test
-	chapter_11::OwnArray array_3(10), array_4(5), array_5(15);
-	array_3 = ownArray; // при равном количестве элементов
-	array_4 = ownArray; // количество элементов в присваиваемом массиве больше
-	array_5 = ownArray; // количество элементов в присваиваемом массиве меньше
-	// выведем на экран содержимое массивов arr3, arr4, arr5
-	std::cout << "array_3 = "; array_3.display(); std::cout << std::endl;
-	std::cout << "array_4 = "; array_4.display(); std::cout << std::endl;
-	std::cout << "array_5 = "; array_5.display(); std::cout << std::endl;
-
-	// тестируем присваивание самому себе
-	ownArray = ownArray;
-	// выведем на экран содержимое массива arr1
-	std::cout << "ownArray = "; ownArray.display(); std::cout << std::endl;
-
-	// тестируем множественное присваивание
-	chapter_11::OwnArray array_6, array_7;
-	array_7 = array_6 = ownArray;
-	// выведем на экран содержимое массивов arr6, arr7
-	std::cout << "array_6 = "; array_6.display(); std::cout << std::endl;
-	std::cout << "array_7 = "; array_7.display(); std::cout << std::endl;
-
-	return 0;
-
-}
