@@ -1,6 +1,5 @@
 #include "9_7.h"
 
-//ch
 
 int main9_7()
 {
@@ -8,17 +7,17 @@ int main9_7()
 	//int j = (--i * (++i)) + (--(++(i)));
 	//int j = (--(--i))++;
 	//int j = (--(++i))++;
-	//j = (++(++i))--;
+	//int j = (++(++i))--;
 
 	int j = --i;
-	j = (++i)--;
-	j = ++i - i++;
+	//j = (++i)--;
+	//j = ++i - i++;
 
 	std::cout << i << "\n";
 	std::cout << j << "\n";
 
 	CounterDec ñ1(10);                          
-	CounterPostFix ñ2((--ñ1).getCount());
+	CounterPostFix ñ2((--ñ1));
 
 	std::cout << ñ1.getCount() << "\n";
 	std::cout << ñ2.getCount() << "\n";
@@ -43,11 +42,8 @@ unsigned int CounterBase::getCount() const
 
 CounterBase &CounterBase::operator++()
 {
-	CounterDec counretDec;
-	++counretDec;
+	++p_count;
 	return (*this);
-	//return CounterDec(++p_Count);
-
 }
 
 CounterPostFix CounterPostFix::operator--(int)
