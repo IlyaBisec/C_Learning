@@ -25,7 +25,7 @@ namespace chapter11_5
 		}
 		
 		// The method converts a money string into a long double number
-		long double mstold(const char[]); // прототип
+		long double mstold(const char[]);
 		
 		// Converts a long double (m_sum) number to a money string and returns this string via the first parameter
 		void ldtoms(char[]);
