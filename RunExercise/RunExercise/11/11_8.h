@@ -4,77 +4,94 @@
 #include <cstdlib>
 #include <ctime> 
 
-const int IMG = 5;
-const int MAX_HORSES = 7;
+constexpr int FURLONG_LENGTH = 5; // Furlong length
+constexpr int MAX_HORSES = 7;
 
 class Track;
 class Comtrack;
 
+// Horse
 class Horse
 {
+
 public:
-	Horse(const int n, const Track *ptrT) :
-		HORSE_NUMBER(n),
-		ptr_track(ptrT),
-		distanceRun(0.0) 
+
+	Horse(const int number, const Track* ptrT) :
+		HORSE_NUMBER(number),
+		ptrTrack(ptrT),
+		p_distanceRun(0.0) 
+		
 	{
 	}
 
-	~Horse()
-	{
-	}
+	~Horse(){ }
 	
-	void display_horse(const float elapsed_time);
+	void displayHorse(const float elapsed_time);
+
 protected:
-	const Track *ptr_track;
+
+	const Track* ptrTrack; 
 	const int HORSE_NUMBER;
+
+	// Time from the start of the race to the crossing of the finish line (in seconds)
+	float p_finishTime;  
+	// The length (in furlongs) of the part of the distance covered at the moment
+	float p_distanceRun;
 	
-	float finishTime;
-	float distanceRun;
 };
 
-class Comhorse : public Horse
+// A running horse
+class Comhorse : public Horse 
 {
 public:
-	ComHorse(const int n, const Comtrack *ptrT) :horse(n, NULL),
-		ptrTrack(ptrT)
-	{
-	}
-	void display_horse(const float elapsed_time);
+	Comhorse(const int number, const Comtrack* ptrT) :
+		Horse(number, NULL), 
+		ptrTrack(ptrT) 
+		{ }
+
+	void displayHorse(const float elapsed_time);
+
 private:
-	const Comtrack *ptr_track;
-
+	const Comtrack* m_ptrTrack; 
 };
 
-class Track // класс, представляющий скаковой трек
+// Racing track
+class Track
 {
+
 public:
 
-	Track(float lenT, int nH);
-	~Track();
-	void display_track();     
-	void run();                 
-	float get_track_len() const; 
+	Track(float lengthTrack, int numberOfHorse);
+	~Track();                
+
+	void displayTrack();        
+	void run();             
+
+	float getTrackLength() const; 
 
 protected:
-	Horse *hArray[MAX_HORSES];
-	int total_horses;
-	int horse_count;
+	Horse *p_ptrArray[MAX_HORSES];
 
-	const float TRACK_LANGTH;
-	float elapsed_time;
+	int p_total_horses;         // The total number of horses participating in the race
+	int p_horse_count;          // The counter of horses processed at the current time
+	                         
+	const float TRACK_LENGTH;	// Track legnth(in furlongs)
+	float p_elapsedTime;		// Time elapsed since the start of the race (in seconds)
 };
 
-class Comtrack : public Track 
+// Horse racing track
+class Comtrack : public Track
 {
-private:
-	Comhorse *hArray[MAX_HORSES]; 
-	int horse_count;
 public:
+	Comtrack(float lengthTrack, int numberOfHorse);
+	~Comtrack();                
+	void run();                  
 
-	Comtrack(float lenT, int nH);
-	~Comtrack();            
-	void run();               
 
-	friend void Comhorse::display_horse(float);
+	friend void Comhorse::displayHorse(float);
+
+private:
+	Comhorse* m_hArray[MAX_HORSES]; 
+	int m_horseCount;
 };
+
