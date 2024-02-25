@@ -4,6 +4,8 @@
 #include <cstdlib>
 #include <ctime> 
 
+#include "../stdafx.h"
+
 constexpr int FURLONG_LENGTH = 5; // Furlong length
 constexpr int MAX_HORSES = 7;
 
@@ -91,7 +93,7 @@ public:
 	friend void Comhorse::displayHorse(float);
 
 private:
-	Comhorse* m_hArray[MAX_HORSES]; 
+	Comhorse *m_hArray[MAX_HORSES]; 
 	int m_horseCount;
 };
 
