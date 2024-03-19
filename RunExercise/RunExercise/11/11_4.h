@@ -1,6 +1,5 @@
 #pragma once
 
-//  ласс из 11_1
 // Adding the isOversize() method, which points to objects that have exceeded the allowed size
 
 #include "../stdafx.h"
@@ -27,7 +26,7 @@ namespace chapter_11_4 {
 		virtual bool isOversize() const = 0;
 
 	protected:
-		char p_title[LENGTH];
+		char  p_title[LENGTH];
 		float p_price;
 	};
 
