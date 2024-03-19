@@ -12,7 +12,7 @@ namespace chapter11_10{
 	{
 	public:
 		virtual float getNumber() const = 0;
-		virtual char getOperator() const = 0;
+		virtual char  getOperator() const = 0;
 	};
 
 	class Operator : public Token
@@ -20,8 +20,8 @@ namespace chapter11_10{
 	public:
 		Operator(char oper) : m_oper(oper){}
 
-		char  getOperator() const	{ return m_oper; }
-		float getNumber()   const	{ return 0.0; }
+		char  getOperator() const { return m_oper; }
+		float getNumber()   const { return 0.0; }
 
 	private:
 		char m_oper; // + - / *
@@ -77,7 +77,7 @@ namespace chapter11_10{
 
 	private:
 		Stack m_Stack;
-		char *m_ptrString;
-		int m_length;
+		char  *m_ptrString;
+		int   m_length;
 	};
 }
