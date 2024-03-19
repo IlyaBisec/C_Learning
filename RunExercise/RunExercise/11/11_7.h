@@ -2,46 +2,51 @@
 #include "../stdafx.h"
 #include <io.h> 
 
-class Token // Абстрактный базовый класс
+class Token
 {
 public:
-	virtual float getNumber() const = 0; // чистая виртуальная
-	// функция
-	virtual char getOperator() const = 0;
+	virtual float getNumber() const = 0;
+	virtual char  getOperator() const = 0;
 };
+
 class Operator : public Token
 {
 public:
-	Operator(char oper) : m_oper(oper) {}; // конструктор устанавливает значение
-	char getOperator() const { return m_oper; }; // получить значение
-	float getNumber() const { return 0.0f; }; // просто некая функция
+	Operator(char oper) : m_oper(oper) {}; 
+
+	char  getOperator() const { return m_oper; }; 
+	float getNumber() const { return 0.0f; }; 
 
 private:
-	char m_oper; // Операторы +, -, *, /
+	char m_oper; // +, -, *, / operators
 };
+
 class Number : public Token
 {
 public:
-	Number(float num) : m_fnum(num) {}// конструктор устанавливает значение
-	float getNumber() const { return m_fnum; }; // получить значение
-	char getOperator() const { return '0'; }; // просто некая функция
+	Number(float num) : m_fnum(num) {}
+
+	float getNumber() const { return m_fnum; }; 
+	char  getOperator() const { return '0'; }; 
 
 private:
-	float m_fnum; // число
+	float m_fnum; // Number
 };
 
 class Stack
 {
 public:
-	Stack() { top = 0; };
+	Stack() { m_top = 0; };
 	
-	void push(Token *value) { token[++top] = value; }
-	Token *pop() { return token[top--]; }
-	int getTop() const { return top; }
+	void push(Token *value) { m_token[++m_top] = value; }
+
+	Token *pop() { return m_token[m_top--]; }
+	int   getTop() const { return m_top; }
+
 	bool isNum()const
 	{
 		Number *ptr_number;
-		if(ptr_number = dynamic_cast<Number*>(token[top]))
+		if(ptr_number = dynamic_cast<Number*>(m_token[m_top]))
 		{
 			return 1;
 		}
@@ -49,7 +54,7 @@ public:
 	}
 
 private:
-	Token *token[100];
+	Token *m_token[100];
 
-	int top;
+	int m_top;
 };
