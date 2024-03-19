@@ -17,10 +17,8 @@ class Horse
 {
 
 public:
-
-	Horse(const int number, const Track* ptrT) :
-		HORSE_NUMBER(number),
-		ptrTrack(ptrT),
+	Horse(const int number, const Track *ptrTrack) : p_HORSE_NUMBER(number),
+		p_ptrTrack(ptrTrack),
 		p_distanceRun(0.0) 
 		
 	{
@@ -28,12 +26,11 @@ public:
 
 	~Horse(){ }
 	
-	void displayHorse(const float elapsed_time);
+	void displayHorse(const float elapsed_time) const;
 
 protected:
-
-	const Track* ptrTrack; 
-	const int HORSE_NUMBER;
+	const Track* p_ptrTrack; 
+	const int	 p_HORSE_NUMBER;
 
 	// Time from the start of the race to the crossing of the finish line (in seconds)
 	float p_finishTime;  
@@ -46,12 +43,11 @@ protected:
 class Comhorse : public Horse 
 {
 public:
-	Comhorse(const int number, const Comtrack* ptrT) :
-		Horse(number, NULL), 
-		ptrTrack(ptrT) 
+	Comhorse(const int number, const Comtrack *ptrTrack) : Horse(number, NULL), 
+		m_ptrTrack(ptrTrack) 
 		{ }
 
-	void displayHorse(const float elapsed_time);
+	void displayHorse(const float elapsed_time) const;
 
 private:
 	const Comtrack* m_ptrTrack; 
@@ -66,7 +62,7 @@ public:
 	Track(float lengthTrack, int numberOfHorse);
 	~Track();                
 
-	void displayTrack();        
+	void displayTrack() const;        
 	void run();             
 
 	float getTrackLength() const; 
@@ -74,10 +70,10 @@ public:
 protected:
 	Horse *p_ptrArray[MAX_HORSES];
 
-	int p_total_horses;         // The total number of horses participating in the race
-	int p_horse_count;          // The counter of horses processed at the current time
+	int p_totalHorses;         // The total number of horses participating in the race
+	int p_horseCount;          // The counter of horses processed at the current time
 	                         
-	const float TRACK_LENGTH;	// Track legnth(in furlongs)
+	const float p_TRACK_LENGTH;	// Track legnth(in furlongs)
 	float p_elapsedTime;		// Time elapsed since the start of the race (in seconds)
 };
 
@@ -86,11 +82,11 @@ class Comtrack : public Track
 {
 public:
 	Comtrack(float lengthTrack, int numberOfHorse);
-	~Comtrack();                
+	~Comtrack();   
+
 	void run();                  
 
-
-	friend void Comhorse::displayHorse(float);
+	friend void Comhorse::displayHorse(float) const;
 
 private:
 	Comhorse *m_hArray[MAX_HORSES]; 
