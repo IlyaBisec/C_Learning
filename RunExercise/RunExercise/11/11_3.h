@@ -11,12 +11,12 @@ namespace chapter_11 {
 	{
 	public:
 		OwnArray():m_pointer(0), m_size(0){}
-		OwnArray(int temp)
+		OwnArray(int size)
 		{
-			m_size = temp;
-			m_pointer = new int[temp];
+			m_size = size;
+			m_pointer = new int[size];
 		}
-		OwnArray(OwnArray &own_array)
+		OwnArray(const OwnArray &own_array)
 		{
 			m_size = own_array.m_size;
 			m_pointer = new int[m_size];
@@ -29,9 +29,9 @@ namespace chapter_11 {
 
 		~OwnArray() { delete[] m_pointer; }
 
-		int &operator[] (int j){ return *(m_pointer + j);}
+		int &operator[] (int j) { return *(m_pointer + j);}
 
-		OwnArray &operator= (OwnArray &own_array)
+		OwnArray &operator=(const OwnArray &own_array)
 		{
 			if (this == &own_array) return *this;
 			delete[] m_pointer;
