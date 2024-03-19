@@ -61,23 +61,5 @@ int main11_1()
 		pubPtr[j]->putData();
 	}
 
-
-
-	// chapter_11::Publication publication;
-	// chapter_11::Book fantasyBook;
-	// chapter_11::Type type;
-
-	// std::cout << "Input data...\n";
-
-	//// publication.getData();
-	//fantasyBook.getData();
-	// //type.getData();
-
-	// std::cout << "\nEntered data: \n";
-
-	//// publication.putData();
-	// fantasyBook.putData();
-	//// type.putData();
-
 	return 0;
 }

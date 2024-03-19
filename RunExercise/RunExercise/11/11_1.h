@@ -36,7 +36,7 @@ namespace chapter_11 {
 		int m_countPage; // count of page
 	};
 
-	class Type : public Book {
+	class Type : public Publication {
 	public:
 		void getData();
 		void putData() const;
