@@ -9,7 +9,6 @@ namespace chapter11_6
 	// A class representing a monetary amount in dollars and cents
 	class bMoney
 	{
-
 	public:
 		bMoney()
 		{
@@ -17,8 +16,7 @@ namespace chapter11_6
 		}
 		// long double to bMoney
 		explicit bMoney(long double n) : m_sum(n) {}
-		bMoney(const char
-			s[]) // The money line
+		bMoney(const char s[]) // The money line
 		{
 			mstold(s);
 		}
