@@ -13,7 +13,7 @@ namespace chapter11_9{
 	{
 	public:
 		LinkList(){ m_first = NULL; }
-		LinkList(LinkList &list)
+		LinkList(const LinkList &list)
 		{
 			m_first = NULL;
 
@@ -43,7 +43,7 @@ namespace chapter11_9{
 			newLink->next = m_first;
 			m_first = newLink;
 		}
-		void displayList()
+		void displayList() const
 		{
 			Link *current = m_first;
 			while (current)
@@ -54,7 +54,7 @@ namespace chapter11_9{
 			std::cout << "\n";
 		}
 
-		LinkList &opertator = (LinkList & list)
+		LinkList &opertator= (const LinkList &list)
 		{
 			if (this == &list) return *this;
 
