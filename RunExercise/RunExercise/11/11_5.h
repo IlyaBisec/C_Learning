@@ -1,7 +1,7 @@
 #pragma once
-//A program from example of book, supplemented with overloaded friendly functions
-//  long double * bMoney  -  Multiply a number by money
-//  long double / bMoney - Dividing a number by money
+// A program from example of book, supplemented with overloaded friendly functions
+// long double * bMoney  -  Multiply a number by money
+// long double / bMoney - Dividing a number by money
 
 #include "../stdafx.h"
 
@@ -18,8 +18,7 @@ namespace chapter11_5
 		}
 		// long double to bMoney
 		explicit bMoney(long double n) : m_sum(n) {}
-		bMoney(const char
-				s[]) // The money line
+		bMoney(const char s[]) // The money line
 		{
 			mstold(s);
 		}
@@ -34,7 +33,7 @@ namespace chapter11_5
 		void putmoney();
 
 		
-		bMoney operator+(const bMoney &money) const{ return bMoney(m_sum + money.m_sum);}
+		bMoney operator+(const bMoney &money) const { return bMoney(m_sum + money.m_sum);}
 		bMoney operator-(const bMoney &money) const { return bMoney(m_sum - money.m_sum); }
 	
 		bMoney operator*(long double n) const { return bMoney(m_sum * n); }
@@ -47,7 +46,7 @@ namespace chapter11_5
 		// long double / bMoney
 		friend long double operator/(long double, const bMoney &money);
 
-		private:
+	private:
 		long double m_sum; // The amount of money in dollars and cents
 	};
 
