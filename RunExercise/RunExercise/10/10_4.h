@@ -13,11 +13,11 @@ namespace TenFour
 	};
 
 
-	class LinkList
+	class LinkLists
 	{
 	public:
-		LinkList() { m_first = NULL; }
-		~LinkList();
+		LinkLists() { m_first = NULL; }
+		~LinkLists();
 
 		void addItem(int data);
 		void display() const;
