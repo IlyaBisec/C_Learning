@@ -2,7 +2,7 @@
 
 int main10_4()
 {
-	TenFour::LinkList linkList;
+	TenFour::LinkLists linkList;
 
 	linkList.addItem(1);
 	linkList.addItem(2);
@@ -18,7 +18,7 @@ int main10_4()
 namespace TenFour
 {
 
-	LinkList::~LinkList()
+	LinkLists::~LinkLists()
 	{
 		Link *ptr_currentLink = m_first;
 		while (ptr_currentLink)
@@ -29,7 +29,7 @@ namespace TenFour
 			ptr_currentLink = m_first;
 		}
 	}
-	void LinkList::addItem(int data)
+	void LinkLists::addItem(int data)
 	{
 		
 		// We allocate memory for a new list item
@@ -45,7 +45,7 @@ namespace TenFour
 		m_first = ptr_newLink;
 	}
 	
-	void LinkList::display() const
+	void LinkLists::display() const
 	{
 		Link * ptr_currentLink = m_first;
 		while (ptr_currentLink)
