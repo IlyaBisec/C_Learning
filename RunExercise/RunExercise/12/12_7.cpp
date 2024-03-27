@@ -99,7 +99,7 @@ namespace chapter12_7
 
 using namespace chapter12_7;
 
-int main()
+int main12_7()
 {
 	Document pasport;
 	char choice;
