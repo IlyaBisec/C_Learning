@@ -20,6 +20,7 @@ int main12_2(int argc, char *argv[])
 
 
 	std::ifstream sourceFile(src_fileName);
+	//except("Error opennig src file: ", argv, 1, sourceFile);
 	if (!sourceFile)
 	{
 		std::cerr << "Error opennig src file: "<<src_fileName <<"\n";
@@ -42,3 +43,12 @@ int main12_2(int argc, char *argv[])
 	return 0;
 }
 
+
+template <typename T> void except(const std::string &message, char *argv[], int index, const T argument)
+{
+	if(!argument)
+	{
+		std::cerr << message << argv[index] << "\n";
+		return 1;
+	}
+}
