@@ -1,3 +1,5 @@
+// Employee accounting, with help file system
+
 #pragma once
 #include <io.h>
 #include <fstream>
