@@ -13,7 +13,7 @@
 #include <iomanip>
 
 enum EDirection{
-	dUP, dDOWN, dStop
+	dUP, dDOWN, dSTOP
 };
 
 

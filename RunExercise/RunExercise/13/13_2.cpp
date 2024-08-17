@@ -119,3 +119,48 @@ void Building::display_floorRequest() const
 
 // Elevator
 
+Elevator::Elevator(Building *build)
+{
+	m_currentFloor = 0;	// Current floor 0(for user - 1)
+	m_oldFloor = 0;		// pre floor also 0
+	//  пока кабина лифта стоит на месте
+	m_currentDir = dSTOP; 
+
+	// пассажир еще не нажимал кнопку с этажом назначения
+	for (int i = 0; i < COUNT_FLOORS; i++)
+		destination[i] = false;
+
+	m_timerLoad = 0;
+	m_timerUnload = 0;
+}
+
+void Elevator::chooseAction()
+{
+	display();
+	floor_display();
+	if (m_timerLoad)
+		--m_timerLoad;
+	if (m_timerUnload)
+		--m_timerUnload;
+	decideAction();
+}
+
+void Elevator::move()
+{
+	if (m_timerLoad || m_timerUnload)
+		return;
+	if (m_currentDir == dUP)
+		m_currentFloor++;
+	else if (m_currentDir == dDOWN)
+		m_currentFloor--;
+}
+
+int Elevator::get_floor() const
+{
+	return m_currentFloor;
+}
+
+EDirection Elevator::get_direction() const
+{
+	return m_currentDir;
+}
