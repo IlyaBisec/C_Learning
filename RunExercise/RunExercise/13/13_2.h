@@ -39,7 +39,7 @@ public:
 	void decideAction();			// Принять решение о следующем действии
 
 	void get_destination();			// Получение конечнего этажа
-	void get_floor() const;			// Получение текущего этажа
+	int get_floor() const;			// Получение текущего этажа
 	EDirection get_direction() const; // Получение текущего направления
 
 private:
@@ -60,16 +60,23 @@ public:
 	Building();
 	~Building();
 
-	void elevator_start();  // Запуск лифта
+	// Запуск лифта
+	void elevator_start();  
 	
-	int get_elevFloor() const;  // Найти этаж с лифтом 
-	EDirection get_elevDir() const;  // Получить направление лифта
+	// Найти этаж с лифтом 
+	int get_elevFloor() const;  
+	// Получить направление лифта
+	EDirection get_elevDir() const;  
 
-	bool get_floorRequest(const int, const int) const;  // Проверить, есть ли запрос лифта с этажа
-	void set_floorRequest(const int, const int, const bool); // Ответить на запрос лифта с этажа
+	// Проверить, есть ли запрос лифта с этажа
+	bool get_floorRequest(const int, const int) const;  
+	// Ответить на запрос лифта с этажа
+	void set_floorRequest(const int, const int, const bool); 
 
-	void record_floorRequest();  // Получить запрос от пассажиров с этажей
-	void display_floorRequest() const; // Отобразить на экране запрос от пассажиров с этажей 
+	// Получить запрос от пассажиров с этажей
+	void record_floorRequest();  
+	// Отобразить на экране запрос от пассажиров с этажей 
+	void display_floorRequest() const; 
 
 	using enum EDirection;
 private:
