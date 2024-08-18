@@ -12,6 +12,8 @@
 #include <iostream>
 #include <iomanip>
 
+#define _CRT_SECURE_NO_WARNINGS
+
 enum EDirection{
 	dUP, dDOWN, dSTOP
 };
