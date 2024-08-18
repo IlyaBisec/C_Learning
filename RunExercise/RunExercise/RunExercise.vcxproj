@@ -231,6 +231,8 @@
     <ClCompile Include="13\13_1exe.cpp" />
     <ClCompile Include="13\13_2.cpp" />
     <ClCompile Include="13\13_2app.cpp" />
+    <ClCompile Include="13\13_3.cpp" />
+    <ClCompile Include="13\13_3app.cpp" />
     <ClCompile Include="7\seven_eight.cpp" />
     <ClCompile Include="7\seven_five.cpp" />
     <ClCompile Include="7\seven_four.cpp" />
@@ -348,6 +350,8 @@
     <ClInclude Include="13\13_1.h" />
     <ClInclude Include="13\13_2.h" />
     <ClInclude Include="13\13_2app.h" />
+    <ClInclude Include="13\13_3.h" />
+    <ClInclude Include="13\13_3app.h" />
     <ClInclude Include="7\seven_eight.h" />
     <ClInclude Include="7\seven_five.h" />
     <ClInclude Include="7\seven_nine.h" />
