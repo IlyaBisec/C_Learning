@@ -230,6 +230,7 @@
     <ClCompile Include="13\13_1.cpp" />
     <ClCompile Include="13\13_1exe.cpp" />
     <ClCompile Include="13\13_2.cpp" />
+    <ClCompile Include="13\13_2app.cpp" />
     <ClCompile Include="7\seven_eight.cpp" />
     <ClCompile Include="7\seven_five.cpp" />
     <ClCompile Include="7\seven_four.cpp" />
