@@ -1,0 +1,9 @@
+// Характеристики конкретного здания
+#pragma once
+
+#ifndef _ELEVATOR_APP_MOD_H_
+#define _ELEVATOR_APP_MOD_H_
+#endif // !_ELEVATOR_APP_MOD_H_
+
+const int COUNT_FLOORS = 20; // количество этажей
+const int COUNT_CABINES = 4; // количество лифтов
