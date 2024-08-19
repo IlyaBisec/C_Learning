@@ -1,4 +1,4 @@
-// Улучшенная версия моделирования лифтовой системы для здания
+// An improved version of the elevator system simulation for a building
 #pragma once
 
 #ifndef _ELEVATOR_MOD_H_
@@ -20,76 +20,76 @@ namespace ElevatorSystemMod{
 		dUP, dDOWN, dSTOP
 	};
 
-	const int LOAD_TIME = 3;	// время посадки/высадки пассажира в/из лифта(ticks)
-	const int SPACE = 7;		// расстояние между кабинами лифтов (в символах)
-	const int BUFFER_LENGTH = 80; // длина буфера вспомогательной строки
+	const int LOAD_TIME = 3;	// Passenger load/unload time in/out of the elevator
+	const int SPACE = 7;		// Distance between elevator cabins (in symbols)
+	const int BUFFER_LENGTH = 80; // Buffer length of the auxiliary string
 
 	class Building;
 
-	// Класс лифта, описывающий как работает лифт. 
-	// Понятие слов Elevator = Cabine of elevator = car
+    // An elevator class that describes how the elevator works. 
+	// The position of the words Elevator = Elevator cabine
 	class Elevator
 	{
 	public:
 		Elevator(Building *build, int);
 
-		void chooseAction();		// Выбор действия
-		void move();				// Движение кабины лифта
-		void display();			    // Отображение лифта на экране
+		void chooseAction();		// Choosing an action
+		void move();				// Movement of the elevator cabin
+		void display();			    // Elevator display on the screen
 
-		void floor_display() const;		// Отображение этажа(куда едет лифт)
-		void decideAction();			// Принять решение о следующем действии
+		void floor_display() const;		// Displaying the floor (where the elevator goes)
+		void decideAction();			// Decide on the next action
 
-		void get_destination();			// Получение конечнего этажа
-		int get_floor() const;			// Получение текущего этажа
-		EDirection get_direction() const; // Получение текущего направления
+		void get_destination();			// Getting the final floor
+		int get_floor() const;			// Getting the current floor
+		EDirection get_direction() const; // Getting the current direction
 
 	private:
 		Building *m_ptrBuilding;
-		EDirection m_currentDir;	// Текущее направление движения
+		EDirection m_currentDir;	// Current direction of move
 
-		const int m_elevNumber; // номер лифта
-		int m_currentFloor;		// Текущий этаж
-		int m_oldFloor;			// С какого этажа приехали
-		int m_timerLoad;		// Время загрузки пассажира в лифт
-		int m_timerUnload;		// Время выгрузки пассажира из лифта
+		const int m_elevNumber; // Elevator number
+		int m_currentFloor;		// Current floor
+		int m_oldFloor;			// What floor did you come from
+		int m_timerLoad;		// Passenger loading time in the elevator
+		int m_timerUnload;		// The time of unloading the passenger from the elevator
 
-		bool destination[COUNT_FLOORS];  // Этаж на который едет пассажир
+		bool destination[COUNT_FLOORS];  // The floor to which the passenger is moving
 	};
 
-	// Класс здания, в котором есть лифт
+	// The class of the building that has an elevator
 	class Building
 	{
 	public:
 		Building();
 		~Building();
 
-		// Запуск лифта
+		// Starting the elevator
 		void elevator_start();
 
-		// Найти номер этажа с лифтом 
+		// Find a floor number with an elevator
 		int get_elevFloor(const int) const;
-		// Получить направление лифта
+		// Get the direction of the elevator
 		EDirection get_elevDir(const int) const;
 
-		// Проверить, есть ли запрос лифта с этажа
+		// Check if there is a request for an elevator from the floor
 		bool get_floorRequest(const int, const int) const;
-		// Ответить на запрос лифта с этажа
+		// To respond to the request for an elevator from the floor
 		void set_floorRequest(const int, const int, const bool);
 
-		// Получить запрос от пассажиров с этажей
+		// Receive a request from passengers from the floors
 		void record_floorRequest();
-		// Отобразить на экране запрос от пассажиров с этажей 
+		// Display a request from passengers from the floors on the screen
 		void display_floorRequest() const;
 
 		//using enum EDirection;
 	private:
-		// Число уже созданных лифтов
+		// The number of elevators already created
 		int m_currentCountCabines;
 
 		Elevator *m_elevatorList[COUNT_CABINES];
-		// массив кнопок вызова лифта «вверх/вниз»
-		// (false = ВВЕРХ, true = ВНИЗ)
+		// Array of elevator call buttons "up/down"
+		// (false = UP, true = DOWN)
 		bool m_floorRequests[2][COUNT_FLOORS];
 	};
 }
