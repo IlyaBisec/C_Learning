@@ -1,21 +1,23 @@
 #include "13_2.h"
 #include <stdlib.h>
 
-// Building
+
 namespace ElevatorSystem{
+
+	// Building
 
 	Building::Building()
 	{
-		// строка для номеров этажей
+		// A string for floor numbers
 		char strFloorNum[BUFFER_LENGTH];
 		init_graphics();
 		clear_screen();
 		m_elevator = new Elevator(this);
 
-		// для каждого этажа
+		// For each floor
 		for (int i = 0; i < COUNT_FLOORS; i++)
 		{
-			// вывести номер этажа на экран
+			// Display the floor number on the screen
 			set_cursor_pos(3, COUNT_FLOORS - i);
 			_itoa_s(i + 1, strFloorNum, 10);
 			std::cout << std::setw(3) << strFloorNum;
@@ -103,7 +105,7 @@ namespace ElevatorSystem{
 		for (int i = 0; i < COUNT_FLOORS; i++)
 		{
 			set_cursor_pos(SPACE, COUNT_FLOORS - i);
-			// Стрелка вверх
+			// Up arrow
 			if (m_floorRequests[dUP][i] == true)
 			{
 				std::cout << "'\x25B2'";
@@ -112,7 +114,7 @@ namespace ElevatorSystem{
 				std::cout << ' ';
 			}
 			set_cursor_pos(SPACE + 3, COUNT_FLOORS - i);
-			// Стрелка вниз
+			// Down arrow
 			if (m_floorRequests[dDOWN][i] == true)
 			{
 				std::cout << "\x25BC";
@@ -130,10 +132,10 @@ namespace ElevatorSystem{
 	{
 		m_currentFloor = 0;	// Current floor 0(for user - 1)
 		m_oldFloor = 0;		// pre floor also 0
-		//  пока кабина лифта стоит на месте
+		// While the elevator car is in place
 		m_currentDir = dSTOP;
 
-		// пассажир еще не нажимал кнопку с этажом назначения
+		// The passenger has not yet pressed the button with the destination floor
 		for (int i = 0; i < COUNT_FLOORS; i++)
 			destination[i] = false;
 
@@ -167,24 +169,25 @@ namespace ElevatorSystem{
 		set_cursor_pos(SPACE + SPACE, COUNT_FLOORS - m_oldFloor);
 		std::cout << "  ";
 
-		// отображение погрузки в лифт
+		// Display of loading into the elevator
 		set_cursor_pos(SPACE - 1 + SPACE, COUNT_FLOORS - m_currentFloor);
 		switch (m_timerLoad)
 		{
-			// дверь лифта закрыта, пассажира нет
+			// The elevator door is closed, there is no passenger
 			case 0:
 				std::cout << " \x2588\x2588\x2588 ";
 				break;
-				// дверь лифта закрывается,пассажир внутри кабины и его не видно
+				// The elevator door closes, the passenger is inside the cabin 
+				// and he is not visible
 			case 1:
 				std::cout << " \x2588\x2588\x2588 ";
 				break;
-				// пассажир внутри кабины с открытой дверьб
+				// A passenger inside the cabin with the door open
 			case 2:
 				std::cout << " \x2588\x263A\x2588 ";
 				get_destination();
 				break;
-				// дверь лифта открывается, пассажир хочет войти (слева)
+				// The elevator door opens, the passenger wants to enter (on the left)
 			case 3:
 				std::cout << " \x263A\x2588\x2588 ";
 				break;
@@ -192,23 +195,23 @@ namespace ElevatorSystem{
 				break;
 		}
 
-		// отображение выгрузки из лифта
+		// Displaying the unloading from the elevator
 		set_cursor_pos(SPACE + SPACE, COUNT_FLOORS - m_currentFloor);
 		switch (m_timerUnload)
 		{
-			// дверь лифта закрыта, пассажира нет
+			// The elevator door is closed, there is no passenger
 			case 0:
 				std::cout << " \x2588\x2588\x2588 ";
 				break;
-				// дверь лифта закрывается,пассажир внутри кабины и его не видно
+				// The elevator door closes, the passenger is inside the cabin and he is not visible
 			case 1:
 				std::cout << " \x2588\x2588\x2588 ";
 				break;
-				// дверь открыта, пассажир вышел из лифта(направо)
+				// The door is open, the passenger got out of the elevator (to the right)
 			case 2:
 				std::cout << " \x2588\x2588\x263A ";
 				break;
-				// дверь лифта открывается, виден пассажир внутри кабины
+				// The elevator door opens, the passenger inside the cabin is visible
 			case 3:
 				std::cout << " \x2588\x263A\x2588 ";
 				break;
@@ -238,72 +241,72 @@ namespace ElevatorSystem{
 	{
 		int i;
 
-		bool destins_above, destins_below;  // конечный пункт
-		bool requests_above, requests_below; // запросы с этажей
+		bool destins_above, destins_below;  // The final destination
+		bool requests_above, requests_below; // Requests from floors
 
-		// номер этажа ближайшего запроса с этажей выше и ниже
+		// The floor number of the nearest request from the floors above and below
 		int nearest_high_request = 0;
 		int nearest_low_request = 0;
 
-		// проверка на гранины(верхний и нижний этаж - являются последними)
+		// Checking for boundaries (upper and lower floors are the last ones)
 		if ((m_currentFloor == COUNT_FLOORS - 1 && m_currentDir == dUP)
 			|| (m_currentFloor == 0 && m_currentDir == dDOWN)){
 			m_currentDir = dSTOP;
 		}
 
-		// если приехали, высадить пассажира
+		// If you arrive, drop off the passenger
 		if (destination[m_currentFloor] == true)
 		{
-			// удалить этот пункт назначения из списка
+			// Remove this destination from the list
 			destination[m_currentFloor] == false;
 
-			// начать высадку пассажира
+			// Start disembarking the passenger
 			if (!m_timerUnload)
 				m_timerUnload = LOAD_TIME;
 			return;
 		}
 
-		// проверим, есть ли конечный пункт или запросы с этажей выше и ниже от нас;
-		// запомним ближайший этаж с запросом сверху и снизу от нас
+		// Check if there is a destination or requests from floors above and below
+		// remember the nearest floor with a request from above and below
 		destins_above = destins_below = false;
 		requests_above = requests_below = false;
 
-		// проверяем верхние этажи
+		// Checking the upper floors
 		for (i = m_currentFloor + 1; i < COUNT_FLOORS; i++)
 		{
-			// если он является пунктом назначения,
+			// If it is the destination
 			if (destination[i])
 				destins_above = true;
 
-			// если есть запрос с этого этажа,
+			// If there is a request from this floor
 			if (m_ptrBuilding->get_floorRequest(dUP, i) ||
 				m_ptrBuilding->get_floorRequest(dDOWN, i))
 			{
 				requests_above = true;
-				// если ранее не запомнен этаж
+				// If you have not previously remembered the floor
 				if (!nearest_high_request)
 					nearest_high_request = i;
 			}
 		}
-		// проверяем нижние этажи
+		// Checking the lower floors
 		for (i = m_currentFloor - 1; i >= 0; i--)
 		{
-			// если он является пунктом назначения,
+			// If it is the destination
 			if (destination[i])
 				destins_below = true;
 
-			// если есть запрос с этого этажа
+			// If there is a request from this floor
 			if (m_ptrBuilding->get_floorRequest(dUP, i) ||
 				m_ptrBuilding->get_floorRequest(dDOWN, i))
 			{
 				requests_below = true;
-				// если ранее не запомнен этаж
+				// If you have not previously remembered the floor
 				if (!nearest_low_request)
 					nearest_low_request = i;
 			}
 		}
 
-		// если имеется пункт назначения, а лифт стоит или движется к нему,
+		// If there is a destination, and the elevator is standing or moving towards it
 		if (destins_above && (m_currentDir == dSTOP || m_currentDir == dUP))
 		{
 			m_currentDir = dUP;
@@ -315,11 +318,11 @@ namespace ElevatorSystem{
 			return;
 		}
 
-		// если есть запрос «вверх» с этого этажа и
-		// если мы едем вверх или стоим, произвести посадку пассажира
+		// If there is a request "up" from this floor and
+		// If we are going up or standing, make a passenger boarding
 		if ((m_ptrBuilding->get_floorRequest(dUP, m_currentFloor) && m_currentDir != dDOWN))
 		{
-			// если лифт стоял
+			// If the elevator was standing
 			m_currentDir = dUP;
 
 			m_ptrBuilding->set_floorRequest(m_currentDir, m_currentFloor, false);
@@ -328,11 +331,11 @@ namespace ElevatorSystem{
 			return;
 		}
 
-		// если есть запрос «вниз» с этого этажа и
-		// если мы едем вниз или стоим, произвести посадку пассажира
+		// If there is a request to "down" from this floor and
+		// If we are going down or standing, make a passenger boarding
 		if ((m_ptrBuilding->get_floorRequest(dDOWN, m_currentFloor) && m_currentDir != dUP))
 		{
-			// если лифт стоял
+			// If the elevator was standing
 			m_currentDir = dDOWN;
 
 			m_ptrBuilding->set_floorRequest(m_currentDir, m_currentFloor, false);
@@ -341,7 +344,7 @@ namespace ElevatorSystem{
 			return;
 		}
 
-		// если нет запросов с этажей или пункта назначения сверху или снизу,
+		// If there are no requests from floors or destination from above or below
 		if (!destins_above && !requests_above &&
 			!destins_below && !requests_below)
 		{
@@ -349,14 +352,14 @@ namespace ElevatorSystem{
 			return;
 		}
 
-		// если мы едем вверх или остановились, а выше нас есть запрос с этажа
+		// If we are going up or stopped, and there is a request from the floor above us
 		if ((m_currentDir == dUP || m_currentDir == dSTOP) && requests_above)
 		{
 			m_currentDir = dUP;
 			return;
 		}
 
-		// если мы едем вниз или остановились, а ниже нас есть запрос с этажа
+		// If we are going down or stopped, and there is a request from the floor below us
 		if ((m_currentDir == dUP || m_currentDir == dSTOP) && requests_below)
 		{
 			m_currentDir = dDOWN;
@@ -373,16 +376,16 @@ namespace ElevatorSystem{
 
 		set_cursor_pos(1, 22); clear_line();
 		set_cursor_pos(1, 22);
-		std::cout << "Лифт остановился на этаже " << (m_currentFloor + 1) << "...";
+		std::cout << "The elevator stopped on the floor " << (m_currentFloor + 1) << "...";
 		set_cursor_pos(1, 23);
-		std::cout << "Введите этаж назначения: ";
+		std::cout << "Enter the destination floor: ";
 		std::cin.get(tempString, BUFFER_LENGTH);
 		std::cin.ignore(10, '\n');
-		// этажи нумеруются с 0, а не с 1
+		// Floors are numbered from 0, not from 1
 		dest_floor = atoi(tempString);
 		--dest_floor;
 
-		// выбор этажа назначения выбирает направление движения
+		// Selecting the destination floor selects the direction of move
 		m_currentDir = (dest_floor < m_currentFloor) ? dDOWN : dUP;
 		destination[dest_floor] = true;
 		floor_display();
