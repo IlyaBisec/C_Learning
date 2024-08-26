@@ -192,25 +192,34 @@
     <ClCompile Include="12\12_10.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="13\13_1.cpp">
+    <ClCompile Include="14\14_1.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="13\13_1exe.cpp">
+    <ClCompile Include="14\14_2.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="13\13_2.cpp">
+    <ClCompile Include="14\14_3.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="13\13_2app.cpp">
+    <ClCompile Include="14\14_4.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="13\13_3.cpp">
+    <ClCompile Include="14\14_5.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="13\13_3app.cpp">
+    <ClCompile Include="14\14_6.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="13\13_4.cpp">
+    <ClCompile Include="14\14_7.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="14\14_8.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="14\14_9.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="14\14_10.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -365,22 +374,34 @@
     <ClInclude Include="12\12_10.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="13\13_1.h">
+    <ClInclude Include="14\14_1.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="13\13_2.h">
+    <ClInclude Include="14\14_2.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="13\13_2app.h">
+    <ClInclude Include="14\14_3.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="13\13_3.h">
+    <ClInclude Include="14\14_4.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="13\13_3app.h">
+    <ClInclude Include="14\14_5.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="13\13_4.h">
+    <ClInclude Include="14\14_6.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="14\14_7.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="14\14_8.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="14\14_9.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="14\14_10.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
