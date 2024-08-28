@@ -21,9 +21,9 @@ namespace ElevatorSystem{
 	};
 
 
-	const int LOAD_TIME = 3;	// Passenger load/unload time in/out of the elevator
-	const int SPACE = 7;		// Distance between elevator cabins (in symbols)
-	const int BUFFER_LENGTH = 80; // Buffer length of the auxiliary string
+	constexpr int LOAD_TIME = 3;	// Passenger load/unload time in/out of the elevator
+	constexpr int SPACE = 7;		// Distance between elevator cabins (in symbols)
+	constexpr int BUFFER_LENGTH = 80; // Buffer length of the auxiliary string
 
 
 	class Building;
