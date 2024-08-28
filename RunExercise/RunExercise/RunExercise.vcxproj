@@ -237,6 +237,16 @@
     <ClCompile Include="14\14_7.cpp" />
     <ClCompile Include="14\14_8.cpp" />
     <ClCompile Include="14\14_9.cpp" />
+    <ClCompile Include="15\15_1.cpp" />
+    <ClCompile Include="15\15_10.cpp" />
+    <ClCompile Include="15\15_2.cpp" />
+    <ClCompile Include="15\15_3.cpp" />
+    <ClCompile Include="15\15_4.cpp" />
+    <ClCompile Include="15\15_5.cpp" />
+    <ClCompile Include="15\15_6.cpp" />
+    <ClCompile Include="15\15_7.cpp" />
+    <ClCompile Include="15\15_8.cpp" />
+    <ClCompile Include="15\15_9.cpp" />
     <ClCompile Include="7\seven_eight.cpp" />
     <ClCompile Include="7\seven_five.cpp" />
     <ClCompile Include="7\seven_four.cpp" />
@@ -388,6 +398,7 @@
     <ClInclude Include="9\9_7.h" />
     <ClInclude Include="9\9_8.h" />
     <ClInclude Include="9\9_9.h" />
+    <ClInclude Include="15\header.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
