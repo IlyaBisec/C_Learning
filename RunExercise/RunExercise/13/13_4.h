@@ -9,7 +9,7 @@
 
 #include <string>
 
-const unsigned int MAX_PRODUCTS = 8;
+constexpr unsigned int MAX_PRODUCTS = 8;
 
 enum class EProductType
 {
