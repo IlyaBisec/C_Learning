@@ -9,7 +9,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-const int SIZE = 1000; // Max number of digits
+constexpr int SIZE = 1000; // Max number of digits
 typedef unsigned long UL;
 
 // Verylong - class of very long numbers
