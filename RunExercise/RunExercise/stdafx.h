@@ -9,3 +9,4 @@
 #include <cstring>
 
 constexpr int LENGTH = 80;
+constexpr int MAX = 100;
