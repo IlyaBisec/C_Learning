@@ -6,7 +6,7 @@
 
 #include <iostream>
 
-const int SIZE = 3;
+constexpr int SIZE = 3;
 
 namespace Template_14_8
 {
