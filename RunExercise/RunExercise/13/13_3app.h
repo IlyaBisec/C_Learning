@@ -5,5 +5,5 @@
 #define _ELEVATOR_APP_MOD_H_
 #endif // !_ELEVATOR_APP_MOD_H_
 
-const int COUNT_FLOORS = 20; // Number of floors
-const int COUNT_CABINES = 4; // Number of elevators
+constexpr int COUNT_FLOORS = 20; // Number of floors
+constexpr int COUNT_CABINES = 4; // Number of elevators
