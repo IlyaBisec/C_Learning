@@ -21,8 +21,8 @@ namespace STL_15_4 {
 
 		void display() const
 		{
-			std::cout << std::setiosflags(std::ios::left) << std::setw(STR_SIZE) <<
-				m_lastName << std::setw(STR_SIZE) << m_firstName << "Phone: " << m_phoneNumber << "\n";
+			std::cout << std::setiosflags(std::ios::left) << std::setw(INDENTATION) <<
+				m_lastName << std::setw(INDENTATION) << m_firstName << "Phone: " << m_phoneNumber << "\n";
 		}
 
 	private:
@@ -61,19 +61,19 @@ namespace STL_15_4 {
 
 using namespace STL_15_4;
 
-int main()
+int main15_4()
 {
 	// Multiset
 	std::multiset<Person *, ComparePersons> multiPersons;
 
 	// Выделение памяти на полдюжины персон и помещение их в 
 	// мультимножество
-	multiPersons.insert(new Person("Jackson", "Michael", 88005535));
-	multiPersons.insert(new Person("Tirel", "Travis", 12345678));
-	multiPersons.insert(new Person("Lannistar", "Tywin", 41414141));
-	multiPersons.insert(new Person("King", "Stiven", 78234519));
-	multiPersons.insert(new Person("Pika", "Chu", 77117711));
-	multiPersons.insert(new Person("Jackson", "Michael", 88005535));
+	multiPersons.insert(new Person("Jackson", "Michael", 880055));
+	multiPersons.insert(new Person("Tirel", "Travis", 123456));
+	multiPersons.insert(new Person("Lannistar", "Tywin", 414141));
+	multiPersons.insert(new Person("King", "Stiven", 782345));
+	multiPersons.insert(new Person("Pika", "Chu", 771177));
+	multiPersons.insert(new Person("Jackson", "Michael", 880055));
 
 	// Output
 	std::for_each(multiPersons.begin(), multiPersons.end(), displayPerson);
