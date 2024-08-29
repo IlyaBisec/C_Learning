@@ -1,9 +1,13 @@
 #pragma once
 #include <iostream>
+#include <string>
+
+#include <iomanip>
 #include <list>
+#include <set>
 #include <algorithm>
 #include <vector>
-#include <string>
+
 
 constexpr int SIZE = 80;
 constexpr int MAX_COUNT = 100;
