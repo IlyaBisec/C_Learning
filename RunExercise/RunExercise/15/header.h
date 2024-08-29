@@ -10,6 +10,7 @@
 
 
 constexpr int SIZE = 80;
+constexpr int STR_SIZE = 20;
 constexpr int MAX_COUNT = 100;
 constexpr int LIMIT = 3;
 
