@@ -6,11 +6,14 @@
 #include <list>
 #include <set>
 #include <algorithm>
+#include <functional>
 #include <vector>
+#include <numeric>
+
 
 
 constexpr int SIZE = 80;
-constexpr int STR_SIZE = 20;
+constexpr int INDENTATION = 10;
 constexpr int MAX_COUNT = 100;
 constexpr int LIMIT = 3;
 
