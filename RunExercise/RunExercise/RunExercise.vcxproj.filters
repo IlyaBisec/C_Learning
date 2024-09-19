@@ -252,6 +252,12 @@
     <ClCompile Include="15\15_10.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="13\13_1.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="13\13_1exe.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="7\seven_two.h">
@@ -435,6 +441,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="15\header.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="13\13_1.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

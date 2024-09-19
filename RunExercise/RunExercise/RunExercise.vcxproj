@@ -227,6 +227,8 @@
     <ClCompile Include="12\12_6.cpp" />
     <ClCompile Include="12\12_7.cpp" />
     <ClCompile Include="12\12_8.cpp" />
+    <ClCompile Include="13\13_1.cpp" />
+    <ClCompile Include="13\13_1exe.cpp" />
     <ClCompile Include="14\14_1.cpp" />
     <ClCompile Include="14\14_10.cpp" />
     <ClCompile Include="14\14_2.cpp" />
@@ -361,6 +363,7 @@
     </ClInclude>
     <ClInclude Include="12\12_10.h" />
     <ClInclude Include="12\pre12.h" />
+    <ClInclude Include="13\13_1.h" />
     <ClInclude Include="14\14_1.h" />
     <ClInclude Include="14\14_10.h" />
     <ClInclude Include="14\14_2.h" />
