@@ -3,7 +3,6 @@
 #pragma once
 #ifndef _VERYLONG_H_
 #define _VERYLONG_H_
-#endif // !_VERYLONG_H_
 
 #include <iostream>
 #include <string.h>
@@ -33,7 +32,7 @@ public:
 			m_sign = true;
 		}
 
-		_itoa_s(n, m_string, 10);	// Convert to string
+		_itoa_s(abs(n), m_string, 10);	// Convert to string
 		_strrev(m_string);		// Flip her
 		m_length = strlen(m_string); // Find length
 	}
@@ -74,3 +73,5 @@ private:
 	// if equal, 2 is returned
 	int compare(const Verylong &largeNumber) const;
 };
+
+#endif // !_VERYLONG_H_
