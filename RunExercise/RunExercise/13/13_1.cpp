@@ -2,11 +2,11 @@
 
 void Verylong::put() const
 {
-	char copy[SIZE];
-	strcpy_s(copy, m_string); // Create copy
+	char temp[SIZE];
+	strcpy_s(temp, m_string); // Create temp
 	if (!m_sign && compare(Verylong(0L)) != 2) // If -digit & !=0
 		std::cout << '-';
-	std::cout << _strrev(copy); // Flip copy and display
+	std::cout << _strrev(temp); // Flip temp and display
 }
 
 void Verylong::get()
@@ -59,7 +59,7 @@ Verylong Verylong::operator+(const Verylong &largeNum)
 		// If 2-st >
 		else if(compare(largeNum) == 0)
 		{
-			result = subtract(*this);  // Substrucrt 2st & 1st terms
+			result = largeNum.subtract(*this);  // Substrucrt 2st & 1st terms
 			result.m_sign = largeNum.m_sign; // Sign of result = sign greater term
 		}
 		// If equal
@@ -185,28 +185,30 @@ Verylong Verylong::addBy(const Verylong &largeNum) const
 		   { digitSum -= 10; carry = 1; } // Decrease sum -10 and transfer 
 		else
 			// Else transfer = 0
-			carry = 0;					
+			carry = 0;		
 		
 		tempNumber[pos] = digitSum + '0';
 	}
+
+
 	// If the transfer in the end
 	// last digit = 1
 	if (carry == 1)					
 		tempNumber[pos++] = '1';
 	tempNumber[pos] = '\0';
 
-	// Delete leading zeros
-	for(pos = strlen(tempNumber) - 1; pos > 0; pos--)
-	{
-		if (tempNumber[pos] == '0')
-		{
-			tempNumber[pos] = '\0';
-		}
-		else
-		{
-			break;
-		}
-	}
+	//// Delete leading zeros
+	//for(pos = strlen(tempNumber) - 1; pos > 0; pos--)
+	//{
+	//	if (tempNumber[pos] == '0')
+	//	{
+	//		tempNumber[pos] = '\0';
+	//	}
+	//	else
+	//	{
+	//		break;
+	//	}
+	//}
 
 	return Verylong(tempNumber);
 }
@@ -239,7 +241,7 @@ Verylong Verylong::subtract(const Verylong &largeNum) const
 	tempNumber[pos] = '\0';
 
 	// Delete leading zeros
-	for(pos = m_length - 1; pos > 0; pos--)
+	/*for(pos = m_length - 1; pos > 0; pos--)
 	{
 		if (tempNumber[pos] == '0')
 		{
@@ -249,7 +251,7 @@ Verylong Verylong::subtract(const Verylong &largeNum) const
 		{
 			break;
 		}
-	}
+	}*/
 
 	return Verylong(tempNumber);
 }
