@@ -14,32 +14,51 @@ int main()
 	unsigned long number, j;
 	Verylong factorial = 1;          
 
-	wcout << L"Input number: ";
-	wcin >> number;
+	try
+	{
+		wcout << L"Input number: ";
+		wcin >> number;
 
-	for (j = number; j > 0; j--)
-		factorial = factorial * j;
-	wcout << L"Factorial = ";
-	factorial.put();
-	wcout << endl;
+		if (number == 0)
+		{
+			std::wcout << "Unsigned number only and number can be zero\n";
+			exit(-1);
+		}
+		// If user_input > SIZE
+		if (number >= SIZE || number < 0) {
+			std::wcout << "Max size: "<<SIZE<<"\n";
+			exit(-1);
+		}
 
-	// TESTING
+		for (j = number; j > 0; j--)
+			factorial = factorial * j;
+		wcout << L"Factorial = ";
+		factorial.put();
+		wcout << endl;
 
-	Verylong s, s1, s2;
+		// TESTING
 
-	wcout << L"\nEnter the first number: "; s1.get();
-	wcout << L"Enter the second number: "; s2.get();
-	s = s1 + s2;
-	wcout << L"\nSumm: "; s.put();
-	s = s1 - s2;
-	wcout << L"\nSubstruct: "; s.put();
-	s = s1 * s2;
-	wcout << L"\nMultiplication: "; s.put();
-	s = s1 / s2;
-	wcout << L"\nDivision: "; s.put();
-	s = s1 % s2;
-	wcout << L"\nRemainder of the division: "; s.put();
-	wcout << endl;
+		Verylong s, s1, s2;
+
+		wcout << L"\nEnter the first number: "; s1.get();
+		wcout << L"Enter the second number: "; s2.get();
+		s = s1 + s2;
+		wcout << L"\nSumm: "; s.put();
+		s = s1 - s2;
+		wcout << L"\nSubstruct: "; s.put();
+		s = s1 * s2;
+		wcout << L"\nMultiplication: "; s.put();
+		s = s1 / s2;
+		wcout << L"\nDivision: "; s.put();
+		s = s1 % s2;
+		wcout << L"\nRemainder of the division: "; s.put();
+		wcout << endl;
+
+	} catch (const std::exception &)
+	{
+
+	}
+
 
 	return 0;
 }
