@@ -16,23 +16,36 @@ void Verylong::put() const
 // Getting a number from the user
 void Verylong::get()
 {
-	wchar_t temp[SIZE];
-	wcin >> temp;  
+	wchar_t user_input[SIZE];
+
+	wcin >> user_input;
+
+
+	// If !number and !-number
+	for (int i = 0; user_input[i] != L'\0'; ++i)
+	{
+		if (!iswdigit(user_input[i]) && !(i == 0 && user_input[i] == L'-'))
+		{
+			wcerr << L"Unccorrect input, pls number only." << endl;
+			exit(1);
+		}
+	}
 
 	// If the user has entered a minus sign '-' for a negative number
-	if (temp[0] == L'-')  // Get sign
+	if (user_input[0] == L'-')  // Get sign
 	{
-		m_sign = false; wcscpy(m_string, temp + 1);
+		m_sign = false; wcscpy(m_string, user_input + 1);
 	}
 	// Otherwise, the number is positive and the plus sign is not required, respectively,
 	// the user enters only numbers
 	else
 	{
-		m_sign = true; wcscpy(m_string, temp);
+		m_sign = true; wcscpy(m_string, user_input);
 	}
 
 	m_length = wcslen(m_string); // Find number length
 	_wcsrev(m_string);       // Flip him
+
 }
 
 // Find the sum of very long integers
@@ -83,225 +96,214 @@ Verylong Verylong::operator- (const Verylong v)
 	// If the reduced is positive and the subtracted is negative
 	// a - (-b) = a + b
 	if (m_sign && !v.m_sign)
-	{                              //     то есть получается сложение: a – (–b) = a + b
-		res = addBy(v); // складываем их модули
-		res.m_sign = true;           // итог — положителен
+	{                              
+		res = addBy(v); 
+		res.m_sign = true;          
 	}
-	else if (!m_sign && v.m_sign)      // если уменьшаемое отрицательно, а вычитаемое положительно
-	{                              //     то есть получается: –a – b = –(a + b)
-		res = addBy(v); // складываем их модули
-		res.m_sign = false;          // итог — отрицателен
+	//  –a – b = –(a + b)
+	else if (!m_sign && v.m_sign)     
+	{                              
+		res = addBy(v); 
+		res.m_sign = false;       
 	}
-	else                           // если уменьшаемое и вычитаемое имеют один и тот же знак
+	// If the reduced and subtracted have the same sign
+	else            
 	{
-		if (compare(v) == 1)                  // если уменьшаемое больше,
+		// If the reduced value is greater
+		if (compare(v) == 1)                
 		{
-			res = subtract(v);       // считаем разницу уменьшаемого и вычитаемого
-			res.m_sign = m_sign;                    // знак результата — знак уменьшаемого
-												// (или знак вычитаемого, они же тут равны)
+			res = subtract(v);      
+			res.m_sign = m_sign;                  
+												
 		}
-		else if (compare(v) == 0)             // если вычитаемое больше,
+		// If the deductible is greater,
+		else if (compare(v) == 0)             
 		{
-			res = v.subtract(*this); // считаем разницу вычитаемого и уменьшаемого
-			res.m_sign = !v.m_sign;                 // знак результата — знак, противоположный
-												// знаку уменьшаемого (или вычитаемого, они равны)
+			res = v.subtract(*this); 
+			res.m_sign = !v.m_sign;                 
+												
 		}
-		else                              // уменьшаемое и вычитаемое равны
-			res = Verylong(0L);                 // результат равен 0
+		// If equal
+		else                              
+			res = Verylong(0L);                
 	}
 
 	return res;
 }
 
-// натуральное сложение: находим сумму двух положительных очень длинных целых чисел,
-// то есть итог сложения тоже будет положительным очень длинным целым числом
-// (сумма двух натуральных чисел дает натуральное число)
+// The algorithm for adding very large numbers
 Verylong Verylong::addBy(const Verylong v) const
 {
 	wchar_t temp[SIZE];
 	int j;
-	// получим длину более длинного слагаемого
+	// Get legth
 	int maxlen = (m_length > v.m_length) ? m_length : v.m_length;
-	int carry = 0;                         // перенос станет равен 1,
-										   // если сумма разрядов будет >= 10
-	for (j = 0; j < maxlen; j++)           // начать цикл поразрядного сложения
+	int carry = 0;                         // Transfer = 1,
+										   // If sum of bits >= 10
+	for (j = 0; j < maxlen; j++)           
 	{
-		int d1 = (j > m_length - 1) ? 0 : m_string[j] - L'0';     // получим цифру 1-го слагаемого
-		int d2 = (j > v.m_length - 1) ? 0 : v.m_string[j] - L'0'; // получим цифру 2-го слагаемого
-		int digitsum = d1 + d2 + carry;    // суммируем цифры и перенос
-		if (digitsum >= 10)                // если сумма цифр >= 10, то выполнить перенос
+		int d1 = (j > m_length - 1) ? 0 : m_string[j] - L'0';     
+		int d2 = (j > v.m_length - 1) ? 0 : v.m_string[j] - L'0';
+		int digitsum = d1 + d2 + carry;    
+		if (digitsum >= 10)                // If sum of bits >= 10, trasfer
 		{
 			digitsum -= 10; carry = 1;
-		} // уменьшим сумму на 10 и установим перенос
+		} // Decrease sum on 10 and set transfer
 		else
-			carry = 0;                     // иначе переноса нет, он равен нулю
-		temp[j] = digitsum + L'0';         // преобразуем цифру в символ и помещаем в итог
+			carry = 0;                     
+		temp[j] = digitsum + L'0';         
 	}
-	if (carry == 1)                        // если остался перенос от последнего сложения,
-		temp[j++] = L'1';                  // добавляем еще один старший разряд, равный 1
-	temp[j] = L'\0';                       // обозначим конец строки нулевым символом
+	if (carry == 1)                        
+		temp[j++] = L'1';                 
+	temp[j] = L'\0';                      
 
-	// вставим удаление ведущих нулей на всякий случай
+	// Insert the removal of the leading zeros
 	for (j = wcslen(temp) - 1; j > 0; j--)
 	{
-		if (temp[j] == L'0')               // если разряд содержит 0,
-			temp[j] = L'\0';               // сократить наше число на этот разряд
-										   // и перейти к проверке следующего разряда
+		if (temp[j] == L'0')               
+			temp[j] = L'\0';              
+										  
 		else
-			break;                         // иначе выйти из цикла
+			break;                      
 	}
 
-	return Verylong(temp);                 // возвратим результат сложения
+	return Verylong(temp);                
 }
 
-// натуральное вычитание: находим разницу двух положительных очень длинных целых чисел,
-// при этом должно выполняться условие: первое из этих чисел больше второго или равно ему,
-// то есть итог вычитания тоже будет положительным очень длинным целым числом
-// (разница двух натуральных чисел дает натуральное число, если уменьшаемое больше
-// вычитаемого или равно ему)
+// The algorithm for sunbtration very large numbers
 Verylong Verylong::subtract(const Verylong v) const
 {
 	wchar_t temp[SIZE];
 	int j;
-	int carry = 0;                         // перенос из старшего разряда
+	int carry = 0;                         
 
-	for (j = 0; j < m_length; j++)             // начать цикл поразрядного вычитания
+	for (j = 0; j < m_length; j++)            
 	{
-		int d1 = m_string[j] - L'0';                          // получим цифру уменьшаемого
-		int d2 = (j > v.m_length - 1) ? 0 : v.m_string[j] - L'0'; // получим цифру вычитаемого
-		int digitres = d1 - d2 - carry;    // вычисляем разность этих цифр
-										   // с учетом переноса
-		if (digitres < 0)                  // если разность < 0, то выполнить перенос
+		int d1 = m_string[j] - L'0';                         
+		int d2 = (j > v.m_length - 1) ? 0 : v.m_string[j] - L'0'; 
+		int digitres = d1 - d2 - carry;  
+		
+		// Calculate the difference between these numbers, taking into account the transfer
+		
+		// If the difference is < 0, then carry out the transfer
+		if (digitres < 0)                 
 		{
 			digitres += 10; carry = 1;
-		} // увеличим разность на 10 и установим перенос
+		} // Increase the difference by 10 and set the transfer
 		else
-			carry = 0;                     // иначе переноса нет, он равен нулю
-		temp[j] = digitres + L'0';         // преобразуем цифру в символ и помещаем в итог
+			carry = 0;                    
+		temp[j] = digitres + L'0';         
 	}
-	temp[j] = L'\0';                       // обозначим конец строки нулевым символом
+	temp[j] = L'\0';                       
 
-	// тут в temp уже содержится результат вычитания, но в этом результате могут
-	// быть ведущие нули; например, при вычислении разницы 1000 и 999 в temp
-	// будет записано число 1 в виде строки "1000" (помним, что числа мы храним в
-	// "перевернутом" виде), то есть с тремя ведущими нулями; поэтому здесь
-	// напишем удаление этих ведущих нулей, если они есть в результате
-
-	// ведем проверку от старшего к младшему разряду,
-	// младший разряд (j == 0) проверять не будем, так как в числе должен остаться
-	// хотя бы один разряд
+	
 	for (j = m_length - 1; j > 0; j--)
 	{
-		if (temp[j] == L'0')               // если разряд содержит 0,
-			temp[j] = L'\0';               // сократить наше число на этот разряд
-										   // и перейти к проверке следующего разряда
+		if (temp[j] == L'0')               // If the digit contains 0,
+			temp[j] = L'\0';               // Reduce our number by this category
+										   // and move on to checking the next discharge
 		else
-			break;                         // иначе выйти из цикла
+			break;                         // Otherwise, exit the loop
 	}
 
-	return Verylong(temp);                 // возвратим результат вычитания
+	return Verylong(temp);              
 }
 
-// если текущее число больше аргумента, то возвращается 1, если меньше — 0,
-// при равенстве возвращается 2 (сравниваются модули чисел, без учета знаков)
+// If the current number is greater than the argument, then 1 is returned, if less than 0,
+// if equal, 2 is returned
 int Verylong::compare(const Verylong v) const
 {
-	if (m_length > v.m_length)      // кол-во разрядов текущего числа больше, чем у аргумента
+	if (m_length > v.m_length)      // The number of digits of the current number is greater than that of the argument
 		return 1;
-	else if (m_length < v.m_length) // кол-во разрядов текущего числа меньше, чем у аргумента
+	else if (m_length < v.m_length) // The number of digits of the current number is lower than that of the argument
 		return 0;
-	else                                    // при равном кол-ве разрядов
-		for (int j = m_length - 1; j >= 0; j--) // сравним числа поразрядно,
-		{                                   // начиная со старшего разряда
+	else                                    // Equal
+		for (int j = m_length - 1; j >= 0; j--) 
+		{                                   
 			if (m_string[j] - L'0' > v.m_string[j] - L'0')
 				return 1;
 			else if (m_string[j] - L'0' < v.m_string[j] - L'0')
 				return 0;
-			// если разряды равны, переходим к сравнению более младших разрядов
+			
 		}
-	// если числа равны, то
 	return 2;
 }
 
-// найти произведение очень длинных целых чисел
+// Find the multiplication of very long integers
 Verylong Verylong::operator* (const Verylong v)
 {
 	Verylong res;
 
-	res = multiply(v);            // находим произведение модулей сомножителей
-	if ((m_sign && v.m_sign) || (!m_sign && !v.m_sign)) // если сомножители имеют одинаковые знаки,
-		res.m_sign = true;                        // итог — положителен
-	else                                        // если сомножители имеют разные знаки,
-		res.m_sign = false;                       // итог — отрицателен
+	res = multiply(v);           
+	if ((m_sign && v.m_sign) || (!m_sign && !v.m_sign)) 
+		res.m_sign = true;                       
+	else                                       
+		res.m_sign = false;                      
 
 	return res;
 }
 
-// натуральное умножение очень длинных целых чисел
+// The algorithm for multuply very large numbers
 Verylong Verylong::multiply(const Verylong v) const
 {
-	Verylong pprod;                        // произведение цифр из одного разряда
-	Verylong tempsum;                      // текущая сумма произведений
-	for (int j = 0; j < v.m_length; j++)       // переберем цифры из разрядов множителя
+	Verylong pprod;                       
+	Verylong tempsum;                     
+	for (int j = 0; j < v.m_length; j++)       
 	{
-		int digit = v.m_string[j] - L'0';     // получим цифру множителя
-		pprod = multdigit(digit);          // умножим множимое на эту цифру
-		for (int k = 0; k < j; k++)        // умножим результат на 10
-			pprod = mult10(pprod);         // нужное количество (k) раз
-		tempsum = tempsum + pprod;         // добавить очередное произведение к итоговой сумме
+		int digit = v.m_string[j] - L'0';     
+		pprod = multdigit(digit);          
+		for (int k = 0; k < j; k++)        
+			pprod = mult10(pprod);         
+		tempsum = tempsum + pprod;        
 	}
-	return tempsum;                        // возвратим результат умножения
+	return tempsum;                      
 }
 
-// найти результат целочисленного деления очень длинных целых чисел
+// Find the result of integer division of very long integers
 Verylong Verylong::operator/ (const Verylong v)
 {
 	Verylong res;
 
-	res = devide(v, true);            // находим результат деления модулей
-												// делимого и делителя
-	if ((m_sign && v.m_sign) || (!m_sign && !v.m_sign)) // если делимое и делитель имеют одинаковые знаки,
-		res.m_sign = true;                        // итог — положителен
-	else                                        // если делимое и делитель имеют разные знаки,
-		res.m_sign = false;                       // итог — отрицателен
+	res = devide(v, true);         
+												
+	if ((m_sign && v.m_sign) || (!m_sign && !v.m_sign)) 
+		res.m_sign = true;                        
+	else                                       
+		res.m_sign = false;                       
 
 	return res;
 }
 
-// найти остаток от целочисленного деления очень длинных целых чисел
+// Find the remainder of the integer division of very long integers
 Verylong Verylong::operator% (const Verylong v)
 {
 	Verylong res;
 
-	if (compare(Verylong(0L)) == 2)           // если делимое равно 0
-		res = Verylong(0L);               // остаток от деления равен 0
+	if (compare(Verylong(0L)) == 2)           
+		res = Verylong(0L);               
 	else
-	{                                     // если делимое не равно 0
-		res = devide(v, false); // находим остаток от деления модулей
-										  // делимого и делителя
-		res.m_sign = m_sign;                  // знак остатка равен знаку делимого
+	{                                    
+		res = devide(v, false); 
+										  
+		res.m_sign = m_sign;                
 	}
 
 	return res;
 }
 
-// натуральное целочисленное деление: возвращает результат целочисленного деления, либо остаток,
-// в зависимости от значения аргумента flag: true — результат, false — остаток
-// (слово «натуральное» здесь означает, что делимое и делитель — положительные числа)
+// The natural integer division algorithm returns the result of integer division, or the remainder,
+// depending on the value of the flag argument: true is the result, false is the remainder
 Verylong Verylong::devide(const Verylong v, bool flag) const
 {
-	if (v.compare(Verylong(0L)) == 2)          // если делитель равен 0
+	if (v.compare(Verylong(0L)) == 2)          // If the divisor is 0
 	{
-		wcout << L"\nОшибка! Делитель не может быть равен нулю!" << endl;
-		exit(1);                           // завершить программу
+		wcout << L"\nThe divisor cannot be zero!" << endl;
+		exit(1);                        
 	}
 
-	if (v.compare(*this) == 1)                    // если делитель больше делимого
-		return (flag) ? Verylong(0L) : *this; // завершить работу метода и
-											  // возвратить результат деления: 0
-											  // остаток от деления: делимое
-
-										   // если делитель меньше делимого или равен ему
+	if (v.compare(*this) == 1)                    // If the divisor is greater than the divisible
+		return (flag) ? Verylong(0L) : *this; 
+								
 	wchar_t res[SIZE];
 	Verylong dividend, divider;
 	int j = 0;
@@ -309,12 +311,13 @@ Verylong Verylong::devide(const Verylong v, bool flag) const
 	dividend = *this;
 	divider = v;
 
-	dividend.m_sign = true; // так как это натуральное деление, производим его
-	divider.m_sign = true;  // без учета знаков делимого и делителя
+	dividend.m_sign = true;
+	divider.m_sign = true;
 
-	do {                                   // цикл, пока делитель меньше делимого или равен ему
+	// As long as the divisor is less than or equal to the divisible one
+	do {                            
 
-		// умножаем делитель на 10, пока он не приблизится к делимому как можно ближе
+		// Multiply the divisor by 10 until it gets as close to the divisible as possible
 		Verylong prevdiv;
 		while (divider.compare(dividend) == 0 || divider.compare(dividend) == 2)
 		{
@@ -323,8 +326,8 @@ Verylong Verylong::devide(const Verylong v, bool flag) const
 		}
 		divider = prevdiv;
 
-		// умножаем делитель на числа от 1 до 9, пока он не приблизится к делимому как можно ближе,
-		// при этом это число в пределах от 1 до 9 станет очередной цифрой итогового ответа
+		// Multiply the divisor by the numbers from 1 to 9 until it gets as close to the divisible as possible,
+		// at the same time, this number in the range from 1 to 9 will become the next digit of the final answer
 		int digit = 1;
 		while (divider.compare(dividend) == 0 || divider.compare(dividend) == 2)
 		{
@@ -334,55 +337,52 @@ Verylong Verylong::devide(const Verylong v, bool flag) const
 		digit--;
 		divider = prevdiv.multdigit(digit);
 
-		// запишем найденную цифру ответа в итог
 		res[j++] = digit + L'0';
 
-		// отнимем от делимого отработанную часть
 		dividend = dividend - divider;
 
-		// вернем делитель к первоначальному значению
 		divider = v;
 
 	} while (divider.compare(dividend) == 0 || divider.compare(dividend) == 2);
 
-	res[j] = L'\0';                           // конец строки
-	_wcsrev(res);                             // перевернем итог
-	return (flag) ? Verylong(res) : dividend; // возвратим результат или остаток
+	res[j] = L'\0';                          
+	_wcsrev(res);                             
+	return (flag) ? Verylong(res) : dividend;
 }
 
-// умножение аргумента на 10
+// Multiplying the argument by 10
 Verylong Verylong::mult10(const Verylong v) const
 {
 	wchar_t temp[SIZE];
-	for (int j = v.m_length - 1; j >= 0; j--)  // сдвинем цифры в массиве-строке
-		temp[j + 1] = v.m_string[j];          // на одну позицию вправо
-	temp[0] = L'0';                        // поместим ноль в освободившуюся позицию слева
-	temp[v.m_length + 1] = L'\0';              // обозначим конец строки
-	return Verylong(temp);                 // возвратим результат
+	for (int j = v.m_length - 1; j >= 0; j--)  
+		temp[j + 1] = v.m_string[j];          
+	temp[0] = L'0';                        
+	temp[v.m_length + 1] = L'\0';              
+	return Verylong(temp);                
 }
 
-// умножение текущего числа на аргумент-цифру
+// Multiplying the current number by a digit argument
 Verylong Verylong::multdigit(const int d2) const
 {
 	wchar_t temp[SIZE];
 	int j, carry = 0;
-	for (j = 0; j < m_length; j++)             // переберем цифры текущего числа
+	for (j = 0; j < m_length; j++)            
 	{
-		int d1 = m_string[j] - L'0';          // получим цифру текущего числа
-		int digitprod = d1 * d2;           // умножим ее на аргумент-цифру
-		digitprod += carry;                // прибавим к произведению перенос
-		if (digitprod >= 10)               // если результат >= 10, организуем перенос
+		int d1 = m_string[j] - L'0';          
+		int digitprod = d1 * d2;           
+		digitprod += carry;               
+		if (digitprod >= 10)              
 		{
-			carry = digitprod / 10;        // перенос равен цифре из старшего разряда
-			digitprod -= carry * 10;       // текущий результат — цифра из младшего разряда
+			carry = digitprod / 10;        
+			digitprod -= carry * 10;       
 		}
 		else
-			carry = 0;                     // иначе перенос равен нулю (переноса нет)
-		temp[j] = digitprod + L'0';        // преобразуем цифру в символ и помещаем в итог
+			carry = 0;                     
+		temp[j] = digitprod + L'0';       
 	}
-	if (carry != 0)                        // если остался перенос от последнего произведения,
-		temp[j++] = carry + L'0';          // добавляем еще один старший разряд с переносом
-	temp[j] = L'\0';                       // обозначим конец строки
-	return Verylong(temp);                 // возвратим результат
+	if (carry != 0)                       
+		temp[j++] = carry + L'0';          
+	temp[j] = L'\0';                       
+	return Verylong(temp);                 
 }
 
