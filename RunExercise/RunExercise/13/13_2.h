@@ -6,15 +6,17 @@
 
 
 
-#include "13_2app.h"
 #include "../msoftcon.h"
 
 #include <iostream>
 #include <iomanip>
+#include <conio.h>
+#include <stdlib.h>
+#include <process.h>
 
 #define _CRT_SECURE_NO_WARNINGS
 
-namespace ElevatorSystem{
+
 
 	enum EDirection{
 	
@@ -25,6 +27,7 @@ namespace ElevatorSystem{
 	constexpr int LOAD_TIME = 3;	// Passenger load/unload time in/out of the elevator
 	constexpr int SPACE = 7;		// Distance between elevator cabins (in symbols)
 	constexpr int BUFFER_LENGTH = 80; // Buffer length of the auxiliary string
+	constexpr int COUNT_FLOORS = 20; // Number of floors
 
 
 	class Building;
@@ -84,13 +87,12 @@ namespace ElevatorSystem{
 		// Display a request from passengers from the floors on the screen
 		void display_floorRequest() const;
 
-		using enum EDirection;
 	private:
 		Elevator *m_elevator;
 		// Array of elevator call buttons "up/down"
 		// (false = UP, true = DOWN)
 		bool m_floorRequests[2][COUNT_FLOORS];
 	};
-}
+
 
 #endif // !_ELEVATOR_H_

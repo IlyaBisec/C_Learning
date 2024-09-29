@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 
-namespace ElevatorSystem{
+
 
 	// Building
 
@@ -404,4 +404,3 @@ namespace ElevatorSystem{
 	{
 		return m_currentDir;
 	}
-}
