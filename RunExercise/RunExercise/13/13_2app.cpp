@@ -1,7 +1,6 @@
 #include "13_2.h"
 
-
-int main()
+int main13_2()
 {
 	Building building;
 

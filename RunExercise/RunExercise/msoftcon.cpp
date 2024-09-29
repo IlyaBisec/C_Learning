@@ -15,7 +15,7 @@ void init_graphics()
 {
 	COORD console_size = { 80, 25 };
 	// открыть канал ввода/вывода на консоль
-	hConsole = CreateFile("CONOUT$", GENERIC_WRITE | GENERIC_READ,
+	hConsole = CreateFile(L"CONOUT$", GENERIC_WRITE | GENERIC_READ,
 		                  FILE_SHARE_READ | FILE_SHARE_WRITE,
 		                  0L, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0L);
 	// установить размер экрана 80 x 25
