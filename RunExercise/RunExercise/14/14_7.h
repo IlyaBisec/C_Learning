@@ -1,8 +1,7 @@
+#pragma once
 // Calculator with template
 #ifndef _CALCULATOR_TEMPLATE_H_
 #define _CALCULATOR_TEMPLATE_H_
-#endif // !_CALCULATOR_TEMPLATE_H_
-#pragma once
 
 #include <iostream>
 
@@ -72,3 +71,4 @@ namespace Template_14_7
 		  m_denumirator;
 	};
 }
+#endif // !_CALCULATOR_TEMPLATE_H_

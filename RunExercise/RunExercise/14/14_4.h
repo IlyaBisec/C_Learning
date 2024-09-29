@@ -3,7 +3,7 @@
 #pragma once
 #ifndef _SWAP_TEMPLATE_H_
 #define _SWAP_TEMPLATE_H_
-#endif // !_SWAP_TEMPLATE_H_
+
 
 #include <iostream>
 
@@ -17,3 +17,4 @@ namespace Template_14_4 {
     }
 }
 
+#endif // !_SWAP_TEMPLATE_H_

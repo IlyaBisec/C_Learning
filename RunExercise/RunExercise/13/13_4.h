@@ -5,7 +5,7 @@
 	#define CLASS_DECLSPEC _declspec(dllexport)
 #else
 	#define CLASS_DECLSPEC _declspec(dllimport)
-#endif // _SHOP_PROJECT_LIB_
+
 
 #include <string>
 
@@ -60,3 +60,5 @@ private:
 	float sumMoney;
 	
 };
+
+#endif // _SHOP_PROJECT_LIB_

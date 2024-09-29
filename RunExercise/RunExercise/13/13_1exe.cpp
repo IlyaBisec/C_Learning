@@ -6,7 +6,7 @@
 #include <fcntl.h>
 
 
-int main()
+int main13_1()
 {
 	_setmode(_fileno(stdout), _O_U16TEXT);
 	_setmode(_fileno(stdin), _O_U16TEXT);

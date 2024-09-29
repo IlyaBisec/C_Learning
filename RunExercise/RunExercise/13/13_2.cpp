@@ -69,10 +69,10 @@ namespace ElevatorSystem{
 		set_cursor_pos(1, 22);
 
 		std::cout << "Enter [Enter] for start of elevator or [ESC} for the exit from programm: ";
-		if (!kbhit()) // Wait '\r'
+		if (!_kbhit()) // Wait '\r'
 			return;
 
-		tempSymbol = _getwch();
+		tempSymbol = _getch();
 		if (tempSymbol == '\x1B') // If Esc
 			exit(0);
 
@@ -108,7 +108,7 @@ namespace ElevatorSystem{
 			// Up arrow
 			if (m_floorRequests[dUP][i] == true)
 			{
-				std::cout << "'\x25B2'";
+				std::cout << L"'\x25B2'";
 			} else
 			{
 				std::cout << ' ';
@@ -117,7 +117,7 @@ namespace ElevatorSystem{
 			// Down arrow
 			if (m_floorRequests[dDOWN][i] == true)
 			{
-				std::cout << "\x25BC";
+				std::cout << L"\x25BC";
 			} else
 			{
 				std::cout << ' ';
@@ -175,21 +175,21 @@ namespace ElevatorSystem{
 		{
 			// The elevator door is closed, there is no passenger
 			case 0:
-				std::cout << " \x2588\x2588\x2588 ";
+				std::cout << L" \x2588\x2588\x2588 ";
 				break;
 				// The elevator door closes, the passenger is inside the cabin 
 				// and he is not visible
 			case 1:
-				std::cout << " \x2588\x2588\x2588 ";
+				std::cout << L" \x2588\x2588\x2588 ";
 				break;
 				// A passenger inside the cabin with the door open
 			case 2:
-				std::cout << " \x2588\x263A\x2588 ";
+				std::cout << L" \x2588\x263A\x2588 ";
 				get_destination();
 				break;
 				// The elevator door opens, the passenger wants to enter (on the left)
 			case 3:
-				std::cout << " \x263A\x2588\x2588 ";
+				std::cout << L" \x263A\x2588\x2588 ";
 				break;
 			default:
 				break;
@@ -201,19 +201,19 @@ namespace ElevatorSystem{
 		{
 			// The elevator door is closed, there is no passenger
 			case 0:
-				std::cout << " \x2588\x2588\x2588 ";
+				std::cout << L" \x2588\x2588\x2588 ";
 				break;
 				// The elevator door closes, the passenger is inside the cabin and he is not visible
 			case 1:
-				std::cout << " \x2588\x2588\x2588 ";
+				std::cout << L" \x2588\x2588\x2588 ";
 				break;
 				// The door is open, the passenger got out of the elevator (to the right)
 			case 2:
-				std::cout << " \x2588\x2588\x263A ";
+				std::cout << L" \x2588\x2588\x263A ";
 				break;
 				// The elevator door opens, the passenger inside the cabin is visible
 			case 3:
-				std::cout << " \x2588\x263A\x2588 ";
+				std::cout << L" \x2588\x263A\x2588 ";
 				break;
 			default:
 				break;
@@ -229,7 +229,7 @@ namespace ElevatorSystem{
 			set_cursor_pos(SPACE - 2 + SPACE, COUNT_FLOORS - i);
 			if (destination[i] == true)
 			{
-				std::cout << "\x25A0";
+				std::cout << L"\x25A0";
 			} else
 			{
 				std::cout << " ";
@@ -258,7 +258,7 @@ namespace ElevatorSystem{
 		if (destination[m_currentFloor] == true)
 		{
 			// Remove this destination from the list
-			destination[m_currentFloor] == false;
+			destination[m_currentFloor] = false;
 
 			// Start disembarking the passenger
 			if (!m_timerUnload)

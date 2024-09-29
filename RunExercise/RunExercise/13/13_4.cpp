@@ -18,7 +18,7 @@ const Product g_productShop[MAX_PRODUCTS] =
 const Buyer buyer("Alex", EProductType::ptMeat, 30);
 
 
-int main13_4()
+int main()
 {
 	std::cout << "Welcome, " << buyer.getName() << ".\n";
 	std::cout << "The store has " << MAX_PRODUCTS << "products.\n";

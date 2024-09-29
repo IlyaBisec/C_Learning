@@ -4,7 +4,7 @@
 #pragma once
 #ifndef _ARITHMETICAL_TEMPLATE_H_
 #define _ARITHMETICAL_TEMPLATE_H_
-#endif
+
 
 
 #include <iostream>
@@ -23,3 +23,5 @@ namespace Template_14_1{
 		return sum / size;
 	}
 }
+
+#endif

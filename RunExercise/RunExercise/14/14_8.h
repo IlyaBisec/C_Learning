@@ -1,7 +1,7 @@
 // Generate index out exclusion class
 #ifndef _ARROVER_EXCLUSION_TEMPLATE_H_
 #define _ARROVER_EXCLUSION_TEMPLATE_H_
-#endif // !_ARROVER_ENCLUSION_TEMPLATE_H_
+
 #pragma once
 
 #include <iostream>
@@ -30,3 +30,4 @@ namespace Template_14_8
 
 
 
+#endif // !_ARROVER_ENCLUSION_TEMPLATE_H_

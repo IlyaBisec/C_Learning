@@ -1,8 +1,7 @@
 // Exclusion generate for system of measuares
+#pragma once
 #ifndef _ENGLERR_EXCLUSION_GENERATE_H_
 #define _ENGLERR_EXCLUSION_GENERATE_H_
-#endif // !_ENGLERR_EXCLUSION_GENERATE_H_
-#pragma once
 
 #include <iostream>
 
@@ -46,3 +45,5 @@ namespace Template_14_10 {
 	};
 
 }
+
+#endif // !_ENGLERR_EXCLUSION_GENERATE_H_

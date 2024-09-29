@@ -1,8 +1,8 @@
+#pragma once
 // SafeArray with template, because put any types
 #ifndef _SAFEARRAY_TEMPLATE_H_
 #define _SAFEARRAY_TEMPLATE_H_
-#endif // !_SAFEARRAY_TEMPLATE_H_
-#pragma once
+
 
 #include <iostream>
 
@@ -28,3 +28,4 @@ namespace Template_14_6
 		S m_array[SIZE];
 	};
 }
+#endif // !_SAFEARRAY_TEMPLATE_H_

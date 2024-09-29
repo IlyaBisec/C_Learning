@@ -2,7 +2,7 @@
 #pragma once
 #ifndef _AMAX_TEMPLATE_H_
 #define _AMAX_TEMPLATE_H_
-#endif // !_AMAX_TEMPLATE_H_
+
 
 namespace Template_14_5
 {
@@ -20,3 +20,4 @@ namespace Template_14_5
 		return temp;
 	}
 }
+#endif // !_AMAX_TEMPLATE_H_

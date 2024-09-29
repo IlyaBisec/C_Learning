@@ -2,7 +2,7 @@
 // with message code
 #ifndef _ARROVER_EXCLUSION_MOD_TEMPLATE_H_
 #define _ARROVER_EXCLUSION_MOD_TEMPLATE_H_
-#endif // !_ARROVER_EXCLUSION_MOD_TEMPLATE_H_
+
 #pragma once
 
 #include <iostream>
@@ -34,5 +34,5 @@ namespace Template_14_9
 	};
 }
 
-
+#endif // !_ARROVER_EXCLUSION_MOD_TEMPLATE_H_
 

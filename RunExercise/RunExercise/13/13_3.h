@@ -3,7 +3,7 @@
 
 #ifndef _ELEVATOR_MOD_H_
 #define _ELEVATOR_MOD_H_
-#endif // !_ELEVATOR_MOD_H_
+
 
 
 #include "13_3app.h"
@@ -93,3 +93,5 @@ namespace ElevatorSystemMod{
 		bool m_floorRequests[2][COUNT_FLOORS];
 	};
 }
+
+#endif // !_ELEVATOR_MOD_H_

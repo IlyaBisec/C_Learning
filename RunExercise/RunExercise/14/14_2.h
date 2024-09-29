@@ -3,7 +3,7 @@
 
 #ifndef _TEMPLATE_QUEUE_SYSTEM_H_
 #define _TEMPLATE_QUEUE_SYSTEM_H_
-#endif // !_TEMPLATE_QUEUE_SYSTEM_H_
+
 
 #include <iostream>
 
@@ -28,3 +28,4 @@ namespace Template_14_2 {
 	};
 
 }
+#endif // !_TEMPLATE_QUEUE_SYSTEM_H_

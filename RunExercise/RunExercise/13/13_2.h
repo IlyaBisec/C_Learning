@@ -3,7 +3,7 @@
 
 #ifndef _ELEVATOR_H_
 #define _ELEVATOR_H_
-#endif // !_ELEVATOR_H_
+
 
 
 #include "13_2app.h"
@@ -17,6 +17,7 @@
 namespace ElevatorSystem{
 
 	enum EDirection{
+	
 		dUP, dDOWN, dSTOP
 	};
 
@@ -91,3 +92,5 @@ namespace ElevatorSystem{
 		bool m_floorRequests[2][COUNT_FLOORS];
 	};
 }
+
+#endif // !_ELEVATOR_H_
