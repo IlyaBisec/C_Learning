@@ -47,11 +47,11 @@ public:
 	Buyer(std::string name, EProductType favourite_product, float money):
 		m_name(name), favouriteProduct(favourite_product), sumMoney(money) { }
 
-	// Получить имя покупателя
+	// Get name buyer
 	std::string getName() const; 
-	// Проверить тип продукта
+	// Check type of product
 	bool checkType(const Product &product) const;
-	// Проверить цену продукта
+	// Check price of product
 	bool checkPrice(const Product &product) const;
 
 private:

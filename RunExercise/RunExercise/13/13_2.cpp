@@ -75,7 +75,7 @@ void Building::record_floorRequest()
 
 	set_cursor_pos(1, 22);
 
-	std::cout << "Enter [Enter] for start of elevator: ";
+	std::cout << "Press [Enter] for start of elevator: ";
 	if (!_kbhit()) // Wait '\r'
 		return;
 
@@ -98,12 +98,64 @@ void Building::record_floorRequest()
 	std::cin.get(choose_direction);
 	std::cin.ignore(10, '\n');
 
+	// There is no other direction!\nAvailable direction: 'u' or 'U' and 'd' or 'D'
+	// choose_direction = 's'
+	// choose_direction = 'ä'
+	// choose_direction = '5'
+	// choose_direction = '.'
+
+	// Checking that the user has entered exactly the direction symbols
+	if(choose_direction != 'u' && choose_direction != 'U' && 
+		choose_direction != 'd' && choose_direction != 'D')
+	{
+		std::cout << "\nThere is no other direction!\nAvailable direction: 'u' or 'U' and 'd' or 'D'" << std::endl;
+		
+		clearMsgLines(1, 20, 50, 3);
+
+		return;
+	}
+
+
 	// Requests for direction
 	if (choose_direction == 'u' || choose_direction == 'U')
 		m_floorRequests[dUP][floor - 1] = true;
 	if (choose_direction == 'd' || choose_direction == 'D')
 		m_floorRequests[dDOWN][floor - 1] = true;
 
+
+	// What floor are you on?
+	// :50	// The building has a number of floors: 10
+	// :0	// The passenger wants to go down or up beyond the possible floors!
+
+	// If the floor is outside the building
+	if(floor > NUM_FLOORS || floor < 1)
+	{
+		std::cout << "\nThe passenger wants to go down or up beyond the possible floors!\nThe building has a number of floors: " << NUM_FLOORS << std::endl;
+		
+		clearMsgLines(1, 20, 50, 3);
+
+		return;
+	}
+
+	// : -5 //Unccorrect input, pls number only
+	// : -g //Unccorrect input, pls number only
+	// : g //Unccorrect input, pls number only
+	// : / //Unccorrect input, pls number only
+
+
+	// If !number floor and !-number floor
+	for (int i = 0; tempString[i] != L'\0'; ++i)
+	{
+		if (!iswdigit(tempString[i]) && !(i == 0 && tempString[i] == L'-'))
+		{
+			std::cerr << "\nUnccorrect input, pls number only." << std::endl;
+
+			clearMsgLines(1, 20, 50, 3);
+			return;
+		}
+	}
+
+	
 	// Clear text
 	set_cursor_pos(1, 22); clear_line();
 	set_cursor_pos(1, 23); clear_line();
@@ -434,6 +486,7 @@ void Elevator::decideAction()
 				{
 					cabine_opposite_down = true;
 				}
+
 		} // END if(No our elevator)
 
 	} // END for(for every elevator)
@@ -469,7 +522,7 @@ void Elevator::get_destination()
 
 	set_cursor_pos(1, 22); clear_line();
 	set_cursor_pos(1, 22);
-	std::cout << "The elevator" << (m_currentFloor + 1) << "stopped on the floor " << (m_currentFloor + 1) << "\nDestination floor (0 for end of entry)";
+	std::cout << "The elevator " << (m_currentFloor + 1) << " stopped on the floor " << (m_currentFloor + 1) << "\nDestination floor (0 for end of entry)";
 	for(int i = 1; i < NUM_FLOORS; i++)
 	{
 		set_cursor_pos(1, 24);
@@ -508,4 +561,14 @@ int Elevator::get_floor() const
 EDirection Elevator::get_direction() const
 {
 	return m_currentDir;
+}
+
+void clearMsgLines(int x, int yMin, int yMax, int time)
+{
+	std::this_thread::sleep_for(std::chrono::seconds(time));
+
+	for(int i = yMin; i <= yMax; i++)
+	{
+		set_cursor_pos(x, i); clear_line();
+	}
 }

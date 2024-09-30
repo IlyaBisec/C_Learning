@@ -17,7 +17,13 @@ int main13_1()
 	try
 	{
 		wcout << L"Input number: ";
-		wcin >> number;
+		wcin >> number; // 5
+
+		//number = 'd';		// Unsigned number only
+		//number = 'û';		// Unsigned number only
+		//number =  0;		// number can be zero
+		//number = '-2';	// Unsigned number only
+		//number = 89549;	// Max size: 1000
 
 		if (number == 0)
 		{
@@ -33,12 +39,15 @@ int main13_1()
 		for (j = number; j > 0; j--)
 			factorial = factorial * j;
 		wcout << L"Factorial = ";
-		factorial.put();
-		wcout << endl;
+		factorial.put(); // 120
+		wcout << endl; 
 
 		// TESTING
 
 		Verylong s, s1, s2;
+
+		//s1 = 'd';  // Unccorrect input, pls number only.
+		//s2 = '-ô'; // Unccorrect input, pls number only.
 
 		wcout << L"\nEnter the first number: "; s1.get();
 		wcout << L"Enter the second number: "; s2.get();
@@ -53,6 +62,8 @@ int main13_1()
 		s = s1 % s2;
 		wcout << L"\nRemainder of the division: "; s.put();
 		wcout << endl;
+
+
 
 	} catch (const std::exception &)
 	{

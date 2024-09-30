@@ -11,6 +11,9 @@
 #include <stdlib.h>
 #include <process.h>
 
+#include <thread>
+#include <chrono>
+
 #include "../msoftcon.h"
 
 enum EDirection{
@@ -22,10 +25,14 @@ enum EDirection{
 constexpr int LOAD_TIME = 3;		// Passenger load/unload time in/out of the elevator
 constexpr int SPACE = 7;			// Distance between elevator cabins (in symbols)
 constexpr int BUFFER_LENGTH = 80;	// Buffer length of the auxiliary string
-constexpr int NUM_FLOORS = 20;		// Number of floors
-constexpr int NUM_CABINES = 4;			// Number of elevatror cabines 
 
+constexpr int NUM_FLOORS = 10;		// Number of floors
+constexpr int NUM_CABINES = 1;			// Number of elevatror cabines 
 
+// Clear the selected area
+// x, yMin, yMax - coordinates
+// time - the time after which the field is cleared  
+void clearMsgLines(int x, int yMin, int yMax, int time);
 
 class Building;
 

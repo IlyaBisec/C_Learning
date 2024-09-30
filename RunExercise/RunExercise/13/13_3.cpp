@@ -1,4 +1,4 @@
-#include "13_4.h"
+#include "13_3.h"
 #include <iostream>
 
 // Shop
@@ -18,7 +18,7 @@ const Product g_productShop[MAX_PRODUCTS] =
 const Buyer buyer("Alex", EProductType::ptMeat, 30);
 
 
-int main()
+int main13_3()
 {
 	std::cout << "Welcome, " << buyer.getName() << ".\n";
 	std::cout << "The store has " << MAX_PRODUCTS << "products.\n";
