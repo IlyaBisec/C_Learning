@@ -91,6 +91,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EntryPointSymbol>main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -138,6 +139,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="easy\codemu\1.1\Numb1.cpp" />
+    <ClCompile Include="easy\codemu\1.1\Numb2.cpp" />
+    <ClCompile Include="easy\codemu\1.1\Numb3.cpp" />
+    <ClCompile Include="easy\codemu\1.1\Numb4.cpp" />
+    <ClCompile Include="easy\codemu\1.1\Numb5.cpp" />
+    <ClCompile Include="easy\codemu\1.1\Numb6.cpp" />
+    <ClCompile Include="easy\codemu\1.1\Numb7.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="easy\codemu\stdafx2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
