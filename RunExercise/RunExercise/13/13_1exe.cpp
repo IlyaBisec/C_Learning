@@ -42,7 +42,7 @@ int main13_1()
 		factorial.put(); // 120
 		wcout << endl; 
 
-		// TESTING
+		// SIMPLE TESTING
 
 		Verylong s, s1, s2;
 
