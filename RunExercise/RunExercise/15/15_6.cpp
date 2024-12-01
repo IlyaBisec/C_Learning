@@ -1,5 +1,5 @@
-// Контейнеры в прямом и обратном направлении для вектора целых чисел
-// с переворачиванием
+// Containers in the forward and reverse directions for the vector of integers
+// with inversion
 
 #include "header.h"
 

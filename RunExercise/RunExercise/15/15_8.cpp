@@ -1,10 +1,8 @@
-// Программа, позволяющуя производить копирование 
-// последовательностей внутри контейнера
-// Допустим, пользователь вводит значения
-// first1, last1 и first2.Осуществляйте в программе проверку того, 
-// что последователь - ность, перекрывающая другую, сдвигается налево, 
-// а не направо. (Напри - мер, можно сдвигать некоторые данные из позиции
-// 10 в позицию 9, но не в позицию 11.)
+// A program that allows you to copy sequences inside a container
+// let's say the user enters values first1, last1 and first2.
+// Checking the program that the sequence overlapping the other is shifted to the left,
+// and not to the right. (For example, you can shift some data from position
+// 10 to position 9, but not to position 11).
 
 #include "header.h"
 
@@ -24,8 +22,8 @@ int main15_8()
 	}
 
 	// Get 3 indexes of array from user
-	// first1 and last1 - определяют копируемую последовательность
-	// first2 - определяет начало места, в которое будет произведено копирование
+	// first1 and last1 - define the sequence to be copied
+	// first2 - It determines the beginning of the place to which the copy will be made
 
 	int first1, last1, first2;
 

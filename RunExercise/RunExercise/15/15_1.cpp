@@ -1,4 +1,4 @@
-// Сортировака float массива с помощью sort() STL
+// Sorting float array with help sort() STL
 
 #include "header.h"
 

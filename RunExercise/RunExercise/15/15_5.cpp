@@ -1,5 +1,5 @@
-// Объединение контейнеров(массив с четными числами и множество с нечетными)
-// с помощью алгоритма merge()
+// combining containers(an array with even numbers and a set with odd numbers)
+// using the merge() algorithm
 
 #include "header.h"
 

@@ -1,11 +1,11 @@
-// применение accumulate() с тремя аргументами
+// Using accumulate() with three arguments
 
 #include "header.h"
 
 
 namespace STL_15_7 {
 
-	// Класс по отслеживанию времени вылета и прилета самолетов
+	// КA class for tracking the departure and arrival times of aircraft
 	class AirTime
 	{
 	public:
@@ -37,11 +37,11 @@ namespace STL_15_7 {
 
 	AirTime AirTime::operator+(const AirTime &right) const
 	{
-		// Сложение полей
+		// Adding fields
 		int tempH = m_hours + right.m_hours;
 		int tempM = m_minutes + right.m_minutes;
 
-		// Проверка на перенос
+		// Checking for transfer
 		if (tempM >= 60)
 		{
 			tempH++;

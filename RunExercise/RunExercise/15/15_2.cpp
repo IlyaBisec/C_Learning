@@ -1,6 +1,6 @@
-// јлгоритм sort() дл€ сортировки массива слов 
-// push back() - дл€ добавлени€ слов
-// операторы[] and size() - дл€ вывода
+// Algorithm sort() for sort array of words 
+// push back() - add new words
+// operators[] and size() - for the output
 
 #include "header.h"
 

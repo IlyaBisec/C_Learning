@@ -1,7 +1,7 @@
-// Используется специальный «адаптер функции», 
-// называющийся bind1dt или bind2nd, для связывания аргумента с
-// функциональным объектом.Пусть, например, мы ищем строку SearchName
-// в строковом контейнере names. В этом случае необходимо писать такое выражение :
+// A special "function adapter",
+// called bind2nd, is used to bind an argument to
+// a functional object. Let's say, for example, we are looking for the string Search Name
+// in the string container names. In this case, it is necessary to write such an expression :
 // ptr = find_if(names.begin(), names.end(), bind2nd(equal_to<string>(), SearchName));
 
 #include "header.h"

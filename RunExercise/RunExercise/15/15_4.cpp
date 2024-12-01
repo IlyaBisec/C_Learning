@@ -1,13 +1,13 @@
-// Класс person для хранения указателей на объекты 
-// этого класса. 
-// С помощью comparePersons - автоматически сортировать поименно людей
-// Определить полдюжины элементов и внести их в мультимножество
-// Вывести содержимое
+// The person class for storing pointers to objects
+// of this class. 
+// Using comparePersons - automatically sort people by name
+// Identify half a dozen items and add them to a multiset
+// Output the contents
 
 #include "header.h"
 
 namespace STL_15_4 {
-	// Person - класс как запись о человеке в тел. книге
+	// Person - A class is like an entry about a person in a phone book
 	class Person
 	{
 	public:
@@ -41,8 +41,8 @@ namespace STL_15_4 {
 		return (person1.m_lastName < person2.m_lastName) ? true : false;
 	}
 
-	// ComparePerson - класс сравнения объектов класса Person 
-	// по указателям
+	// ComparePerson - object comparison class of the Person class 
+	// by the signs
 	class ComparePersons
 	{
 	public:
@@ -50,8 +50,8 @@ namespace STL_15_4 {
 			{return *ptr_person1 < *ptr_person2; }
 	};
 
-	// displayPerson - функция для вывода на экран класса person
-	// по указателю
+	// displayPerson - function for displaying the person class
+// by pointer
 	void displayPerson(const Person *ptr_person)
 	{
 		ptr_person->display();
@@ -66,8 +66,8 @@ int main15_4()
 	// Multiset
 	std::multiset<Person *, ComparePersons> multiPersons;
 
-	// Выделение памяти на полдюжины персон и помещение их в 
-	// мультимножество
+	// Allocating memory for half a dozen people and putting them in 
+	// multiset
 	multiPersons.insert(new Person("Jackson", "Michael", 880055));
 	multiPersons.insert(new Person("Tirel", "Travis", 123456));
 	multiPersons.insert(new Person("Lannistar", "Tywin", 414141));
@@ -78,7 +78,7 @@ int main15_4()
 	// Output
 	std::for_each(multiPersons.begin(), multiPersons.end(), displayPerson);
 
-	// Осовбождеие памяти
+	// Free memory
 	std::multiset<Person *, ComparePersons>::iterator iterator;
 	for (iterator = multiPersons.begin(); iterator != multiPersons.end(); iterator++)
 	{

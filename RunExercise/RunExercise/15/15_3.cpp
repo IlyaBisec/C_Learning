@@ -1,5 +1,5 @@
-// Обычные итераторы в прямом и обратном направлении для списока целых чисел
-// с переворачиванием
+// Regular forward and reverse iterators for a list of integers
+// with inversion
 
 #include "header.h"
 
